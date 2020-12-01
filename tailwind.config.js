@@ -1,5 +1,14 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  theme: {},
+  theme: {
+    fontFamily: {
+      heading: ['Kondolar Thai', ...defaultTheme.fontFamily.serif],
+      subtitle: ['Anuphan', ...defaultTheme.fontFamily.sans],
+      body: ['Bai Jamjuri', ...defaultTheme.fontFamily.sans],
+      button: ['Anuphan', ...defaultTheme.fontFamily.sans],
+    },
+  },
   variants: {},
   plugins: [],
   purge: {
