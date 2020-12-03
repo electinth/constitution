@@ -17,7 +17,7 @@ export default {
   css: ['~/assets/fonts/typography.css', '~/assets/style.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: ['~/plugins/msw.server.ts'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -35,4 +35,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  env: {
+    STRAPI_ENDPOINT: process.env.STRAPI_ENDPOINT,
+    MSW_ENDPOINT: 'http://msw.local',
+  },
 };

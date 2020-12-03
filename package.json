@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
-    "generate": "nuxt-ts generate && rm dist/mockServiceWorker.js",
+    "generate": "nuxt-ts generate",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ."
   },
   "lint-staged": {
