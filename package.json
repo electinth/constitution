@@ -4,11 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
-    "lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
-    "lint": "yarn lint:js"
+    "generate": "nuxt-ts generate && rm dist/mockServiceWorker.js",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ."
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint"
@@ -40,6 +37,7 @@
     "eslint-plugin-vue": "^7.1.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
+    "msw": "^0.24.1",
     "prettier": "^2.1.2"
   }
 }
