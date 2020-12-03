@@ -1,19 +1,28 @@
 <template>
-  <div
-    class="min-h-screen flex justify-center items-center text-center mx-auto"
-  >
+  <div class="min-h-screen mx-auto">
     <div>
-      <Logo />
-      <h1 class="font-heading text-48 leading-1.2">title</h1>
-      <h2 class="font-subtitle text-24">subtitle</h2>
-      <p class="font-body text-16">body</p>
-      <button class="font-button rounded border">button</button>
+      {{ fetchedData }}
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import {
+  getAllCategories,
+  getCategoryById,
+  getTopicByCategoryId,
+} from '../utils/strapi';
 
-export default Vue.extend({});
+export default Vue.extend({
+  async asyncData() {
+    const fetchedData = await Promise.all([
+      getAllCategories(),
+      getCategoryById(2),
+      getTopicByCategoryId(3),
+    ]);
+
+    return { fetchedData };
+  },
+});
 </script>

@@ -3,5 +3,8 @@
     "@nuxtjs/eslint-config-typescript",
     "prettier/vue",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "rules": {
+    "camelcase": "off"
+  }
 }
