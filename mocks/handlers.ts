@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import categories from './data/categories.json';
 import categoryById from './data/category-by-id.json';
-import topicByCategoryId from './data/topic-by-category-id.json';
+import topicsByCategoryId from './data/topics-by-category-id.json';
 
 const root = process.env.MSW_ENDPOINT;
 
@@ -28,10 +28,12 @@ export const handlers = [
     }
 
     return res(
-      ctx.json({
-        ...topicByCategoryId,
-        category_id: +categoryId,
-      })
+      ctx.json(
+        topicsByCategoryId.map((topic) => ({
+          ...topic,
+          category_id: +categoryId,
+        }))
+      )
     );
   }),
 ];

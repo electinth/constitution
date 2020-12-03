@@ -11,7 +11,7 @@ import Vue from 'vue';
 import {
   getAllCategories,
   getCategoryById,
-  getTopicByCategoryId,
+  getTopicsByCategoryId,
 } from '../utils/strapi';
 
 export default Vue.extend({
@@ -19,7 +19,7 @@ export default Vue.extend({
     const fetchedData = await Promise.all([
       getAllCategories(),
       getCategoryById(2),
-      getTopicByCategoryId(3),
+      getTopicsByCategoryId(3),
     ]);
 
     return { fetchedData };

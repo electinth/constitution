@@ -87,5 +87,5 @@ export const getAllCategories = (): Promise<CategoryOverview[]> =>
 export const getCategoryById = (id: number): Promise<Category> =>
   get<Category>(`/categories/${id}`);
 
-export const getTopicByCategoryId = (id: number): Promise<Topic> =>
-  get<Topic>(`/topics?category_id=${id}`);
+export const getTopicsByCategoryId = (id: number): Promise<Topic[]> =>
+  get<Topic[]>(`/topics?category_id=${id}`);
