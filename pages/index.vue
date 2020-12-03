@@ -1,8 +1,6 @@
 <template>
-  <div class="min-h-screen mx-auto">
-    <div>
-      {{ fetchedData }}
-    </div>
+  <div class="bg-black text-white">
+    {{ fetchedData }}
   </div>
 </template>
 
