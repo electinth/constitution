@@ -35,8 +35,15 @@
 
     <SectionDivider />
 
-    <section>
-      <CategoryTable :categories="constitutionOverview.categories" />
+    <section class="flex flex-col md:flex-row space-y-6">
+      <CategoryTable
+        :categories="constitutionOverview.categories"
+        class="flex-1"
+      />
+      <ConstitutionsBreakdown
+        :categories="constitutionOverview.categories"
+        :constitutions="constitutionOverview.constitutions"
+      />
     </section>
   </div>
 </template>

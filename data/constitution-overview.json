@@ -19,15 +19,15 @@
           { "categoryId": 1, "pageRatio": 0.5 }
         ],
         [
-          { "categoryId": 2, "pageRatio": 0.5 },
-          { "categoryId": 3, "pageRatio": 0.5 }
+          { "categoryId": 1, "pageRatio": 0.5 },
+          { "categoryId": 2, "pageRatio": 0.5 }
         ],
-        [{ "categoryId": 3, "pageRatio": 1 }],
-        [{ "categoryId": 3, "pageRatio": 1 }],
-        [{ "categoryId": 3, "pageRatio": 1 }],
-        [{ "categoryId": 3, "pageRatio": 1 }],
-        [{ "categoryId": 3, "pageRatio": 1 }],
-        [{ "categoryId": 3, "pageRatio": 1 }]
+        [{ "categoryId": 2, "pageRatio": 1 }],
+        [{ "categoryId": 1, "pageRatio": 1 }],
+        [{ "categoryId": 1, "pageRatio": 1 }],
+        [{ "categoryId": 2, "pageRatio": 1 }],
+        [{ "categoryId": 2, "pageRatio": 1 }],
+        [{ "categoryId": 2, "pageRatio": 1 }]
       ]
     },
     {
@@ -35,7 +35,7 @@
       "name": "ธรรมนูญ 2475",
       "year": 2475,
       "context": "พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช...",
-      "isTemporaryEdition": true,
+      "isTemporaryEdition": false,
       "isWrittenByCoup": false,
       "pageCount": 2,
       "pages": [
@@ -44,8 +44,8 @@
           { "categoryId": 1, "pageRatio": 0.5 }
         ],
         [
-          { "categoryId": 2, "pageRatio": 0.5 },
-          { "categoryId": 3, "pageRatio": 0.5 }
+          { "categoryId": 1, "pageRatio": 0.5 },
+          { "categoryId": 2, "pageRatio": 0.5 }
         ]
       ]
     }
