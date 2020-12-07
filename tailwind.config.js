@@ -32,7 +32,7 @@ module.exports = {
       8: '8px',
     },
     colors: {
-      black: 'black',
+      black: '#131313',
       white: 'white',
     },
   },
