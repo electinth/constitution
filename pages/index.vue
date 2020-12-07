@@ -34,13 +34,23 @@
     </section>
 
     <SectionDivider />
+
+    <section>
+      <CategoryTable :categories="constitutionOverview.categories" />
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import constitutionOverview from '~/data/constitution-overview.ts';
 
-const howtoSteps = [
+interface HowtoStep {
+  image: string;
+  text: string;
+}
+
+const howtoSteps: HowtoStep[] = [
   {
     image: require('~/assets/images/landing-howto-1.svg'),
     text: 'ดูภาพรวมโครงสร้างและการจัดหมวดหมู่',
@@ -63,6 +73,7 @@ export default Vue.extend({
   data() {
     return {
       howtoSteps,
+      constitutionOverview,
     };
   },
 });
