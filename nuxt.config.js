@@ -34,10 +34,16 @@ export default {
   modules: [],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    publicPath: `${process.env.BASE_PATH || ''}/_nuxt/`,
+  },
 
   env: {
     STRAPI_ENDPOINT: process.env.STRAPI_ENDPOINT,
     MSW_ENDPOINT: 'http://msw.local',
+  },
+
+  router: {
+    base: process.env.BASE_PATH || '/',
   },
 };
