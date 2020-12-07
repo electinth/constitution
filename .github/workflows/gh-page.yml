@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  pipeline:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout source code
@@ -19,7 +19,7 @@ jobs:
     - name: Build project
       uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: build
+        cmd: generate
     - name: Deploy to Github Page
       uses: peaceiris/actions-gh-pages@v3
       with:
