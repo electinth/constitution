@@ -40,7 +40,7 @@
           class="fixed z-10 inset-0 md:relative flex"
         >
           <div
-            class="md:absolute top-0 left-0 bg-white text-black w-screen md:max-w-xs mx-8 my-auto md:m-0"
+            class="md:absolute top-0 left-0 bg-white text-black w-screen md:max-w-xs mx-8 my-auto md:m-0 shadow-md"
           >
             <div
               class="md:hidden flex flex-row p-3"
@@ -49,13 +49,14 @@
               <Heading4 class="font-black flex-1">
                 {{ title }}
               </Heading4>
-              <img
-                src="~/assets/images/icon-cross.svg"
-                alt="close"
-                class="w-3"
-                style="filter: brightness(0)"
-                @click.stop="focusingCategoryId = null"
-              />
+              <button @click.stop="focusingCategoryId = null">
+                <img
+                  src="~/assets/images/icon-cross.svg"
+                  alt="close"
+                  class="w-3"
+                  style="filter: brightness(0)"
+                />
+              </button>
             </div>
             <div class="p-4 space-y-4">
               <Paragraph2>{{ description }}</Paragraph2>

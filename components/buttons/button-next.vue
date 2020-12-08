@@ -4,8 +4,7 @@
       compact ? 'px-2 py-1' : 'px-3 py-2'
     }`"
   >
-    <Label2 v-if="compact"><slot /></Label2>
-    <Label3 v-else><slot /></Label3>
+    <Label2><slot /></Label2>
     <svg
       width="13"
       height="10"
