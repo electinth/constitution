@@ -3,5 +3,7 @@ enum TailwindBreakpoint {
   lg = 1024,
 }
 
-export const isMediumOrMore = () => window.innerWidth > TailwindBreakpoint.md;
-export const isLargeOrMore = () => window.innerWidth > TailwindBreakpoint.lg;
+export const isMediumOrMore = () =>
+  process.client && window.innerWidth > TailwindBreakpoint.md;
+export const isLargeOrMore = () =>
+  process.client && window.innerWidth > TailwindBreakpoint.lg;
