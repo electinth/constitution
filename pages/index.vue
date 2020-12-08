@@ -38,7 +38,7 @@
     <section
       class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4"
     >
-      <CategoryTable :categories="constitutionOverview.categories" />
+      <CategoriesTable :categories="constitutionOverview.categories" />
       <ConstitutionsBreakdown
         :categories="constitutionOverview.categories"
         :constitutions="constitutionOverview.constitutions"
