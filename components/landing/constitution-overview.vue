@@ -32,20 +32,39 @@
     >
 
     <!-- Constitution pages -->
-    <div class="flex flex-row md:flex-col flex-wrap">
+    <div class="flex flex-row md:flex-col flex-wrap relative">
       <div
         v-for="(page, pageIndex) in constitution.pages"
         :key="pageIndex"
-        class="flex flex-col w-6 h-8 mr-2 mb-3 md:mx-auto md:mb-1"
+        class="flex flex-row"
       >
+        <!-- Page ratio visualize -->
         <div
-          v-for="{ categoryId, pageRatio } in page"
-          :key="categoryId"
-          :style="{
-            height: `${Math.round(pageRatio * 100)}%`,
-            backgroundColor: categoriesMap[categoryId].color,
-          }"
-        />
+          class="flex flex-col w-6 h-8 mr-2 mb-3 md:mx-auto md:mb-1 border border-black hover:border-white"
+          @mouseover="isMediumOrMore() && (hoveringPageIndex = pageIndex)"
+          @mouseleave="isMediumOrMore() && (hoveringPageIndex = null)"
+        >
+          <div
+            v-for="{ categoryId, pageRatio } in page"
+            :key="categoryId"
+            :style="{
+              height: `${Math.round(pageRatio * 100)}%`,
+              backgroundColor: categoriesMap[categoryId].color,
+            }"
+          />
+        </div>
+        <!-- End of Page ratio visualize -->
+        <!-- Page preview -->
+        <div v-if="hoveringPageIndex === pageIndex" class="relative">
+          <div class="absolute z-10 top-0 left-0 bg-white flex w-24">
+            <img
+              src="https://placehold.co/200x300"
+              :alt="`หน้า ${pageIndex}`"
+              class="hw-full shadow-md"
+            />
+          </div>
+        </div>
+        <!-- End of Page preview -->
       </div>
     </div>
     <!-- End of Constitution pages -->
@@ -56,6 +75,7 @@
 import Vue from 'vue';
 import { CategoriesMap } from './constitutions-breakdown.vue';
 import { Constitution } from '~/data/constitution-overview';
+import { isMediumOrMore } from '~/utils/screen';
 
 export default Vue.extend({
   props: {
@@ -67,6 +87,12 @@ export default Vue.extend({
       type: Object as () => CategoriesMap,
       required: true,
     },
+  },
+  data() {
+    return {
+      hoveringPageIndex: null,
+      isMediumOrMore,
+    };
   },
 });
 </script>
