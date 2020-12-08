@@ -43,6 +43,7 @@
           class="flex flex-col w-6 h-8 mr-2 mb-3 md:mx-auto md:mb-1 border border-black hover:border-white"
           @mouseover="isMediumOrMore() && (hoveringPageIndex = pageIndex)"
           @mouseleave="isMediumOrMore() && (hoveringPageIndex = null)"
+          @click="isMediumOrMore() && (selectedPageIndex = pageIndex)"
         >
           <div
             v-for="{ categoryId, pageRatio } in page"
@@ -65,6 +66,30 @@
           </div>
         </div>
         <!-- End of Page preview -->
+        <!-- Page image dialog -->
+        <div
+          v-if="selectedPageIndex === pageIndex"
+          class="fixed z-10 inset-0 flex"
+        >
+          <div class="flex max-h-screen h-full m-auto py-10 relative">
+            <img
+              src="https://placehold.co/800x1200"
+              :alt="`หน้า ${pageIndex}`"
+              class="h-full w-auto m-auto"
+            />
+            <div
+              class="absolute right-0 flex bg-black -m-3 w-8 h-8 rounded-full border"
+              @click="selectedPageIndex = null"
+            >
+              <img
+                src="~/assets/images/icon-cross.svg"
+                alt="close"
+                class="w-4 m-auto"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- End of Page image dialog -->
       </div>
     </div>
     <!-- End of Constitution pages -->
@@ -91,6 +116,7 @@ export default Vue.extend({
   data() {
     return {
       hoveringPageIndex: null,
+      selectedPageIndex: null,
       isMediumOrMore,
     };
   },
