@@ -11,17 +11,19 @@
         v-for="category in categories"
         :key="category.id"
         class="flex flex-row"
+        @mouseover="isMediumOrMore() && openDescription(category)"
+        @mouseleave="isMediumOrMore() && closeDescription()"
       >
         <CategoryLabel
           :category="category"
           :is-focusing="focusingCategoryId === category.id"
-          @open="focusingCategoryId = category.id"
-          @close="focusingCategoryId = null"
+          @open="openDescription(category)"
+          @close="closeDescription"
         />
         <CategoryFloatingDescription
           v-if="focusingCategoryId === category.id"
           :category="category"
-          @close="focusingCategoryId = null"
+          @close="closeDescription"
         />
       </li>
       <!-- End of Category item -->
@@ -32,6 +34,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Category } from '~/data/constitution-overview.ts';
+import { isMediumOrMore } from '~/utils/screen';
 
 export default Vue.extend({
   props: {
@@ -43,7 +46,19 @@ export default Vue.extend({
   data() {
     return {
       focusingCategoryId: null,
+      isMediumOrMore,
+    } as {
+      focusingCategoryId: number | null;
+      isMediumOrMore: () => boolean;
     };
+  },
+  methods: {
+    openDescription(category: Category) {
+      this.focusingCategoryId = category.id;
+    },
+    closeDescription() {
+      this.focusingCategoryId = null;
+    },
   },
 });
 </script>

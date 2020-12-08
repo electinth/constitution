@@ -5,8 +5,6 @@
       backgroundColor:
         isFocusing && isMediumOrMore() ? category.color : 'unset',
     }"
-    @mouseover="isMediumOrMore() && $emit('open')"
-    @mouseleave="isMediumOrMore() && $emit('close')"
     @click="!isMediumOrMore() && $emit('open')"
   >
     <div class="flex">
