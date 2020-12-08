@@ -4,12 +4,14 @@
       <Subtitle2 class="md:hidden font-semibold"
         >เปลี่ยนมาแล้ว 20 ฉบับ</Subtitle2
       >
-      <div class="flex flex-col md:flex-row opacity-75 space-y-2 md:space-y-0">
-        <div class="flex-1 flex flex-row space-x-2">
+      <div
+        class="flex flex-col md:flex-row opacity-75 space-y-2 md:space-y-0 md:space-x-4"
+      >
+        <div class="flex flex-row space-x-1">
           <div class="white-fill w-8" />
           <Label2>ฉบับที่เกิดจากรัฐบาลปกติ</Label2>
         </div>
-        <div class="flex-1 flex flex-row space-x-2">
+        <div class="flex flex-row space-x-1">
           <div class="cross-fill w-8" />
           <Label2>ฉบับที่เกิดจากรัฐประหาร</Label2>
         </div>
