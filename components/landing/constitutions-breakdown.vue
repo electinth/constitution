@@ -9,11 +9,11 @@
         class="flex flex-col md:flex-row opacity-75 space-y-2 md:space-y-0 md:space-x-4"
       >
         <div class="flex flex-row space-x-1">
-          <div class="white-fill w-8" />
+          <CoupIndicator class="w-8 my-auto" />
           <Label2>ฉบับที่เกิดจากรัฐบาลปกติ</Label2>
         </div>
         <div class="flex flex-row space-x-1">
-          <div class="cross-fill w-8" />
+          <CoupIndicator coup class="w-8 my-auto" />
           <Label2>ฉบับที่เกิดจากรัฐประหาร</Label2>
         </div>
       </div>
@@ -29,13 +29,7 @@
             class="flex flex-col bg-gray-2 hover:bg-gray-1 cursor-pointer p-2 pb-1 md:p-1 md:pb-0 w-full space-y-2 md:space-y-1"
             @click="selectedConstitutionId = constitution.id"
           >
-            <div class="h-1">
-              <div
-                :class="
-                  constitution.isTemporaryEdition ? 'white-fill' : 'cross-fill'
-                "
-              />
-            </div>
+            <CoupIndicator :coup="constitution.isWrittenByCoup" />
             <div class="flex flex-row">
               <div class="flex-1 md:text-center">
                 <h3
@@ -89,8 +83,9 @@
           class="fixed z-10 inset-0 flex"
         >
           <div
-            class="flex flex-col w-full h-full min-h-screen md:min-h-0 md:h-auto bg-white text-black m-auto md:max-w-lg p-2 md:p-1 shadow-md space-y-4 overflow-y-auto"
+            class="flex flex-col w-full h-full min-h-screen md:min-h-0 md:h-auto bg-white text-black m-auto md:max-w-lg p-2 md:p-1 shadow-md overflow-y-auto"
           >
+            <CoupIndicator dark :coup="constitution.isWrittenByCoup" />
             <div class="flex justify-end">
               <button @click="selectedConstitutionId = null">
                 <img
@@ -101,7 +96,7 @@
                 />
               </button>
             </div>
-            <div class="flex flex-col p-2 md:p-6 pt-0 space-y-6">
+            <div class="flex flex-col p-2 md:p-6 space-y-4">
               <Heading3 class="font-black text-center">
                 {{ constitution.name }}
               </Heading3>
@@ -156,19 +151,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style scoped>
-.white-fill {
-  @apply bg-white;
-  @apply my-auto;
-  height: 2px;
-}
-
-.cross-fill {
-  @apply h-1;
-  @apply my-auto;
-  background-image: url(~assets/images/icon-cross.svg);
-  background-repeat: repeat-x;
-  background-position: left center;
-}
-</style>
