@@ -59,8 +59,12 @@
         <div v-if="hoveringPageIndex === pageIndex" class="relative">
           <div class="absolute z-10 top-0 left-0 bg-white flex w-24">
             <img
-              src="https://placehold.co/200x300"
-              :alt="`หน้า ${pageIndex}`"
+              :src="
+                require(`~/assets/images/constitutions/${constitution.id + 1}/${
+                  pageIndex + 1
+                }.png`)
+              "
+              :alt="`${constitution.title} หน้า ${pageIndex}`"
               class="hw-full shadow-md"
             />
           </div>
@@ -73,8 +77,12 @@
         >
           <div class="flex max-h-screen h-full m-auto py-10 relative">
             <img
-              src="https://placehold.co/800x1200"
-              :alt="`หน้า ${pageIndex}`"
+              :src="
+                require(`~/assets/images/constitutions/${constitution.id + 1}/${
+                  pageIndex + 1
+                }.png`)
+              "
+              :alt="`${constitution.title} หน้า ${pageIndex}`"
               class="h-full w-auto m-auto"
             />
             <div
