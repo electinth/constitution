@@ -3,7 +3,7 @@
     <div
       class="flex flex-col w-full h-full min-h-screen md:min-h-0 md:h-auto bg-white text-black m-auto md:max-w-lg p-2 md:p-1 shadow-md overflow-y-auto"
     >
-      <CoupIndicator dark :coup="constitution.isWrittenByCoup" />
+      <CoupIndicator is-dark :coup="constitution.isWrittenByCoup" />
       <div class="flex justify-end">
         <button @click="$emit('close')">
           <img

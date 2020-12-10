@@ -2,7 +2,7 @@
   <div class="h-1">
     <div
       :class="coup ? 'cross-fill' : 'white-fill'"
-      :style="{ filter: `brightness(${dark ? 0 : 1})` }"
+      :style="{ filter: `brightness(${isDark ? 0 : 1})` }"
     />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default Vue.extend({
       type: Boolean,
       default: false,
     },
-    dark: {
+    isDark: {
       type: Boolean,
       default: false,
     },
