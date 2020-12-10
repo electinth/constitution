@@ -28,6 +28,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@aceforth/nuxt-optimized-images',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -45,5 +46,9 @@ export default {
 
   router: {
     base: process.env.BASE_PATH || '/',
+  },
+
+  optimizedImages: {
+    optimizeImages: true,
   },
 };
