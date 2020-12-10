@@ -32,7 +32,8 @@ module.exports = {
       8: '8px',
     },
     colors: {
-      black: '#131313',
+      black: 'black',
+      dark: '#131313',
       white: 'white',
       'gray-1': '#4B4B4B',
       'gray-2': '#2b2b2b',

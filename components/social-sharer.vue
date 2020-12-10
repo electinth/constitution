@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex flex-row bg-black border-2 border-black h-10 p-1 justify-center space-x-4"
-  >
+  <div class="flex flex-row h-10 p-1 justify-center space-x-4">
     <Label1 :class="`my-auto ${isDark ? 'text-white' : 'text-black'}`"
       >Share</Label1
     >
