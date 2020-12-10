@@ -45,6 +45,9 @@
         class="flex-1"
       />
     </section>
+    <section>
+      <SocialSharer is-dark />
+    </section>
   </div>
 </template>
 
