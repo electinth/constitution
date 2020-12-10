@@ -37,11 +37,14 @@ module.exports = {
       white: 'white',
       'light-gray-1': '#EBEBEB',
       'light-gray-2': '#F5F5F5',
+      'light-gray-3': '#d9d9d9',
       'gray-1': '#4B4B4B',
       'gray-2': '#2b2b2b',
     },
   },
-  variants: {},
+  variants: {
+    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+  },
   plugins: [],
   purge: {
     enabled: process.env.NODE_ENV === 'production',

@@ -2,10 +2,9 @@
   <div
     class="flex flex-row py-2 md:p-0 w-full"
     :style="{
-      backgroundColor:
-        isFocusing && isMediumOrMore() ? category.color : 'unset',
+      backgroundColor: isFocusing ? category.color : 'unset',
     }"
-    @click="!isMediumOrMore() && $emit('open')"
+    @click="$emit('click')"
   >
     <div class="flex">
       <div
@@ -14,7 +13,12 @@
       ></div>
     </div>
     <div class="flex flex-1 cursor-default">
-      <Label1 class="font-semibold my-auto">{{ category.title }}</Label1>
+      <Label1
+        class="my-auto"
+        :class="{ 'font-semibold': isSemibold, 'text-white': isFocusing }"
+      >
+        {{ category.title }}
+      </Label1>
     </div>
   </div>
 </template>
@@ -22,7 +26,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Category } from '~/utils/strapi';
-import { isMediumOrMore } from '~/utils/screen';
 
 export default Vue.extend({
   props: {
@@ -34,11 +37,10 @@ export default Vue.extend({
       type: Boolean,
       default: false,
     },
-  },
-  data() {
-    return {
-      isMediumOrMore,
-    };
+    isSemibold: {
+      type: Boolean,
+      default: false,
+    },
   },
 });
 </script>

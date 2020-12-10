@@ -20,7 +20,7 @@
         <NuxtLink to="/">
           <NavigationItem>ภาพรวม</NavigationItem>
         </NuxtLink>
-        <NavigationItem>ดูตามหมวด</NavigationItem>
+        <CategoriesDropdown />
         <NuxtLink to="/about">
           <NavigationItem>เกี่ยวกับโครงการ</NavigationItem>
         </NuxtLink>

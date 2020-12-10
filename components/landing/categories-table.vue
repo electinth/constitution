@@ -15,10 +15,10 @@
         @mouseleave="isMediumOrMore() && closeDescription()"
       >
         <CategoryLabel
+          is-semibold
           :category="category"
-          :is-focusing="focusingCategoryId === category.id"
-          @open="openDescription(category)"
-          @close="closeDescription"
+          :is-focusing="isMediumOrMore() && focusingCategoryId === category.id"
+          @click="!isMediumOrMore() && openDescription(category)"
         />
         <CategoryFloatingDescription
           v-if="focusingCategoryId === category.id"
