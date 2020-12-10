@@ -24,6 +24,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
+interface SocialLink {
+  service: string;
+  icon: string;
+  href: string;
+}
+
 export default Vue.extend({
   props: {
     isDark: {
@@ -33,7 +40,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      socialLinks: [],
+      socialLinks: [] as SocialLink[],
     };
   },
   mounted() {
