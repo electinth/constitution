@@ -3,7 +3,7 @@
     <div class="md:w-2/3 flex flex-row">
       <div class="md:flex-1 p-3 md:p-4">
         <img
-          src="~/assets/images/elect-logo.png"
+          src="~/assets/images/logo-elect-header.png"
           alt="ELECT"
           class="h-4 md:h-6 my-auto"
         />
