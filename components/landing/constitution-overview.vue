@@ -40,7 +40,9 @@
       >
         <!-- Page ratio visualize -->
         <div
-          class="flex flex-col w-6 h-8 mr-2 mb-3 md:mx-auto md:mb-1 border border-black hover:border-white"
+          :class="`flex flex-col w-6 h-8 mr-2 mb-3 md:mx-auto md:mb-1 border ${
+            hoveringPageIndex === pageIndex ? 'border-white' : 'border-black'
+          }`"
           @mouseover="isMediumOrMore() && (hoveringPageIndex = pageIndex)"
           @mouseleave="isMediumOrMore() && (hoveringPageIndex = null)"
           @click="isMediumOrMore() && (selectedPageIndex = pageIndex)"
