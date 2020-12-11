@@ -1,24 +1,16 @@
-import { parse } from "https://deno.land/std@0.80.0/encoding/csv.ts"
+import { parseCsv } from "../csv.ts";
 import { RecordRow } from "./record-row.model.ts";
 
 export async function extractFromCsv(csvPath: string): Promise<RecordRow[]> {
-  const raw = await (await fetch(csvPath)).text();
-  return parse(raw, {
-    skipFirstRow: true,
-    columns: ['constitutionId', 'fromPage', 'toPage', 'categoryId', 'note'],
-    parse: (e) => {
-      const eachRow = e as {[key: string]: string};
-      return mapRecordRow(eachRow);
-    },
-  }) as Promise<RecordRow[]>;
+  return parseCsv(csvPath, mapRecordRow);
 }
 
-function mapRecordRow(dict: { [key: string]: string }): RecordRow {
+function mapRecordRow(cells: string[]): RecordRow {
   return {
-    constitutionId: dict['constitutionId'],
-    fromPage: parseFloat(dict['fromPage']),
-    toPage: parseFloat(dict['toPage']),
-    categoryId: dict['categoryId'],
-    note: dict['note'],
+    constitutionId: cells[0],
+    fromPage: parseFloat(cells[1]),
+    toPage: parseFloat(cells[2]),
+    categoryId: cells[3],
+    note: cells[4],
   } as RecordRow;
 }
