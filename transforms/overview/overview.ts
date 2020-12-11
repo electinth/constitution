@@ -34,7 +34,8 @@ export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] 
   );
 
   const pages: ConstitutionPageCategory[][] = [];
-  const maxPage = Math.floor(rows[rows.length - 1].toPage);
+  const lastToPage = rows[rows.length - 1].toPage;
+  const maxPage = Number.isInteger(lastToPage) ? lastToPage - 1 : Math.floor(lastToPage);
   for (let i = 0; i < maxPage; i++) pages.push([]);
 
   let progress = 1;

@@ -29,3 +29,16 @@ Deno.test('should return empty pages when gives empty rows', () => {
   const pages = transformPages([]);
   assertEquals(pages, [])
 });
+
+Deno.test('should create just enough pages when the last row takes full last page', () => {
+  const pages = transformPages([
+    { constitutionId: 'test', categoryId: 'a', fromPage: 1, toPage: 2 },
+    { constitutionId: 'test', categoryId: 'b', fromPage: 2, toPage: 4 },
+  ]);
+
+  assertEquals(pages, [
+    [{ categoryId: 'a', pageRatio: 1 }],
+    [{ categoryId: 'b', pageRatio: 1 }],
+    [{ categoryId: 'b', pageRatio: 1 }],
+  ]);
+});
