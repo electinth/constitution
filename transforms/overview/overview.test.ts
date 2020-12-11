@@ -24,3 +24,8 @@ Deno.test('should return correct pages for the temporary 2475 constitution', () 
     [{ categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: '0.25' }, { categoryId: 'อำนาจตุลาการ', pageRatio: '0.25' }],
   ])
 });
+
+Deno.test('should return empty pages when gives empty rows', () => {
+  const pages = transformPages([]);
+  assertEquals(pages, [])
+});
