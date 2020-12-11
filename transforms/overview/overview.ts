@@ -1,9 +1,22 @@
+import { Constitution as ExtractedConstitution } from '../../extractors/constitution.model.ts';
 import { RecordRow } from '../../extractors/overview/record-row.model.ts';
 import { ConstitutionPageCategory } from './constitution.model.ts';
 import { Overview } from './overview.model.ts';
 
-export function transform(rows: RecordRow[]): Overview {
-  return { categories: [], constitutions: [] };
+export function transform(rows: RecordRow[], cons: ExtractedConstitution[]): Overview {
+  return { categories: [], constitutions: cons.map(c => {
+    const pages = transformPages(rows.filter(r => r.constitutionId === c.id));
+    return {
+      id: c.id,
+      name: c.name,
+      year: c.year,
+      context: c.context,
+      isTemporaryEdition: c.isTemporary,
+      isWrittenByCoup: c.isWrittenbyCoup,
+      pageCount: pages.length,
+      pages: pages,
+    }
+  }) };
 }
 
 export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] {
