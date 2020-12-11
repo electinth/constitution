@@ -11,5 +11,5 @@ export interface Constitution {
 
 export interface ConstitutionPageCategory {
   categoryId: string;
-  pageRatio: string;
+  pageRatio: number;
 }

@@ -14,14 +14,14 @@ Deno.test('should return correct pages for the temporary 2475 constitution', () 
   ]);
 
   assertEquals(pages, [
-    [{ categoryId: 'คำปรารภ', pageRatio: '0.60' }, { categoryId: 'บททั่วไป', pageRatio: '0.40' }],
-    [{ categoryId: 'พระมหากษัตริย์/องคมนตรี', pageRatio: '0.50' }, { categoryId: 'อำนาจนิติบัญญัติ', pageRatio: '0.50' }],
-    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: '1.00' }],
-    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: '1.00' }],
-    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: '1.00' }],
-    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: '0.40' }, { categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: '0.60' }],
-    [{ categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: '1.00' }],
-    [{ categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: '0.25' }, { categoryId: 'อำนาจตุลาการ', pageRatio: '0.25' }],
+    [{ categoryId: 'คำปรารภ', pageRatio: 0.6 }, { categoryId: 'บททั่วไป', pageRatio: 0.4 }],
+    [{ categoryId: 'พระมหากษัตริย์/องคมนตรี', pageRatio: 0.5 }, { categoryId: 'อำนาจนิติบัญญัติ', pageRatio: 0.5 }],
+    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: 1.0 }],
+    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: 1.0 }],
+    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: 1.0 }],
+    [{ categoryId: 'อำนาจนิติบัญญัติ', pageRatio: 0.4 }, { categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: 0.6 }],
+    [{ categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: 1.0 }],
+    [{ categoryId: 'อำนาจคณะรัฐประหาร', pageRatio: 0.25 }, { categoryId: 'อำนาจตุลาการ', pageRatio: 0.25 }],
   ])
 });
 

@@ -27,7 +27,7 @@ export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] 
   if (rows.length === 0) {
     return [];
   }
-  
+
   rows.sort((first, second) => 
     first.fromPage === second.fromPage ? 0 :
     first.fromPage > second.fromPage ? 1 : -1
@@ -48,14 +48,14 @@ export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] 
         // The remainer of the catogery can be fitted to current page
         pages[Math.floor(progress) - 1].push({
           categoryId: row.categoryId,
-          pageRatio: rowRemainer.toFixed(2)
+          pageRatio: parseFloat(rowRemainer.toFixed(2)),
         });
         progress += rowRemainer;
         rowRemainer = 0;
       } else {
         pages[Math.floor(progress) - 1].push({
           categoryId: row.categoryId,
-          pageRatio: currentPageRemainer.toFixed(2)
+          pageRatio: parseFloat(currentPageRemainer.toFixed(2)),
         });
         progress += currentPageRemainer;
         rowRemainer -= currentPageRemainer;
