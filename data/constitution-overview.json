@@ -1,66 +1,4842 @@
 {
   "categories": [
     {
-      "id": 0,
+      "id": "preamble",
       "title": "คำปรารภ",
-      "color": "#575757",
-      "description": "อารัมภบทของกฎหมาย ที่มีขึ้นด้วยความมุ่งหมายแสดงพระราชอำนาจพระมหากษัตริย์ ในการประกาศใช้บังคับพระราชบัญญัติตามรัฐธรรมนูญ"
+      "color": "#575757"
     },
     {
-      "id": 1,
+      "id": "general",
       "title": "บททั่วไป",
-      "color": "#F9564A",
-      "description": "อธิบายภาพรวมๆ กว้างๆ"
+      "color": "#F9564A"
     },
     {
-      "id": 2,
+      "id": "the_king",
       "title": "พระมหากษัตริย์/องคมนตรี",
-      "color": "#1F90EF",
-      "description": "อำนาจนิติบัญญัติหรืออำนาจของรัฐสภา ประกอบด้วยสภาผู้แทนราษฎร และวุฒิสภา"
+      "color": "#1F90EF"
+    },
+    {
+      "id": "thai_rights_and_duties",
+      "title": "สิทธิเสรีภาพและหน้าที่ของชาวไทย",
+      "color": "#FF9900"
+    },
+    {
+      "id": "state_duties_and_policies",
+      "title": "หน้าที่/แนวนโยบายของรัฐ",
+      "color": "#BA83F7"
+    },
+    {
+      "id": "reform",
+      "title": "การปฏิรูปประเทศ",
+      "color": "#FF6BB2"
+    },
+    {
+      "id": "legislative",
+      "title": "อำนาจนิติบัญญัติ",
+      "color": "#0BB5BA"
+    },
+    {
+      "id": "executive",
+      "title": "อำนาจบริหาร",
+      "color": "#FF6F34"
+    },
+    {
+      "id": "judicial",
+      "title": "อำนาจตุลาการ",
+      "color": "#FF9399"
+    },
+    {
+      "id": "conflict_of_interest",
+      "title": "การขัดกันของผลประโยชน์",
+      "color": "#BE408C"
+    },
+    {
+      "id": "independent_organs",
+      "title": "องค์กรอิสระ",
+      "color": "#B3B700"
+    },
+    {
+      "id": "constitutional_court",
+      "title": "ตุลาการ/ศาลรัฐธรรมนูญ",
+      "color": "#B26F1F"
+    },
+    {
+      "id": "political_ethics",
+      "title": "จริยธรรมของผู้ดำรงตำแหน่งทางการเมืองและเจ้าหน้าที่รัฐ",
+      "color": "#3FBAE1"
+    },
+    {
+      "id": "local_administrative",
+      "title": "การปกครองส่วนท้องถิ่น",
+      "color": "#2AC68E"
+    },
+    {
+      "id": "amendment",
+      "title": "การแก้ไขเพิ่มเติมรัฐธรรมนูญ",
+      "color": "#FB4A76"
+    },
+    {
+      "id": "junta_authority",
+      "title": "อำนาจคณะรัฐประหาร",
+      "color": "#AF9368"
+    },
+    {
+      "id": "epilogue",
+      "title": "บทสุดท้าย",
+      "color": "#877F74"
+    },
+    {
+      "id": "transitory",
+      "title": "บทเฉพาะกาล",
+      "color": "#87A491"
     }
   ],
   "constitutions": [
     {
-      "id": 0,
+      "id": "con2475temp",
       "name": "ธรรมนูญชั่วคราว 2475",
       "year": 2475,
-      "context": "พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช...",
+      "context": "พระราชบัญญัติธรรมนูญฉบับนี้เป็นรัฐธรรมนูญฉบับแรกในประวัติศาสตร์ไทย ร่างขึ้นโดยแกนนำสำคัญภายในคณะราษฎร โดยในวันที่ 26 มิถุนายน พ.ศ. 2475 พระบาทสมเด็จพระปกเกล้าเจ้าอยู่หัวเสด็จฯ กลับพระนคร และในวันเดียวกันนั้นก็โปรดเกล้าฯ ให้คณะราษฎรเข้าเฝ้าฯ และทรงลงพระปรมาภิไธยในพระราชกำหนดนิรโทษกรรมให้แก่บรรดาสมาชิกคณะราษฎร",
       "isTemporaryEdition": true,
       "isWrittenByCoup": false,
       "pageCount": 8,
       "pages": [
         [
-          { "categoryId": 0, "pageRatio": 0.5 },
-          { "categoryId": 1, "pageRatio": 0.5 }
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.6
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.4
+          }
         ],
         [
-          { "categoryId": 1, "pageRatio": 0.5 },
-          { "categoryId": 2, "pageRatio": 0.5 }
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.5
+          }
         ],
-        [{ "categoryId": 2, "pageRatio": 1 }],
-        [{ "categoryId": 1, "pageRatio": 1 }],
-        [{ "categoryId": 1, "pageRatio": 1 }],
-        [{ "categoryId": 2, "pageRatio": 1 }],
-        [{ "categoryId": 2, "pageRatio": 1 }],
-        [{ "categoryId": 2, "pageRatio": 1 }]
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.6
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.25
+          }
+        ]
       ]
     },
     {
-      "id": 1,
-      "name": "ธรรมนูญ 2475",
+      "id": "con2475",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรสยาม",
       "year": 2475,
-      "context": "พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยาม พุทธศักราช...",
+      "context": "",
       "isTemporaryEdition": false,
-      "isWrittenByCoup": true,
-      "pageCount": 2,
+      "isWrittenByCoup": false,
+      "pageCount": 12,
       "pages": [
         [
-          { "categoryId": 0, "pageRatio": 0.5 },
-          { "categoryId": 1, "pageRatio": 0.5 }
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
         ],
         [
-          { "categoryId": 1, "pageRatio": 0.5 },
-          { "categoryId": 2, "pageRatio": 0.5 }
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.3
+          }
+        ],
+        [
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.6
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.3
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2489",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2489",
+      "year": 2489,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 18,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.7
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.3
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.8
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.6
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.4
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.7
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2490temp",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย (ฉบับชั่วคราว) พุทธศักราช 2490",
+      "year": 2490,
+      "context": "",
+      "isTemporaryEdition": true,
+      "isWrittenByCoup": true,
+      "pageCount": 14,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.6
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.6
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.4
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.3
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2492",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2492",
+      "year": 2492,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 34,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.6
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.4
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.7
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.6
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2495",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2475 แก้ไขเพิ่มเติม พุทธศักราช 2495",
+      "year": 2495,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 18,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.7
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.8
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.9
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.65
+          },
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.9
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.9
+          },
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.6
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.4
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.4
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2502",
+      "name": "ธรรมนูญการปกครองราชอาณาจักร พุทธศักราช 2502",
+      "year": 2502,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": true,
+      "pageCount": 4,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.8
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.05
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.05
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.6
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.1
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2511",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2511",
+      "year": 2511,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 34,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "epilogue",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2515",
+      "name": "ธรรมนูญการปกครองราชอาณาจักร พุทธศักราช 2515",
+      "year": 2515,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": true,
+      "pageCount": 6,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2517",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2517",
+      "year": 2517,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 44,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.75
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2519",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2519",
+      "year": 2519,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": true,
+      "pageCount": 7,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.4
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.2
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2520",
+      "name": "ธรรมนูญการปกครองราชอาณาจักร พุทธศักราช 2520",
+      "year": 2520,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": true,
+      "pageCount": 7,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "reform",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "reform",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.1
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.1
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.2
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2521",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2521",
+      "year": 2521,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 41,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.4
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.6
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.8
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.2
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "id": "con2534temp",
+      "name": "ธรรมนูญการปกครองราชอาณาจักร พุทธศักราช 2534",
+      "year": 2534,
+      "context": "",
+      "isTemporaryEdition": true,
+      "isWrittenByCoup": true,
+      "pageCount": 8,
+      "pages": [
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.2
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.3
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.5
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "id": "con2534",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2534",
+      "year": 2534,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 47,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2540",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2540",
+      "year": 2540,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 99,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2549temp",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย (ฉบับชั่วคราว) พุทธศักราช 2549",
+      "year": 2549,
+      "context": "",
+      "isTemporaryEdition": true,
+      "isWrittenByCoup": true,
+      "pageCount": 14,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2550",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2550",
+      "year": 2550,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 127,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "constitutional_court",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "political_ethics",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "political_ethics",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.25
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2557temp",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย (ฉบับชั่วคราว) พุทธศักราช 2557",
+      "year": 2557,
+      "context": "",
+      "isTemporaryEdition": true,
+      "isWrittenByCoup": true,
+      "pageCount": 17,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "reform",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "reform",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "junta_authority",
+            "pageRatio": 0.5
+          }
+        ]
+      ]
+    },
+    {
+      "id": "con2560",
+      "name": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2560",
+      "year": 2560,
+      "context": "",
+      "isTemporaryEdition": false,
+      "isWrittenByCoup": false,
+      "pageCount": 90,
+      "pages": [
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "preamble",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "general",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "the_king",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "thai_rights_and_duties",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "state_duties_and_policies",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "legislative",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "executive",
+            "pageRatio": 0.5
+          },
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 0.5
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "conflict_of_interest",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "judicial",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "independent_organs",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "local_administrative",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "amendment",
+            "pageRatio": 0.25
+          },
+          {
+            "categoryId": "reform",
+            "pageRatio": 0.75
+          }
+        ],
+        [
+          {
+            "categoryId": "reform",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "reform",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "reform",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "reform",
+            "pageRatio": 0.75
+          },
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.25
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 1
+          }
+        ],
+        [
+          {
+            "categoryId": "transitory",
+            "pageRatio": 0.75
+          }
         ]
       ]
     }

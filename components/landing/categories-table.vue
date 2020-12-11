@@ -48,7 +48,7 @@ export default Vue.extend({
       focusingCategoryId: null,
       isMediumOrMore,
     } as {
-      focusingCategoryId: number | null;
+      focusingCategoryId: string | null;
       isMediumOrMore: () => boolean;
     };
   },
