@@ -41,28 +41,7 @@ export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] 
       }
     }
   }
-
-  // for (const row of rows) {
-    
-  //   if (Number.isInteger(latestFilled)) {
-  //     const latestFilledRemainer = Math.ceil(latestFilled) - latestFilled;
-  //     pages[Math.floor(row.fromPage) - 1].push({ categoryId: row.categoryName, pageRatio: latestFilledRemainer });
-  //     latestFilled += latestFilledRemainer;
-  //   }
-  //   const pagesPerRow = latestFilled - row.toPage;
-  //   let remainer = pagesPerRow;
-  //   for (let i = 0; i <= pagesPerRow; i++) {
-  //     if (remainer <= 1) {
-  //       pages[Math.floor(row.fromPage) - 1 + i].push({ categoryId: row.categoryName, pageRatio: remainer });
-  //     } else {
-  //       pages[Math.floor(row.fromPage) - 1 + i].push({ categoryId: row.categoryName, pageRatio: 1 });
-  //     } 
-  //     remainer -= 1;
-  //   }
-
-  //   latestFilled = row.toPage;
-  // }
-
+  
   return pages;
 }
 
