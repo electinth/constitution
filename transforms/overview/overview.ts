@@ -26,14 +26,14 @@ export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] 
       if (currentPageRemainer > rowRemainer) {
         // The remainer of the catogery can be fitted to current page
         pages[Math.floor(progress) - 1].push({
-          categoryId: row.categoryName,
+          categoryId: row.categoryId,
           pageRatio: rowRemainer.toFixed(2)
         });
         progress += rowRemainer;
         rowRemainer = 0;
       } else {
         pages[Math.floor(progress) - 1].push({
-          categoryId: row.categoryName,
+          categoryId: row.categoryId,
           pageRatio: currentPageRemainer.toFixed(2)
         });
         progress += currentPageRemainer;
@@ -41,7 +41,7 @@ export function transformPages(rows: RecordRow[]): ConstitutionPageCategory[][] 
       }
     }
   }
-  
+
   return pages;
 }
 

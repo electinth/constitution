@@ -1,7 +1,7 @@
 export interface RecordRow {
-  edition: string;
+  constitutionId: string;
   fromPage: number;
   toPage: number;
-  categoryName: string;
+  categoryId: string;
   note?: string;
 }

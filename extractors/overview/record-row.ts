@@ -5,7 +5,7 @@ export async function extractFromCsv(csvPath: string): Promise<RecordRow[]> {
   const raw = await (await fetch(csvPath)).text();
   return parse(raw, {
     skipFirstRow: true,
-    columns: ['edition', 'fromPage', 'toPage', 'categoryName', 'note'],
+    columns: ['constitutionId', 'fromPage', 'toPage', 'categoryId', 'note'],
     parse: (e) => {
       const eachRow = e as {[key: string]: string};
       return mapRecordRow(eachRow);
@@ -15,10 +15,10 @@ export async function extractFromCsv(csvPath: string): Promise<RecordRow[]> {
 
 function mapRecordRow(dict: { [key: string]: string }): RecordRow {
   return {
-    edition: dict['edition'],
+    constitutionId: dict['constitutionId'],
     fromPage: parseFloat(dict['fromPage']),
     toPage: parseFloat(dict['toPage']),
-    categoryName: dict['categoryName'],
+    categoryId: dict['categoryId'],
     note: dict['note'],
   } as RecordRow;
 }

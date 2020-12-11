@@ -1,5 +1,5 @@
 export interface Constitution {
-  id: number;
+  id: string;
   name: string;
   year: number;
   context: string;
@@ -10,6 +10,6 @@ export interface Constitution {
 }
 
 export interface ConstitutionPageCategory {
-  categoryId: number | string;
+  categoryId: string;
   pageRatio: string;
 }

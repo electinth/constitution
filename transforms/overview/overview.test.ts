@@ -5,12 +5,12 @@ import { transformPages } from "./overview.ts";
 
 Deno.test('should return correct pages for the temporary 2475 constitution', () => {
   const pages = transformPages([
-    { edition: '2475ชั่วคราว', categoryName: 'คำปรารภ', fromPage: 1, toPage: 1.6 },
-    { edition: '2475ชั่วคราว', categoryName: 'บททั่วไป', fromPage: 1.6, toPage: 2 },
-    { edition: '2475ชั่วคราว', categoryName: 'พระมหากษัตริย์/องคมนตรี', fromPage: 2, toPage: 2.5 },
-    { edition: '2475ชั่วคราว', categoryName: 'อำนาจนิติบัญญัติ', fromPage: 2.5, toPage: 6.4 },
-    { edition: '2475ชั่วคราว', categoryName: 'อำนาจคณะรัฐประหาร', fromPage: 6.4, toPage: 8.25 },
-    { edition: '2475ชั่วคราว', categoryName: 'อำนาจตุลาการ', fromPage: 8.25, toPage: 8.5 },
+    { constitutionId: '2475ชั่วคราว', categoryId: 'คำปรารภ', fromPage: 1, toPage: 1.6 },
+    { constitutionId: '2475ชั่วคราว', categoryId: 'บททั่วไป', fromPage: 1.6, toPage: 2 },
+    { constitutionId: '2475ชั่วคราว', categoryId: 'พระมหากษัตริย์/องคมนตรี', fromPage: 2, toPage: 2.5 },
+    { constitutionId: '2475ชั่วคราว', categoryId: 'อำนาจนิติบัญญัติ', fromPage: 2.5, toPage: 6.4 },
+    { constitutionId: '2475ชั่วคราว', categoryId: 'อำนาจคณะรัฐประหาร', fromPage: 6.4, toPage: 8.25 },
+    { constitutionId: '2475ชั่วคราว', categoryId: 'อำนาจตุลาการ', fromPage: 8.25, toPage: 8.5 },
   ]);
 
   assertEquals(pages, [
