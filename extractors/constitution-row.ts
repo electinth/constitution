@@ -1,11 +1,11 @@
 import { parseCsv } from './csv.ts';
-import { Constitution } from "./constitution.model.ts";
+import { ConstitutionRow } from "./constitution-row.model.ts";
 
-export async function extractFromCsv(csvPath: string): Promise<Constitution[]> {
+export async function extractFromCsv(csvPath: string): Promise<ConstitutionRow[]> {
   return parseCsv(csvPath, mapConstitution);
 }
 
-function mapConstitution(cells: string[]): Constitution {
+function mapConstitution(cells: string[]): ConstitutionRow {
   return {
     id: cells[0],
     name: cells[1],
@@ -13,5 +13,5 @@ function mapConstitution(cells: string[]): Constitution {
     isTemporary: cells[3] === 'TRUE' ? true : false,
     isWrittenbyCoup: cells[4] === 'TRUE' ? true : false,
     context: cells[5],
-  } as Constitution;
+  } as ConstitutionRow;
 }

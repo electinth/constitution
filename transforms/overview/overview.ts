@@ -1,9 +1,9 @@
-import { Constitution as ExtractedConstitution } from '../../extractors/constitution.model.ts';
+import { ConstitutionRow } from '../../extractors/constitution-row.model.ts';
 import { RecordRow } from '../../extractors/overview/record-row.model.ts';
 import { ConstitutionPageCategory } from './constitution.model.ts';
 import { Overview } from './overview.model.ts';
 
-export function transform(rows: RecordRow[], cons: ExtractedConstitution[]): Overview {
+export function transform(rows: RecordRow[], cons: ConstitutionRow[]): Overview {
   return { categories: [], constitutions: cons.map(c => {
     const pages = transformPages(rows.filter(r => r.constitutionId === c.id));
     return {
