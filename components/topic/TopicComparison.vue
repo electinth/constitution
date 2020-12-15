@@ -4,14 +4,19 @@
       id="comparison-container"
       class="flex flex-row justify-center align-center"
     >
-      <TopicComparisonSide id="comparison-side-L" :versions="versions" />
+      <TopicComparisonSide
+        class="topic-comparison-side"
+        :versions="versions"
+        side-l
+      />
       <span
         id="vs-icon"
-        class="flex text-white bg-black justify-center text-center"
+        class="flex text-white justify-center text-center"
+        :style="{ backgroundColor: bgColor }"
       >
         <Label1 class="text-center text-justify m-auto"> vs. </Label1>
       </span>
-      <TopicComparisonSide :versions="versions" />
+      <TopicComparisonSide class="topic-comparison-side" :versions="versions" />
     </div>
   </div>
 </template>
@@ -24,6 +29,7 @@ export default Vue.extend({
     TopicComparisonSide,
   },
   props: {
+    bgColor: String,
     versions: Array,
   },
 });
@@ -41,7 +47,21 @@ export default Vue.extend({
   margin-left: 50px;
   margin-right: 50px;
 }
-#comparison-L {
-  margin-left: 165px;
+.topic-comparison-side {
+  /* width: calc(50% - 62.5px); */
+  width: 45%;
+  min-width: 140px;
+}
+
+@media only screen and (max-width: 768px) {
+  #comparison-container {
+    padding-top: 35px;
+  }
+  #vs-icon {
+    display: none;
+  }
+  .topic-comparison-side {
+    width: 50%;
+  }
 }
 </style>

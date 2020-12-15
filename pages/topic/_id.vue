@@ -2,39 +2,51 @@
   <div>
     <div
       id="header-tab"
-      class="flex flex-row bg-black text-white justify-center"
+      class="flex flex-row bg-black text-white"
+      :style="{ backgroundColor: bgColor }"
     >
-      <Heading3 class="text-center font-black">
-        {{ d[0].category_name }}
-      </Heading3>
+      <div id="header-tab-arrow">
+        <a href="www.google.com" style="cursor: pointer; float: left">
+          <img
+            id="header-tab-arrow-img"
+            src="@/assets/images/topic-back-arrow.png"
+          />
+        </a>
+      </div>
+      <div id="header-tab-text" class="flex justify-center">
+        <Heading3 class="text-center font-black">
+          {{ d[0][0].category_name }}
+        </Heading3>
+      </div>
     </div>
 
-    <div
-      id="title"
-      class="flex flex-row pt-8 pb-4 bg-white text-black justify-center"
-    >
+    <div id="title" class="flex flex-row bg-white text-black justify-center">
       <Heading1 class="text-center font-black">
-        {{ d[0].name }}
+        {{ d[0][0].name }}
       </Heading1>
     </div>
 
-    <TopicPanel id="topic-panel" @clicked="onClickPanel" />
+    <TopicPanel id="topic-panel" :bg-color="bgColor" @clicked="onClickPanel" />
 
-    <TopicSummary id="topic-summary" :summary="d[0].summary" />
+    <TopicSummary id="topic-summary" :summary="d[0][0].summary" />
 
-    <TopicComparison id="topic-comparison" :versions="d[0].constitutions" />
+    <TopicComparison
+      id="topic-comparison"
+      :versions="d[0][0].constitutions"
+      :bg-color="bgColor"
+    />
 
-    <TopicOpinions id="topic-opinions" :opinions="d[0].opinions" />
+    <TopicOpinions id="topic-opinions" :opinions="d[0][0].opinions" />
 
     <SocialSharer id="social-sharer" />
 
     <hr id="hr-end" />
 
-    <div id="related">
-      <Heading7 id="related-title" class="text-center font-black">
-        RELATED TOPICS
-      </Heading7>
-    </div>
+    <TopicRelatedPanel
+      id="related-panel"
+      :subcategory_id="d[0][0].subcategory_id"
+      :subcategories="d[1].subcategories"
+    />
   </div>
 </template>
 
@@ -44,8 +56,9 @@ import TopicPanel from '@/components/topic/TopicPanel.vue';
 import TopicSummary from '@/components/topic/TopicSummary.vue';
 import TopicComparison from '@/components/topic/TopicComparison.vue';
 import TopicOpinions from '@/components/topic/TopicOpinions.vue';
+import TopicRelatedPanel from '@/components/topic/TopicRelatedPanel.vue';
 import SocialSharer from '@/components/social-sharer.vue';
-import { getTopicsByCategoryId } from '@/utils/strapi';
+import { getCategoryById, getTopicsByCategoryId } from '@/utils/strapi';
 export default Vue.extend({
   components: {
     TopicPanel,
@@ -53,27 +66,43 @@ export default Vue.extend({
     TopicComparison,
     TopicOpinions,
     SocialSharer,
+    TopicRelatedPanel,
   },
   async asyncData(context) {
     const fetchedData = await Promise.all([
       getTopicsByCategoryId(parseInt(context.params.id)),
+      getCategoryById(parseInt(context.params.id)),
     ]);
-    const d = fetchedData[0];
+    const d = fetchedData;
     return { d };
+  },
+  computed: {
+    bgColor(): String {
+      const colormap = {
+        คำปรารภ: '#575757',
+        บททั่วไป: '#f9564a',
+        'พระมหากษัตริย์/องคมนตรี': '#1f90ef',
+        สิทธิและเสรีภาพของชนชาวไทย: '#ff9900',
+        แนวนโยบายพื้นฐานแห่งรัฐ: '#ba83f7',
+        การปฏิรูปต่างประเทศ: '#ff6bb2',
+        อำนาจนิติบัญญัติ: '#0bb5ba',
+        อำนาจบริหาร: '#ff6f34',
+        อำนาจตุลาการ: '#ff9399',
+        การขัดกันผลประโยชน์: '#be408c',
+        ตุลาการรัฐธรรมนูญ: '#b26f1f',
+        องค์กรอิสระ: '#b3b700',
+        จริยธรรมของผู้ดำรงตำแหน่งทางการเมืองและเจ้าหน้าที่รัฐ: '#3fbae1',
+        การปกครองส่วนท้องถิ่น: '#2ac68e',
+        การแก้ไขเพิ่มเติมรัฐธรรมนูญ: '#fb4a76',
+        อำนาจคณะรัฐประหาร: '#af9368',
+        บทสุดท้าย: '#b77f74',
+        บทเฉพาะกาล: '#87a491',
+      };
+      return colormap[this.d[0][0].category_name];
+    },
   },
   mounted() {
     this.onClickPanel(0);
-    const panel = document.getElementById('topic-panel');
-    if (panel) {
-      const panels = panel.querySelectorAll('button');
-      panels.forEach(function (item, i) {
-        if (i !== 0) {
-          item.style.opacity = '0.2';
-        } else {
-          item.style.opacity = '1.0';
-        }
-      });
-    }
   },
   methods: {
     onClickPanel(index: number): void {
@@ -99,16 +128,33 @@ export default Vue.extend({
   padding-top: 16px;
   padding-bottom: 15px;
 }
+
+#header-tab-arrow {
+  margin-left: 35px;
+  position: absolute;
+}
+
+#header-tab-arrow-img {
+  width: 31px;
+}
+
+#header-tab-text {
+  width: 100%;
+}
+
 #title {
   padding-top: 95px;
 }
+
 #topic-panel {
   padding-top: 52px;
 }
+
 #social-sharer {
   margin-top: 60px;
   margin-bottom: 60px;
 }
+
 #hr-end {
   border: 1px solid #929191;
   margin-left: 85px;
@@ -116,8 +162,34 @@ export default Vue.extend({
   margin-top: 1px;
   margin-bottom: 1px;
 }
-#related-title {
-  margin-top: 50px;
-  margin-bottom: 50px;
+
+@media only screen and (max-width: 768px) {
+  #header-tab {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  #header-tab-arrow {
+    margin-left: 10px;
+  }
+  #header-tab-arrow-img {
+    width: 22px;
+  }
+  #title {
+    padding-top: 29px;
+  }
+  #topic-panel {
+    padding-top: 25px;
+  }
+  #social-sharer {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  #hr-end {
+    border: 1px solid #929191;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
 }
 </style>

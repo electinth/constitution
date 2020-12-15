@@ -57,7 +57,7 @@ fieldset[disabled] .multiselect {
     box-sizing: content-box;
     display: block;
     position: relative;
-    width: 100%;
+    width: calc(70% - 12px);
     min-height: 40px;
     text-align: left;
     color: #35495e
@@ -122,7 +122,7 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__tag~.multiselect__input, .multiselect__tag~.multiselect__single {
-    width: auto
+    width: 100%;
 }
 
 .multiselect__input:hover, .multiselect__single:hover {
@@ -145,7 +145,7 @@ fieldset[disabled] .multiselect {
 
 .multiselect__tags {
     min-height: 40px;
-    width: 400px;
+    width: 100%;
     display: block;
     padding: 8px 40px 0 8px;
     border-radius: 5px;
@@ -166,7 +166,7 @@ fieldset[disabled] .multiselect {
     margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
     text-overflow: ellipsis
 }
 
@@ -258,7 +258,7 @@ fieldset[disabled] .multiselect {
     position: absolute;
     display: block;
     background: #fff;
-    width: calc(100% - 32px);
+    width: 100%;
     max-height: 240px;
     overflow: auto;
     border: 1px solid #e8e8e8;
@@ -266,7 +266,8 @@ fieldset[disabled] .multiselect {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 1;
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
+    word-wrap: break-word;
 }
 
 .multiselect__content {
@@ -275,7 +276,9 @@ fieldset[disabled] .multiselect {
     padding: 0;
     margin: 0;
     min-width: 100%;
-    vertical-align: top
+    vertical-align: top;
+    word-wrap: break-word;
+    
 }
 
 .multiselect--above .multiselect__content-wrapper {
@@ -300,13 +303,14 @@ fieldset[disabled] .multiselect {
     display: block;
     padding: 12px;
     min-height: 40px;
-    line-height: 16px;
+    line-height: 120%;
     text-decoration: none;
     text-transform: none;
     vertical-align: middle;
+    word-wrap: break-word;
     position: relative;
     cursor: pointer;
-    white-space: nowrap
+    /* white-space: nowrap */
 }
 
 .multiselect__option:after {

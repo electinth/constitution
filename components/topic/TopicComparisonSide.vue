@@ -15,25 +15,45 @@
         :allow-empty="false"
         select-label=""
         deselect-label=""
+        :style="
+          sideL
+            ? `margin-left: auto; margin-right: 0;`
+            : `margin-left: 0; margin-right: auto;`
+        "
         @select="selectVersion"
       >
       </multiselect>
 
-      <div>
+      <div
+        v-for="(section, index) in sections"
+        :key="index"
+        style="margin-top: 64px"
+      >
         <div
-          v-for="(section, index) in sections"
-          :key="index"
-          style="width: 100%"
+          class="flex flex-col"
+          :style="
+            sideL
+              ? `padding-left: 30%; padding-right: 12px;`
+              : `padding-left: 12px; padding-right: 30%;`
+          "
         >
-          <Paragraph1 v-html="section.content" />
-          <Label1 v-html="section.footer" />
+          <Paragraph1
+            class="flex flex-row text-left"
+            v-html="section.content"
+          />
+          <Label1
+            class="flex flex-row text-right"
+            style="float: right; margin-top: 30px; margin-bottom: 16px"
+            v-html="section.footer"
+          />
           <div
             v-for="(amendment, index) in section.amendments"
             :key="'amend-' + index"
-            style="background-color: #ccc"
+            style="background-color: #ccc; margin-top: 64px"
+            class="text-left"
           >
             <Label1 v-html="amendment.header" />
-            <Paragraph1 v-html="amendment.content" />
+            <Paragraph1 class="text-left" v-html="amendment.content" />
           </div>
         </div>
       </div>
@@ -51,6 +71,10 @@ export default Vue.extend({
   },
   props: {
     versions: Array,
+    sideL: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -75,13 +99,13 @@ export default Vue.extend({
           section.footer +=
             ' <b>หมวด</b> ' + section.chapterId + ' ' + section.chapterName;
         }
+        console.log(section.footer);
 
         section.amendments = [];
         section.amendmentIds.forEach(function (id: number) {
           const amendment = value.amendments.filter(function (a: any) {
             return a.id === id;
           })[0];
-          console.log(amendment);
           amendment.header = '<b>' + amendment.affectedBy + '</b>';
           section.amendments.push(amendment);
         });
@@ -92,9 +116,9 @@ export default Vue.extend({
 </script>
 
 <style src="@/assets/vue-multiselect.min.css"></style>
+
 <style scoped>
 #comparison-side-container {
-  margin-left: 85px;
-  padding-left: 100px;
+  width: 100%;
 }
 </style>

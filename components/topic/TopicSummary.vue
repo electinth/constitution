@@ -85,8 +85,10 @@ export default Vue.extend({
 #summary-intro {
   width: 100%;
   padding-top: 100px;
-  padding-left: 235px;
-  padding-right: 245px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 750px;
+  width: 85%;
 }
 #summary-table {
   margin-top: 68px;
@@ -96,5 +98,22 @@ export default Vue.extend({
 #social-sharer {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+@media only screen and (max-width: 768px) {
+  #summary-intro {
+    padding-top: 63px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #summary-table {
+    margin-top: 27px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+  }
+  #social-sharer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
 </style>
