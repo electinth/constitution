@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="related-container">
     <Heading7 id="related-title" class="text-center font-black">
       RELATED TOPICS
     </Heading7>
@@ -35,6 +35,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+#related-container {
+  overflow: hidden;
+}
 #related-title {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -46,5 +49,19 @@ export default Vue.extend({
 #topic-image-container {
   margin-left: 85px;
   margin-bottom: 96.5px;
+}
+
+@media only screen and (max-width: 768px) {
+  #related-container {
+    overflow: hidden;
+  }
+  .topic-image {
+    width: 280px;
+    padding-right: 15px;
+  }
+  #topic-image-container {
+    margin-left: 0px;
+    margin-bottom: 30px;
+  }
 }
 </style>

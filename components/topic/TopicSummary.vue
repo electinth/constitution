@@ -8,19 +8,20 @@
         {{ summary_intro }}
       </Paragraph1>
     </div>
-    <div
-      id="summary-table"
-      class="flex flex-row bg-white text-black justify-center"
-    >
-      <Paragraph1 class="flex flex-row text-center" v-html="summary_table">
-      </Paragraph1>
+    <div class="justify-center w-full">
+      <TopicSummaryTable id="summary-table" :table="summary_table">
+      </TopicSummaryTable>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import TopicSummaryTable from '@/components/topic/TopicSummaryTable.vue';
 export default Vue.extend({
+  components: {
+    TopicSummaryTable,
+  },
   props: {
     summary: String,
   },

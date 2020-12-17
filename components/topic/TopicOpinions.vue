@@ -8,7 +8,7 @@
       <div class="opinion-container">
         <div v-if="index % 2 == 0" class="flex flex-row">
           <img :src="opinion['speaker_image']" class="opinion-image" />
-          <div class="opinion-credentials">
+          <div class="opinion-credentials-left">
             <Heading2 class="font-semibold" style="padding-top: 8px">
               {{ opinion['speaker_name'] }}
             </Heading2>
@@ -19,30 +19,15 @@
         </div>
 
         <div v-if="index % 2 == 1" class="flex flex-row">
-          <div
-            class="flex flex-col"
-            style="margin-right: 30px; margin-left: auto"
-          >
-            <Heading2
-              class="font-semibold"
-              style="padding-top: 8px; margin-right: 0; margin-left: auto"
-            >
+          <div class="opinion-credentials-right">
+            <Heading2 class="font-semibold" style="padding-top: 8px">
               {{ opinion['speaker_name'] }}
             </Heading2>
-            <Subtitle2 style="margin-right: 0; margin-left: auto">
+            <Subtitle2>
               {{ opinion['speaker_position'] }}
             </Subtitle2>
           </div>
-          <img
-            :src="opinion['speaker_image']"
-            style="
-              border-radius: 50%;
-              width: 80px;
-              height: 80px;
-              margin-right: 0;
-              margin-left: 0;
-            "
-          />
+          <img :src="opinion['speaker_image']" class="opinion-image" />
         </div>
 
         <Paragraph1 class="opinion-content">
@@ -80,9 +65,14 @@ export default Vue.extend({
   width: 80px;
   height: 80px;
 }
-.opinion-credentials {
+.opinion-credentials-left {
   flex-direction: column;
   margin-left: 30px;
+}
+.opinion-credentials-right {
+  flex-direction: column;
+  margin-right: 30px;
+  text-align: right;
 }
 .opinion-content {
   text-align: center;
@@ -104,8 +94,11 @@ export default Vue.extend({
     width: 60px;
     height: 60px;
   }
-  .opinion-credentials {
+  .opinion-credentials-left {
     margin-left: 15px;
+  }
+  .opinion-credentials-right {
+    margin-right: 15px;
   }
   .opinion-content {
     margin-top: 20px;

@@ -34,9 +34,14 @@
       id="topic-comparison"
       :versions="d[0][0].constitutions"
       :bg-color="bgColor"
+      style="display: none"
     />
 
-    <TopicOpinions id="topic-opinions" :opinions="d[0][0].opinions" />
+    <TopicOpinions
+      id="topic-opinions"
+      :opinions="d[0][0].opinions"
+      style="display: none"
+    />
 
     <SocialSharer id="social-sharer" />
 
@@ -161,6 +166,7 @@ export default Vue.extend({
   margin-right: 85px;
   margin-top: 1px;
   margin-bottom: 1px;
+  outline: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -186,10 +192,11 @@ export default Vue.extend({
   }
   #hr-end {
     border: 1px solid #929191;
-    margin-left: 85px;
-    margin-right: 85px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 1px;
     margin-bottom: 1px;
+    outline: none;
   }
 }
 </style>

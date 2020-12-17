@@ -16,6 +16,7 @@
       >
         <Label1 class="text-center text-justify m-auto"> vs. </Label1>
       </span>
+      <span id="vs-padding" />
       <TopicComparisonSide class="topic-comparison-side" :versions="versions" />
     </div>
   </div>
@@ -47,6 +48,9 @@ export default Vue.extend({
   margin-left: 50px;
   margin-right: 50px;
 }
+#vs-padding {
+  display: none;
+}
 .topic-comparison-side {
   /* width: calc(50% - 62.5px); */
   width: 45%;
@@ -59,6 +63,10 @@ export default Vue.extend({
   }
   #vs-icon {
     display: none;
+  }
+  #vs-padding {
+    display: flex;
+    width: 10px;
   }
   .topic-comparison-side {
     width: 50%;

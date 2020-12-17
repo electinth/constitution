@@ -42,11 +42,15 @@
             v-html="section.content"
           />
           <Label1
-            class="flex flex-row text-right"
-            style="float: right; margin-top: 30px; margin-bottom: 16px"
+            style="
+              text-align: right;
+              margin-top: 30px;
+              margin-bottom: 16px;
+              width: 100%;
+            "
             v-html="section.footer"
           />
-          <div
+          <!-- <div
             v-for="(amendment, index) in section.amendments"
             :key="'amend-' + index"
             style="background-color: #ccc; margin-top: 64px"
@@ -54,7 +58,7 @@
           >
             <Label1 v-html="amendment.header" />
             <Paragraph1 class="text-left" v-html="amendment.content" />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
