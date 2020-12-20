@@ -1,5 +1,5 @@
 export interface ConstitutionDetail {
-  id: number;
+  id: string;
   name: string;
   chapter_number: number;
   chapter: string;

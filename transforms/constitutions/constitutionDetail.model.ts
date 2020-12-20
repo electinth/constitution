@@ -1,7 +1,5 @@
-import {ConstitutionDetail as ExtractedConstitutionDetail} from "../../extractors/constitutions/constitutionDetail.model.ts";
-
 export interface ConstitutionDetail {
-    id: number;
+    id: string;
     topic: string;
     name: string;
     prelude: string;

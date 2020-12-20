@@ -19,7 +19,7 @@ export function transform(extractConstitutions: ExtractedConstitutionDetail[]): 
     return constitution;
 }
 
-function _getExistingIndex(constitutions: ConstitutionDetail[], id: number, chapter: string) {
+function _getExistingIndex(constitutions: ConstitutionDetail[], id: string, chapter: string) {
     return constitutions.findIndex((c: ConstitutionDetail) => {
         return c.id === id && c.topic === chapter;
     });

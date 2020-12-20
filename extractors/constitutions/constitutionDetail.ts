@@ -19,7 +19,7 @@ export async function extractConstitution(csvConsPath: string, csvNamePath: stri
     });
 }
 
-function nameIndex(consName: Name[], conId: number) {
+function nameIndex(consName: Name[], conId: string) {
     return consName.findIndex((c: Name) => {
         return c.id === conId;
     });
@@ -27,14 +27,14 @@ function nameIndex(consName: Name[], conId: number) {
 
 function mapName(cells: string[]): Name {
     return {
-        id: parseInt(cells[0]),
+        id: cells[0],
         name: cells[1]
     }
 }
 
 function mapConstitution(cells: string[]): ConstitutionDetail {
     return {
-        id: parseInt(cells[0]),
+        id: cells[0],
         chapter_number: parseInt(cells[1]),
         chapter: cells[2],
         part_number: parseInt(cells[3]),
@@ -45,6 +45,6 @@ function mapConstitution(cells: string[]): ConstitutionDetail {
 }
 
 export interface Name {
-    id: number;
+    id: string;
     name: string;
 }
