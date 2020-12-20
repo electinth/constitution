@@ -1,4 +1,7 @@
+import {ConstitutionDetail as ExtractedConstitutionDetail} from "../../extractors/constitutions/constitutionDetail.model.ts";
+
 export interface ConstitutionDetail {
+    id: number;
     topic: string;
     name: string;
     prelude: string;
@@ -7,25 +10,25 @@ export interface ConstitutionDetail {
 }
 
 export interface Chapters {
-    id: string;
+    id: number;
     name: string;
-    from_section_id: string;
-    to_section_id: string;
+    from_section_id: number;
+    to_section_id: number;
     parts: Parts[];
 }
 
 export interface Parts {
-    id: string;
+    id: number;
     name: string;
-    from_section_id: string;
-    to_section_id: string;
+    from_section_id: number;
+    to_section_id: number;
 }
 
 export interface Sections {
     id: string;
     content: string;
-    chapter_id: string;
+    chapter_id: number;
     chapter_name: string;
-    part_id: string;
+    part_id: number;
     part_name: string;
 }

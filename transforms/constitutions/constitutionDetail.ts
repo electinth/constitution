@@ -5,8 +5,8 @@ export function transform(extractConstitutions: ExtractedConstitutionDetail[]): 
     const constitution: ConstitutionDetail[] = [];
 
     extractConstitutions.map((c: ExtractedConstitutionDetail) => {
-        const data: ConstitutionDetail = _constructor(c);
-        const index = _getExistingIndex(constitution, c.name, c.topic);
+        const data = _constructor(c);
+        const index = _getExistingIndex(constitution, c.id, c.chapter);
 
         if (index === -1) {
             constitution.push(data);
@@ -19,25 +19,25 @@ export function transform(extractConstitutions: ExtractedConstitutionDetail[]): 
     return constitution;
 }
 
-function _getExistingIndex(constitutions: ConstitutionDetail[], name: string, topic: string) {
+function _getExistingIndex(constitutions: ConstitutionDetail[], id: number, chapter: string) {
     return constitutions.findIndex((c: ConstitutionDetail) => {
-        return c.topic === topic && c.name === name;
+        return c.id === id && c.topic === chapter;
     });
 }
 
-function _constructor(constitution: ExtractedConstitutionDetail) {
+function _constructor(constitution: ExtractedConstitutionDetail): ConstitutionDetail{
     const parts = [{
         id: constitution.part_number,
         name: constitution.part,
-        from_section_id: "",
-        to_section_id: "",
+        from_section_id: 0, // Todo get smallest amount
+        to_section_id: 0, // Todo get largest amount
     }];
 
     const chapters = [{
         id: constitution.chapter_number,
         name: constitution.chapter,
-        from_section_id: "",
-        to_section_id: "",
+        from_section_id: 0,
+        to_section_id: 0,
         parts: parts,
     }];
 
@@ -51,8 +51,9 @@ function _constructor(constitution: ExtractedConstitutionDetail) {
     }];
 
     return {
+        id: constitution.id,
         name: constitution.name,
-        topic: constitution.topic,
+        topic: constitution.chapter,
         prelude: "",
         chapters: chapters,
         sections: sections,
