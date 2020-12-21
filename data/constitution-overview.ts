@@ -3,7 +3,8 @@ import constitutionOverview from './constitution-overview.json';
 export interface Category {
   id: string;
   title: string;
-  description: string;
+  shortDesc: string;
+  longDesc: string;
   color: string;
 }
 
