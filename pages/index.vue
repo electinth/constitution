@@ -17,7 +17,7 @@
       </div>
     </section>
 
-    <SectionDivider />
+    <SectionDivider is-dark />
 
     <section class="text-center flex flex-col max-w-5xl mx-auto">
       <Heading3 class="font-black">วิธีใช้งาน</Heading3>
@@ -33,7 +33,7 @@
       </div>
     </section>
 
-    <SectionDivider />
+    <SectionDivider is-dark />
 
     <section
       class="flex flex-col xl:flex-row space-y-6 xl:space-y-0 xl:space-x-8 mx-auto"
