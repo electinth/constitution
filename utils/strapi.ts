@@ -41,7 +41,7 @@ export interface TopicOverview {
 }
 
 export interface Topic extends TopicOverview {
-  category_id: number;
+  category_id: string;
   category_name: string;
   subcategory_id: number;
   subcategory_name: string;
@@ -84,8 +84,8 @@ const get = async <T>(path: string): Promise<T> => {
 export const getAllCategories = (): Promise<CategoryOverview[]> =>
   get<CategoryOverview[]>('/categories');
 
-export const getCategoryById = (id: number): Promise<Category> =>
+export const getCategoryById = (id: string): Promise<Category> =>
   get<Category>(`/categories/${id}`);
 
-export const getTopicsByCategoryId = (id: number): Promise<Topic[]> =>
+export const getTopicsByCategoryId = (id: string): Promise<Topic[]> =>
   get<Topic[]>(`/topics?category_id=${id}`);

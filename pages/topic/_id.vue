@@ -15,31 +15,31 @@
       </div>
       <div id="header-tab-text" class="flex justify-center">
         <Heading3 class="text-center font-black">
-          {{ d[0][0].category_name }}
+          {{ topic.category_name }}
         </Heading3>
       </div>
     </div>
 
     <div id="title" class="flex flex-row bg-white text-black justify-center">
       <Heading1 class="text-center font-black">
-        {{ d[0][0].name }}
+        {{ topic.name }}
       </Heading1>
     </div>
 
     <TopicPanel id="topic-panel" :bg-color="bgColor" @clicked="onClickPanel" />
 
-    <TopicSummary id="topic-summary" :summary="d[0][0].summary" />
+    <TopicSummary id="topic-summary" :summary="topic.summary" />
 
     <TopicComparison
       id="topic-comparison"
-      :versions="d[0][0].constitutions"
+      :versions="topic.constitutions"
       :bg-color="bgColor"
       style="display: none"
     />
 
     <TopicOpinions
       id="topic-opinions"
-      :opinions="d[0][0].opinions"
+      :opinions="topic.opinions"
       style="display: none"
     />
 
@@ -49,8 +49,8 @@
 
     <TopicRelatedPanel
       id="related-panel"
-      :subcategory_id="d[0][0].subcategory_id"
-      :subcategories="d[1].subcategories"
+      :subcategory_id="topic.subcategory_id"
+      :subcategories="category.subcategories"
     />
   </div>
 </template>
@@ -63,7 +63,14 @@ import TopicComparison from '@/components/topic/TopicComparison.vue';
 import TopicOpinions from '@/components/topic/TopicOpinions.vue';
 import TopicRelatedPanel from '@/components/topic/TopicRelatedPanel.vue';
 import SocialSharer from '@/components/social-sharer.vue';
-import { getCategoryById, getTopicsByCategoryId } from '@/utils/strapi';
+import {
+  getCategoryById,
+  getTopicsByCategoryId,
+  Topic,
+  Category,
+} from '@/utils/strapi';
+import constitutionOverview from '~/data/constitution-overview';
+
 export default Vue.extend({
   components: {
     TopicPanel,
@@ -74,36 +81,27 @@ export default Vue.extend({
     TopicRelatedPanel,
   },
   async asyncData(context) {
-    const fetchedData = await Promise.all([
-      getTopicsByCategoryId(parseInt(context.params.id)),
-      getCategoryById(parseInt(context.params.id)),
+    const [[topic], category] = await Promise.all([
+      getTopicsByCategoryId(context.params.id),
+      getCategoryById(context.params.id),
     ]);
-    const d = fetchedData;
-    return { d };
+
+    return { topic, category };
+  },
+  data() {
+    return {
+      topic: null as Topic | null,
+      category: null as Category | null,
+    };
   },
   computed: {
-    bgColor(): String {
-      const colormap = {
-        คำปรารภ: '#575757',
-        บททั่วไป: '#f9564a',
-        'พระมหากษัตริย์/องคมนตรี': '#1f90ef',
-        สิทธิและเสรีภาพของชนชาวไทย: '#ff9900',
-        แนวนโยบายพื้นฐานแห่งรัฐ: '#ba83f7',
-        การปฏิรูปต่างประเทศ: '#ff6bb2',
-        อำนาจนิติบัญญัติ: '#0bb5ba',
-        อำนาจบริหาร: '#ff6f34',
-        อำนาจตุลาการ: '#ff9399',
-        การขัดกันผลประโยชน์: '#be408c',
-        ตุลาการรัฐธรรมนูญ: '#b26f1f',
-        องค์กรอิสระ: '#b3b700',
-        จริยธรรมของผู้ดำรงตำแหน่งทางการเมืองและเจ้าหน้าที่รัฐ: '#3fbae1',
-        การปกครองส่วนท้องถิ่น: '#2ac68e',
-        การแก้ไขเพิ่มเติมรัฐธรรมนูญ: '#fb4a76',
-        อำนาจคณะรัฐประหาร: '#af9368',
-        บทสุดท้าย: '#b77f74',
-        บทเฉพาะกาล: '#87a491',
-      };
-      return colormap[this.d[0][0].category_name];
+    bgColor(): String | undefined {
+      const { category_id } = this.topic as Topic;
+      const category = constitutionOverview.categories.find(
+        ({ id }) => id === category_id
+      );
+
+      return category?.color;
     },
   },
   mounted() {
