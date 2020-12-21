@@ -1,3 +1,7 @@
+import constitutionOverview from './data/constitution-overview';
+import { getTopicsByCategoryId } from './utils/strapi';
+import { server } from './mocks/server';
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -41,7 +45,6 @@ export default {
 
   env: {
     STRAPI_ENDPOINT: process.env.STRAPI_ENDPOINT,
-    MSW_ENDPOINT: 'http://msw.local',
   },
 
   router: {
@@ -50,5 +53,37 @@ export default {
 
   optimizedImages: {
     optimizeImages: true,
+  },
+
+  generate: {
+    async routes() {
+      if (!process.env.STRAPI_ENDPOINT) {
+        server.listen();
+      }
+
+      const routes = await Promise.all(
+        constitutionOverview.categories
+          .map(async (category) => {
+            const categoryPage = {
+              route: `/category/${category.id}`,
+            };
+
+            const topics = await getTopicsByCategoryId(category.id);
+
+            const topicPages = topics.map((topic) => ({
+              route: `/topic/${topic.id}`,
+            }));
+
+            return [categoryPage, ...topicPages];
+          })
+          .flat()
+      );
+
+      if (!process.env.STRAPI_ENDPOINT) {
+        server.close();
+      }
+
+      return routes;
+    },
   },
 };

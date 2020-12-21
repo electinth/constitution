@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { MSW_ENDPOINT } from '../mocks/handlers';
+
 export interface Section {
   id: number;
   content: string;
@@ -68,17 +71,11 @@ export interface Category extends CategoryOverview {
   subcategories: SubCategory[];
 }
 
-const strapiEndpoint = process.env.STRAPI_ENDPOINT || process.env.MSW_ENDPOINT;
+const strapiEndpoint = process.env.STRAPI_ENDPOINT || MSW_ENDPOINT;
 
 const get = async <T>(path: string): Promise<T> => {
-  const response = await fetch(`${strapiEndpoint}${path}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  return response.json();
+  const { data } = await axios.get(`${strapiEndpoint}${path}`);
+  return data;
 };
 
 export const getAllCategories = (): Promise<CategoryOverview[]> =>

@@ -43,10 +43,8 @@ import Vue from 'vue';
 import { getCategoryById } from '~/utils/strapi';
 
 export default Vue.extend({
-  async asyncData() {
-    const category = await getCategoryById('1');
-
-    return { category };
+  async asyncData({ params }) {
+    return { category: await getCategoryById(params.id) };
   },
 });
 </script>

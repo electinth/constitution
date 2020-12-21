@@ -1,5 +1,6 @@
 <template>
-  <div
+  <NuxtLink
+    :to="`/category/${category.id}`"
     class="flex flex-row py-2 md:p-0 w-full"
     :style="{
       backgroundColor: isFocusing ? category.color : 'unset',
@@ -20,7 +21,7 @@
         {{ category.title }}
       </Label1>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script lang="ts">

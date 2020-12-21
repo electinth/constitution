@@ -3,12 +3,14 @@ import categories from './data/categories.json';
 import categoryById from './data/category-by-id.json';
 import topicsByCategoryId from './data/topics-by-category-id.json';
 
-const root = process.env.MSW_ENDPOINT;
+export const MSW_ENDPOINT = 'http://msw.local';
 
 export const handlers = [
-  rest.get(root + '/categories', (_req, res, ctx) => res(ctx.json(categories))),
+  rest.get(MSW_ENDPOINT + '/categories', (_req, res, ctx) =>
+    res(ctx.json(categories))
+  ),
 
-  rest.get(root + '/categories/:id', (req, res, ctx) =>
+  rest.get(MSW_ENDPOINT + '/categories/:id', (req, res, ctx) =>
     res(
       ctx.json({
         ...categoryById,
@@ -17,7 +19,7 @@ export const handlers = [
     )
   ),
 
-  rest.get(root + '/topics', (req, res, ctx) => {
+  rest.get(MSW_ENDPOINT + '/topics', (req, res, ctx) => {
     const categoryId = req.url.searchParams.get('category_id');
 
     if (!categoryId) {

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "swiper": "^6.4.5",
