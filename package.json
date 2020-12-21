@@ -19,6 +19,8 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
+    "swiper": "^6.4.5",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-multiselect": "^2.1.6"
   },
   "devDependencies": {
