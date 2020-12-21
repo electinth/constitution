@@ -20,7 +20,7 @@
       <!-- End of Labels -->
     </div>
 
-    <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-1">
+    <div class="flex flex-col lg:flex-row space-y-8 md:space-y-0 md:space-x-1">
       <!-- Constitution -->
       <div v-for="constitution in constitutions" :key="constitution.id">
         <ConstitutionOverview

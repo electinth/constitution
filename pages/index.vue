@@ -36,7 +36,7 @@
     <SectionDivider />
 
     <section
-      class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4"
+      class="flex flex-col xl:flex-row space-y-6 xl:space-y-0 xl:space-x-8 mx-auto"
     >
       <CategoriesTable :categories="constitutionOverview.categories" />
       <ConstitutionsBreakdown

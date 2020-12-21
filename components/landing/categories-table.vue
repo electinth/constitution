@@ -1,24 +1,26 @@
 <template>
-  <div class="flex flex-col space-y-3">
+  <div class="flex flex-col space-y-3 xl:max-w-xs w-100">
     <div class="px-2">
       <Subtitle2 class="font-semibold"
         >เนื้อหาแบ่งออกเป็น {{ categories.length }} หมวด</Subtitle2
       >
     </div>
-    <ol class="flex flex-col border border-gray-1 divide-y divide-gray-1">
+    <ol
+      class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 border border-gray-2"
+    >
       <!-- Category item -->
       <li
         v-for="category in categories"
         :key="category.id"
-        class="flex flex-row"
-        @mouseover="isMediumOrMore() && openDescription(category)"
-        @mouseleave="isMediumOrMore() && closeDescription()"
+        class="flex flex-col xl:flex-row border border-gray-2"
+        @mouseover="isLargeOrMore() && openDescription(category)"
+        @mouseleave="isLargeOrMore() && closeDescription()"
       >
         <CategoryLabel
           is-semibold
           :category="category"
-          :is-focusing="isMediumOrMore() && focusingCategoryId === category.id"
-          @click="!isMediumOrMore() && openDescription(category)"
+          :is-focusing="isLargeOrMore() && focusingCategoryId === category.id"
+          @click="!isLargeOrMore() && openDescription(category)"
         />
         <CategoryFloatingDescription
           v-if="focusingCategoryId === category.id"
@@ -34,7 +36,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Category } from '~/data/constitution-overview.ts';
-import { isMediumOrMore } from '~/utils/screen';
+import { isLargeOrMore } from '~/utils/screen';
 
 export default Vue.extend({
   props: {
@@ -46,10 +48,10 @@ export default Vue.extend({
   data() {
     return {
       focusingCategoryId: null,
-      isMediumOrMore,
+      isLargeOrMore,
     } as {
       focusingCategoryId: string | null;
-      isMediumOrMore: () => boolean;
+      isLargeOrMore: () => boolean;
     };
   },
   methods: {

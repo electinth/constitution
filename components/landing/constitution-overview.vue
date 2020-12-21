@@ -2,37 +2,37 @@
   <div class="flex flex-col space-y-4">
     <!-- Constitution header -->
     <div
-      class="flex flex-col bg-gray-2 hover:bg-gray-1 cursor-pointer p-2 pb-1 md:p-1 md:pb-0 w-full space-y-2 md:space-y-1"
+      class="flex flex-col bg-gray-2 hover:bg-gray-1 cursor-pointer p-2 pb-1 lg:p-1 lg:pb-0 w-full space-y-2 lg:space-y-1"
       @click="$emit('header-click')"
     >
       <CoupIndicator :coup="constitution.isWrittenByCoup" />
       <div class="flex flex-row">
-        <div class="flex-1 md:text-center">
-          <h3 class="font-heading font-black text-21 md:text-16 leading-1.2">
+        <div class="flex-1 lg:text-center">
+          <h3 class="font-heading font-black text-21 lg:text-16 leading-1.2">
             {{ constitution.year }}
           </h3>
           <p
-            :class="`font-button text-12 md:text-10 ${
+            :class="`font-button text-12 lg:text-10 ${
               constitution.isTemporaryEdition ? '' : 'opacity-0'
             }`"
           >
             ชั่วคราว
           </p>
         </div>
-        <div class="md:hidden -mt-1">
+        <div class="lg:hidden -mt-1">
           <Label1>{{ constitution.pageCount }} หน้า</Label1>
         </div>
       </div>
     </div>
     <!-- End of Constitution header -->
 
-    <Label2 class="hidden md:block text-center"
+    <Label2 class="hidden lg:block text-center"
       >{{ constitution.pageCount
       }}{{ constitution.id === 0 ? ' หน้า' : '' }}</Label2
     >
 
     <!-- Constitution pages -->
-    <div class="flex flex-row md:flex-col flex-wrap relative">
+    <div class="flex flex-row lg:flex-col flex-wrap relative">
       <div
         v-for="(page, pageIndex) in constitution.pages"
         :key="pageIndex"
@@ -40,12 +40,12 @@
       >
         <!-- Page ratio visualize -->
         <div
-          :class="`flex flex-col w-6 h-8 mr-2 mb-3 md:mx-auto md:mb-1 border ${
+          :class="`flex flex-col w-6 h-8 mr-2 mb-3 lg:mx-auto lg:mb-1 border ${
             hoveringPageIndex === pageIndex ? 'border-white' : 'border-black'
           }`"
-          @mouseover="isMediumOrMore() && (hoveringPageIndex = pageIndex)"
-          @mouseleave="isMediumOrMore() && (hoveringPageIndex = null)"
-          @click="isMediumOrMore() && (selectedPageIndex = pageIndex)"
+          @mouseover="isLargeOrMore() && (hoveringPageIndex = pageIndex)"
+          @mouseleave="isLargeOrMore() && (hoveringPageIndex = null)"
+          @click="isLargeOrMore() && (selectedPageIndex = pageIndex)"
         >
           <div
             v-for="{ categoryId, pageRatio } in page"
@@ -110,7 +110,7 @@
 import Vue from 'vue';
 import { CategoriesMap } from './constitutions-breakdown.vue';
 import { Constitution } from '~/data/constitution-overview';
-import { isMediumOrMore } from '~/utils/screen';
+import { isLargeOrMore } from '~/utils/screen';
 
 export default Vue.extend({
   props: {
@@ -127,7 +127,7 @@ export default Vue.extend({
     return {
       hoveringPageIndex: null,
       selectedPageIndex: null,
-      isMediumOrMore,
+      isLargeOrMore,
     };
   },
 });

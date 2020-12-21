@@ -12,7 +12,7 @@
         :style="{ backgroundColor: category.color }"
       ></div>
     </div>
-    <div class="flex flex-1 cursor-default">
+    <div class="flex flex-1 cursor-default pr-2 md:pr-3">
       <Label1
         class="my-auto"
         :class="{ 'font-semibold': isSemibold, 'text-white': isFocusing }"

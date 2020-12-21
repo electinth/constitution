@@ -1,10 +1,10 @@
 <template>
-  <div class="fixed z-10 inset-0 md:relative flex">
+  <div class="fixed z-10 inset-0 lg:relative flex">
     <div
-      class="md:absolute top-0 left-0 bg-white text-black w-screen md:max-w-xs mx-8 my-auto md:m-0 shadow-md"
+      class="lg:absolute top-0 right-0 xl:left-0 bg-white text-black w-screen lg:max-w-xs mx-8 my-auto lg:m-0 shadow-md"
     >
       <div
-        class="md:hidden flex flex-row p-3"
+        class="lg:hidden flex flex-row p-3"
         :style="{ backgroundColor: category.color }"
       >
         <Heading4 class="font-black flex-1">
