@@ -10,5 +10,7 @@ function mapCategoryRow(cells: string[]): CategoryRow {
     id: cells[0],
     title: cells[1],
     color: cells[2],
+    shortDesc: cells[3],
+    longDesc: cells[4],
   } as CategoryRow;
 }

@@ -10,8 +10,8 @@ function mapConstitution(cells: string[]): ConstitutionRow {
     id: cells[0],
     name: cells[1],
     year: parseInt(cells[2]),
-    isTemporary: cells[3] === 'TRUE',
-    isWrittenbyCoup: cells[4] === 'TRUE',
+    isInterim: cells[3] === 'TRUE',
+    isInvolvedWithCoup: cells[4] === 'TRUE',
     context: cells[5],
   } as ConstitutionRow;
 }

@@ -3,8 +3,8 @@ export interface Constitution {
   name: string;
   year: number;
   context: string;
-  isTemporaryEdition: boolean;
-  isWrittenByCoup: boolean;
+  isInterim: boolean;
+  isInvolvedWithCoup: boolean;
   pageCount: number;
   pages: ConstitutionPageCategory[][];
 }

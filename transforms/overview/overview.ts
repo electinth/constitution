@@ -6,7 +6,13 @@ import { Overview } from './overview.model.ts';
 
 export function transform(rows: RecordRow[], cons: ConstitutionRow[], categories: CategoryRow[]): Overview {
   return { 
-    categories: categories.map(c => ({ id: c.id, title: c.title, color: c.color })),
+    categories: categories.map(c => ({
+      id: c.id,
+      title: c.title,
+      color: c.color,
+      shortDesc: c.shortDesc,
+      longDesc: c.longDesc,
+    })),
     constitutions: cons.map(c => {
       const pages = transformPages(rows.filter(r => r.constitutionId === c.id));
       return {
@@ -14,8 +20,8 @@ export function transform(rows: RecordRow[], cons: ConstitutionRow[], categories
         name: c.name,
         year: c.year,
         context: c.context,
-        isTemporaryEdition: c.isTemporary,
-        isWrittenByCoup: c.isWrittenbyCoup,
+        isInterim: c.isInterim,
+        isInvolvedWithCoup: c.isInvolvedWithCoup,
         pageCount: pages.length,
         pages: pages,
       }
