@@ -1,19 +1,19 @@
 import constitutionOverview from './constitution-overview.json';
 
 export interface Category {
-  id: number;
+  id: string;
   title: string;
   description: string;
   color: string;
 }
 
 export interface Page {
-  categoryId: number;
+  categoryId: string;
   pageRatio: number;
 }
 
 export interface Constitution {
-  id: number;
+  id: string;
   name: string;
   year: number;
   context: string;
