@@ -21,7 +21,7 @@ export default {
   css: ['~/assets/fonts/typography.css', '~/assets/style.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/msw.server.ts'],
+  plugins: ['~/plugins/msw.server.ts', '~/plugins/msw.client.ts'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
