@@ -1,15 +1,10 @@
 import { rest } from 'msw';
-import categories from './data/categories.json';
 import categoryById from './data/category-by-id.json';
 import topicsByCategoryId from './data/topics-by-category-id.json';
 
 export const MSW_ENDPOINT = 'http://msw.local';
 
 export const handlers = [
-  rest.get(MSW_ENDPOINT + '/categories', (_req, res, ctx) =>
-    res(ctx.json(categories))
-  ),
-
   rest.get(MSW_ENDPOINT + '/categories/:id', (req, res, ctx) =>
     res(
       ctx.json({

@@ -62,7 +62,7 @@
           <div class="absolute z-10 top-0 left-0 bg-white flex w-24">
             <img
               :src="
-                require(`~/assets/images/constitutions/${constitution.id + 1}/${
+                require(`~/assets/images/constitutions/${constitution.id}/${
                   pageIndex + 1
                 }.png`)
               "
@@ -80,7 +80,7 @@
           <div class="flex max-h-screen h-full m-auto py-10 relative">
             <img
               :src="
-                require(`~/assets/images/constitutions/${constitution.id + 1}/${
+                require(`~/assets/images/constitutions/${constitution.id}/${
                   pageIndex + 1
                 }.png`)
               "

@@ -60,13 +60,10 @@ export interface SubCategory {
   topics: TopicOverview[];
 }
 
-export interface CategoryOverview {
+export interface Category {
   id: number;
   name: string;
   color: string;
-}
-
-export interface Category extends CategoryOverview {
   content: string;
   subcategories: SubCategory[];
 }
@@ -77,9 +74,6 @@ const get = async <T>(path: string): Promise<T> => {
   const { data } = await axios.get(`${strapiEndpoint}${path}`);
   return data;
 };
-
-export const getAllCategories = (): Promise<CategoryOverview[]> =>
-  get<CategoryOverview[]>('/categories');
 
 export const getCategoryById = (id: string): Promise<Category> =>
   get<Category>(`/categories/${id}`);

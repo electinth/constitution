@@ -41,14 +41,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Category, Constitution } from '~/data/constitution-overview';
+import { CategoryOverview, Constitution } from '~/data/constitution-overview';
 
-export type CategoriesMap = Map<string, Omit<Category, 'id'>>;
+export type CategoriesMap = Map<string, Omit<CategoryOverview, 'id'>>;
 
 export default Vue.extend({
   props: {
     categories: {
-      type: Array as () => Category[],
+      type: Array as () => CategoryOverview[],
       required: true,
     },
     constitutions: {
@@ -65,7 +65,7 @@ export default Vue.extend({
     categoriesMap() {
       if (this.categories) {
         return this.categories.reduce(
-          (obj: CategoriesMap, { id, ...props }: Category) => ({
+          (obj: CategoriesMap, { id, ...props }: CategoryOverview) => ({
             ...obj,
             [id]: props,
           }),

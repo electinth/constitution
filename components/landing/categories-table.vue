@@ -35,13 +35,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Category } from '~/data/constitution-overview.ts';
+import { CategoryOverview } from '~/data/constitution-overview.ts';
 import { isLargeOrMore } from '~/utils/screen';
 
 export default Vue.extend({
   props: {
     categories: {
-      type: Array as () => Category[],
+      type: Array as () => CategoryOverview[],
       required: true,
     },
   },
@@ -55,7 +55,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    openDescription(category: Category) {
+    openDescription(category: CategoryOverview) {
       this.focusingCategoryId = category.id;
     },
     closeDescription() {

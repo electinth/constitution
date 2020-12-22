@@ -1,6 +1,6 @@
 import constitutionOverview from './constitution-overview.json';
 
-export interface Category {
+export interface CategoryOverview {
   id: string;
   title: string;
   shortDesc: string;
@@ -25,7 +25,7 @@ export interface Constitution {
 }
 
 export interface ConstitutionOverview {
-  categories: Category[];
+  categories: CategoryOverview[];
   constitutions: Constitution[];
 }
 
