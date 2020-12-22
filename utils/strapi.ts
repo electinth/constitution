@@ -80,3 +80,6 @@ export const getCategoryById = (id: string): Promise<Category> =>
 
 export const getTopicsByCategoryId = (id: string): Promise<Topic[]> =>
   get<Topic[]>(`/topics?category_id=${id}`);
+
+export const getTopicById = (id: string): Promise<Topic> =>
+  get<Topic>(`/topics/${id}`);

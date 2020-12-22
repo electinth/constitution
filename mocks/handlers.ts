@@ -33,4 +33,13 @@ export const handlers = [
       )
     );
   }),
+
+  rest.get(MSW_ENDPOINT + '/topics/:id', (req, res, ctx) => {
+    return res(
+      ctx.json({
+        ...topicsByCategoryId[0],
+        id: req.params.id,
+      })
+    );
+  }),
 ];

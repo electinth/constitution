@@ -63,12 +63,7 @@ import TopicComparison from '@/components/topic/TopicComparison.vue';
 import TopicOpinions from '@/components/topic/TopicOpinions.vue';
 import TopicRelatedPanel from '@/components/topic/TopicRelatedPanel.vue';
 import SocialSharer from '@/components/social-sharer.vue';
-import {
-  getCategoryById,
-  getTopicsByCategoryId,
-  Topic,
-  Category,
-} from '@/utils/strapi';
+import { getCategoryById, Topic, Category, getTopicById } from '@/utils/strapi';
 import constitutionOverview from '~/data/constitution-overview';
 
 export default Vue.extend({
@@ -80,12 +75,12 @@ export default Vue.extend({
     SocialSharer,
     TopicRelatedPanel,
   },
-  async asyncData({ params: { category_id }, payload }) {
+  async asyncData({ params: { category_id, topic_id }, payload }) {
     if (payload) {
       return payload;
     } else {
-      const [[topic], category] = await Promise.all([
-        getTopicsByCategoryId(category_id),
+      const [topic, category] = await Promise.all([
+        getTopicById(topic_id),
         getCategoryById(category_id),
       ]);
 
