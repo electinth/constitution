@@ -11,7 +11,7 @@
     <SectionDivider />
     <!-- Sub-categories -->
     <section
-      v-for="subcategory in category.subcategories"
+      v-for="subcategory in category.sub_categories"
       :key="subcategory.id"
       class="flex flex-col space-y-8"
     >
@@ -21,14 +21,15 @@
         <div class="px-4 md:px-6 space-y-6 md:max-w-sm">
           <Heading4 class="font-black">{{ subcategory.name }}</Heading4>
           <Paragraph2>{{ subcategory.content }}</Paragraph2>
-          <div>
+          <div v-if="subcategory.topics">
             <Label2 class="font-semibold">
               {{ subcategory.topics.length }} posts
             </Label2>
           </div>
         </div>
         <TopicsCarousal
-          :category-id="category.id"
+          v-if="subcategory.topics"
+          :category-id="category.category_id"
           :topics="subcategory.topics"
           class="flex-1"
         />

@@ -33,7 +33,7 @@ export default Vue.extend({
   computed: {
     related_topics() {
       const subcategory = this.subcategories.find(
-        ({ id }) => id === this.subcategoryId
+        ({ sub_category_id }) => sub_category_id === this.subcategoryId
       );
       return subcategory?.topics;
       //   const other_topics = subcategory.topics.filter(function (x: any) {

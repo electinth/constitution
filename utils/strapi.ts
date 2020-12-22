@@ -29,7 +29,7 @@ export interface Constitution {
 }
 
 export interface Opinion {
-  id: string;
+  id: number;
   speaker_name: string;
   speaker_position: string;
   speaker_image: string;
@@ -54,7 +54,8 @@ export interface Topic extends TopicOverview {
 }
 
 export interface SubCategory {
-  id: string;
+  id: number;
+  sub_category_id: string;
   name: string;
   content: string;
   topics: TopicOverview[];
@@ -62,10 +63,11 @@ export interface SubCategory {
 
 export interface Category {
   id: number;
+  category_id: string;
   name: string;
   color: string;
   content: string;
-  subcategories: SubCategory[];
+  sub_categories: SubCategory[];
 }
 
 const strapiEndpoint = process.env.STRAPI_ENDPOINT || MSW_ENDPOINT;
@@ -81,14 +83,17 @@ const get = async <T>(path: string): Promise<T> => {
         }
       : {}
   );
+
   return data;
 };
 
-export const getCategoryById = (id: string): Promise<Category> =>
-  get<Category>(`/categories/${id}`);
+export const getCategoryById = async (id: string): Promise<Category> =>
+  (await get<Category[]>(`/categories?category_id=${id}`))[0];
 
 export const getTopicsByCategoryId = (id: string): Promise<Topic[]> =>
   get<Topic[]>(`/topics?category_id=${id}`);
+
+export const getAllTopics = (): Promise<Topic[]> => get<Topic[]>(`/topics`);
 
 export const getTopicById = (id: string): Promise<Topic> =>
   get<Topic>(`/topics/${id}`);

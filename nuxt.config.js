@@ -1,5 +1,5 @@
 import constitutionOverview from './data/constitution-overview';
-import { getCategoryById, getTopicsByCategoryId } from './utils/strapi';
+import { getCategoryById, getAllTopics } from './utils/strapi';
 import { server } from './mocks/server';
 
 export default {
@@ -71,19 +71,19 @@ export default {
         }))
       );
 
-      const topicRoutes = (
-        await Promise.all(
-          categoryRoutes.map(async ({ payload: { category } }) =>
-            (await getTopicsByCategoryId(category.id)).map((topic) => ({
-              route: `/categories/${category.id}/topics/${topic.id}`,
-              payload: {
-                category,
-                topic,
-              },
-            }))
-          )
-        )
-      ).flat();
+      const topicRoutes = (await getAllTopics()).map((topic) => {
+        const { category } = categoryRoutes.find(
+          ({ payload }) => payload.category.category_id === topic.category_id
+        ).payload;
+
+        return {
+          route: `/categories/${category.category_id}/topics/${topic.id}`,
+          payload: {
+            category,
+            topic,
+          },
+        };
+      });
 
       if (!process.env.STRAPI_ENDPOINT) {
         server.close();

@@ -5,16 +5,7 @@ import topicsByCategoryId from './data/topics-by-category-id.json';
 export const MSW_ENDPOINT = 'http://msw.local';
 
 export const handlers = [
-  rest.get(MSW_ENDPOINT + '/categories/:id', (req, res, ctx) =>
-    res(
-      ctx.json({
-        ...categoryById,
-        id: req.params.id,
-      })
-    )
-  ),
-
-  rest.get(MSW_ENDPOINT + '/topics', (req, res, ctx) => {
+  rest.get(MSW_ENDPOINT + '/categories', (req, res, ctx) => {
     const categoryId = req.url.searchParams.get('category_id');
 
     if (!categoryId) {
@@ -25,10 +16,21 @@ export const handlers = [
     }
 
     return res(
+      ctx.json({
+        ...categoryById,
+        id: categoryId,
+      })
+    );
+  }),
+
+  rest.get(MSW_ENDPOINT + '/topics', (req, res, ctx) => {
+    const categoryId = req.url.searchParams.get('category_id');
+
+    return res(
       ctx.json(
         topicsByCategoryId.map((topic) => ({
           ...topic,
-          category_id: +categoryId,
+          category_id: categoryId ? +categoryId : topic.category_id,
         }))
       )
     );

@@ -22,6 +22,8 @@ jobs:
           cmd: generate
         env:
           BASE_PATH: /constitution
+          STRAPI_ENDPOINT: https://cms.constitution.kickdown.dev
+          STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
       - name: Deploy to Github Page
         uses: peaceiris/actions-gh-pages@v3
         with:

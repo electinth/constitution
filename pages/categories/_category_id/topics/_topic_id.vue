@@ -7,7 +7,7 @@
     >
       <div id="header-tab-arrow">
         <NuxtLink
-          :to="`/categories/${category.id}`"
+          :to="`/categories/${category.category_id}`"
           class="curser-pointer float-left"
         >
           <img
@@ -58,7 +58,7 @@
       id="related-panel"
       :category-id="topic.category_id"
       :subcategory-id="topic.subcategory_id"
-      :subcategories="category.subcategories"
+      :subcategories="category.sub_categories"
     />
   </div>
 </template>
