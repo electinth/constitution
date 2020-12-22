@@ -20,7 +20,7 @@
         </button>
       </div>
       <div class="p-4 space-y-4">
-        <Paragraph2>{{ category.description }}</Paragraph2>
+        <Paragraph2>{{ category.shortDesc }}</Paragraph2>
         <ButtonNext compact>Explore</ButtonNext>
       </div>
     </div>

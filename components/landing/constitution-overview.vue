@@ -5,7 +5,7 @@
       class="flex flex-col bg-gray-2 hover:bg-gray-1 cursor-pointer p-2 pb-1 lg:p-1 lg:pb-0 w-full space-y-2 lg:space-y-1"
       @click="$emit('header-click')"
     >
-      <CoupIndicator :coup="constitution.isWrittenByCoup" />
+      <CoupIndicator :coup="constitution.isInvolvedWithCoup" />
       <div class="flex flex-row">
         <div class="flex-1 lg:text-center">
           <h3 class="font-heading font-black text-21 lg:text-16 leading-1.2">
@@ -13,7 +13,7 @@
           </h3>
           <p
             :class="`font-button text-12 lg:text-10 ${
-              constitution.isTemporaryEdition ? '' : 'opacity-0'
+              constitution.isInterim ? '' : 'opacity-0'
             }`"
           >
             ชั่วคราว

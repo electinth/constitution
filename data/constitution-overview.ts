@@ -3,7 +3,8 @@ import constitutionOverview from './constitution-overview.json';
 export interface Category {
   id: string;
   title: string;
-  description: string;
+  shortDesc: string;
+  longDesc: string;
   color: string;
 }
 
@@ -17,8 +18,8 @@ export interface Constitution {
   name: string;
   year: number;
   context: string;
-  isTemporaryEdition: boolean;
-  isWrittenByCoup: boolean;
+  isInterim: boolean;
+  isInvolvedWithCoup: boolean;
   pageCount: number;
   pages: Page[][];
 }
