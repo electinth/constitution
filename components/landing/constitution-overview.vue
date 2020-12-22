@@ -27,8 +27,7 @@
     <!-- End of Constitution header -->
 
     <Label2 class="hidden lg:block text-center"
-      >{{ constitution.pageCount
-      }}{{ constitution.id === 0 ? ' หน้า' : '' }}</Label2
+      >{{ constitution.pageCount }}{{ showPageLabel ? ' หน้า' : '' }}</Label2
     >
 
     <!-- Constitution pages -->
@@ -40,9 +39,11 @@
       >
         <!-- Page ratio visualize -->
         <div
-          :class="`flex flex-col w-6 h-8 mr-2 mb-3 lg:mx-auto lg:mb-1 border ${
-            hoveringPageIndex === pageIndex ? 'border-white' : 'border-black'
-          }`"
+          class="`flex flex-col w-6 mr-2 lg:mx-auto transition-size-spacing duration-500 ease-in-out"
+          :class="[
+            hoveringPageIndex === pageIndex ? 'border-white' : 'border-dark',
+            isExpanded ? 'h-8 mb-3 lg:mb-1 border' : 'h-1',
+          ]"
           @mouseover="isLargeOrMore() && (hoveringPageIndex = pageIndex)"
           @mouseleave="isLargeOrMore() && (hoveringPageIndex = null)"
           @click="isLargeOrMore() && (selectedPageIndex = pageIndex)"
@@ -121,6 +122,14 @@ export default Vue.extend({
     categoriesMap: {
       type: Object as () => CategoriesMap,
       required: true,
+    },
+    isExpanded: {
+      type: Boolean,
+      default: true,
+    },
+    showPageLabel: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

@@ -4,28 +4,41 @@
       <Subtitle2 class="md:hidden font-semibold"
         >เปลี่ยนมาแล้ว 20 ฉบับ</Subtitle2
       >
-      <!-- Labels -->
-      <div
-        class="flex flex-col md:flex-row opacity-75 space-y-2 md:space-y-0 md:space-x-4"
-      >
-        <div class="flex flex-row space-x-1">
-          <CoupIndicator class="w-8 my-auto" />
-          <Label2>ฉบับที่เกิดจากรัฐบาลปกติ</Label2>
+      <div class="flex flex-row">
+        <!-- Labels -->
+        <div
+          class="flex flex-col md:flex-row opacity-75 space-y-2 md:space-y-0 md:space-x-4"
+        >
+          <div class="flex flex-row space-x-1">
+            <CoupIndicator class="w-8 my-auto" />
+            <Label2 class="my-auto">ฉบับที่เกิดจากรัฐบาลปกติ</Label2>
+          </div>
+          <div class="flex flex-row space-x-1">
+            <CoupIndicator coup class="w-8 my-auto" />
+            <Label2 class="my-auto">ฉบับที่เกิดจากรัฐประหาร</Label2>
+          </div>
         </div>
-        <div class="flex flex-row space-x-1">
-          <CoupIndicator coup class="w-8 my-auto" />
-          <Label2>ฉบับที่เกิดจากรัฐประหาร</Label2>
+        <!-- End of Labels -->
+        <div class="hidden lg:flex flex-1 justify-end">
+          <ConstitutionExpandToggle
+            :is-expanded="isExpanded"
+            @toggle="isExpanded = !isExpanded"
+          />
         </div>
       </div>
-      <!-- End of Labels -->
     </div>
 
     <div class="flex flex-col lg:flex-row space-y-8 md:space-y-0 md:space-x-1">
       <!-- Constitution -->
-      <div v-for="constitution in constitutions" :key="constitution.id">
+      <div
+        v-for="(constitution, constitutionIndex) in constitutions"
+        :key="constitution.id"
+      >
         <ConstitutionOverview
           :constitution="constitution"
           :categories-map="categoriesMap"
+          :is-expanded="isExpanded"
+          :show-page-label="constitutionIndex === 0"
           @header-click="selectedConstitutionId = constitution.id"
         />
         <ConstitutionContextDialog
@@ -59,6 +72,7 @@ export default Vue.extend({
   data() {
     return {
       selectedConstitutionId: null,
+      isExpanded: true,
     };
   },
   computed: {

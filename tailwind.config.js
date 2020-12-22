@@ -45,6 +45,11 @@ module.exports = {
       'gray-1': '#4B4B4B',
       'gray-2': '#2b2b2b',
     },
+    extend: {
+      transitionProperty: {
+        'size-spacing': 'height, width, margin, padding',
+      },
+    },
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
