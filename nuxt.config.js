@@ -45,6 +45,7 @@ export default {
 
   env: {
     STRAPI_ENDPOINT: process.env.STRAPI_ENDPOINT,
+    STRAPI_TOKEN: process.env.STRAPI_TOKEN,
   },
 
   router: {

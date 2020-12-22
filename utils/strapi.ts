@@ -71,7 +71,16 @@ export interface Category {
 const strapiEndpoint = process.env.STRAPI_ENDPOINT || MSW_ENDPOINT;
 
 const get = async <T>(path: string): Promise<T> => {
-  const { data } = await axios.get(`${strapiEndpoint}${path}`);
+  const { data } = await axios.get(
+    `${strapiEndpoint}${path}`,
+    process.env.STRAPI_TOKEN
+      ? {
+          headers: {
+            Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+          },
+        }
+      : {}
+  );
   return data;
 };
 
