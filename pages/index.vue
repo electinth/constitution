@@ -3,18 +3,17 @@
     class="bg-dark text-white p-4 md:p-12 flex flex-col space-y-8 sm:space-y-16"
   >
     <section
-      class="text-center px-6 py-8 sm:pt-16 flex flex-col space-y-4 max-w-4xl mx-auto"
+      class="text-center px-6 py-8 pt-16 flex flex-col space-y-8 md:space-y-16 max-w-4xl mx-auto"
     >
-      <div class="flex flex-col space-y-1">
-        <Heading1 class="font-black">CONSTITUTION CHANGE</Heading1>
-        <Heading2>เพราะรัฐธรรมนูญเปลี่ยนแปลงบ่อย</Heading2>
-      </div>
-      <div>
-        <Subtitle2
-          >ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ Interactive website
-          เพื่อความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน</Subtitle2
-        >
-      </div>
+      <img
+        src="~/assets/images/logo-reconstitution.svg"
+        alt="RE-CONSTITUTION"
+        class="h-12 md:h-16 my-auto"
+      />
+      <Subtitle2>
+        ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ INTERACTIVE WEBSITE
+        เพื่อความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน
+      </Subtitle2>
     </section>
 
     <SectionDivider is-dark />
