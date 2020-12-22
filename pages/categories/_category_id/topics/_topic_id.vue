@@ -3,7 +3,7 @@
     <div
       id="header-tab"
       class="flex flex-row bg-black text-white"
-      :style="{ backgroundColor: bgColor }"
+      :style="{ backgroundColor: category.color }"
     >
       <div id="header-tab-arrow">
         <a href="www.google.com" style="cursor: pointer; float: left">
@@ -26,14 +26,18 @@
       </Heading1>
     </div>
 
-    <TopicPanel id="topic-panel" :bg-color="bgColor" @clicked="onClickPanel" />
+    <TopicPanel
+      id="topic-panel"
+      :bg-color="category.color"
+      @clicked="onClickPanel"
+    />
 
     <TopicSummary id="topic-summary" :summary="topic.summary" />
 
     <TopicComparison
       id="topic-comparison"
       :versions="topic.constitutions"
-      :bg-color="bgColor"
+      :bg-color="category.color"
       style="display: none"
     />
 
@@ -64,7 +68,6 @@ import TopicOpinions from '@/components/topic/TopicOpinions.vue';
 import TopicRelatedPanel from '@/components/topic/TopicRelatedPanel.vue';
 import SocialSharer from '@/components/social-sharer.vue';
 import { getCategoryById, Topic, Category, getTopicById } from '@/utils/strapi';
-import constitutionOverview from '~/data/constitution-overview';
 
 export default Vue.extend({
   components: {
@@ -76,7 +79,7 @@ export default Vue.extend({
     TopicRelatedPanel,
   },
   async asyncData({ params: { category_id, topic_id }, payload }) {
-    if (payload) {
+    if (payload?.topic && payload?.category) {
       return payload;
     } else {
       const [topic, category] = await Promise.all([
@@ -92,16 +95,6 @@ export default Vue.extend({
       topic: null as Topic | null,
       category: null as Category | null,
     };
-  },
-  computed: {
-    bgColor(): String | undefined {
-      const { category_id } = this.topic as Topic;
-      const category = constitutionOverview.categories.find(
-        ({ id }) => id === category_id
-      );
-
-      return category?.color;
-    },
   },
   mounted() {
     this.onClickPanel(0);

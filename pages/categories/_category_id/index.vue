@@ -48,7 +48,7 @@ import { getCategoryById } from '~/utils/strapi';
 
 export default Vue.extend({
   async asyncData({ params: { category_id }, payload }) {
-    if (payload) {
+    if (payload?.category) {
       return payload;
     } else {
       return { category: await getCategoryById(category_id) };
