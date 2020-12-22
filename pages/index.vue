@@ -8,7 +8,7 @@
       <img
         src="~/assets/images/logo-reconstitution.svg"
         alt="RE-CONSTITUTION"
-        class="h-12 md:h-16 my-auto"
+        class="h-12 md:h-16 m-auto"
       />
       <Subtitle2>
         ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ INTERACTIVE WEBSITE

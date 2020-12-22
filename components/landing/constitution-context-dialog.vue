@@ -14,12 +14,11 @@
           />
         </button>
       </div>
-      <div class="flex flex-col p-2 md:p-6 space-y-4">
+      <div class="flex flex-col p-2 md:p-6 space-y-4 mb-4">
         <Heading3 class="font-black text-center">
           {{ constitution.name }}
         </Heading3>
         <Paragraph1>{{ constitution.context }}</Paragraph1>
-        <ButtonNext class="m-auto">อ่านฉบับเต็ม</ButtonNext>
       </div>
     </div>
   </div>
