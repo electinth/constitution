@@ -48,8 +48,8 @@
           @click="isLargeOrMore() && (selectedPageIndex = pageIndex)"
         >
           <div
-            v-for="{ categoryId, pageRatio } in page"
-            :key="categoryId"
+            v-for="({ categoryId, pageRatio }, categoryIndex) in page"
+            :key="categoryIndex"
             :style="{
               height: `${Math.round(pageRatio * 100)}%`,
               backgroundColor: categoriesMap[categoryId].color,

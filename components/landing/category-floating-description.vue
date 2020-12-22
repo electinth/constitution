@@ -19,7 +19,7 @@
           />
         </button>
       </div>
-      <div class="p-4 space-y-4">
+      <div class="flex flex-col p-4 space-y-4">
         <Paragraph2>{{ category.shortDesc }}</Paragraph2>
         <NuxtLink :to="`/categories/${category.id}`">
           <ButtonNext compact>Explore</ButtonNext>

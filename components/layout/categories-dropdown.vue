@@ -28,6 +28,7 @@
           class="flex flex-row cursor-pointer"
           @mouseenter="focusingCategoryId = category.id"
           @mouseleave="focusingCategoryId = null"
+          @click="isOpen = false"
         >
           <NuxtLink :to="`/categories/${category.id}`" class="w-full">
             <CategoryLabel
