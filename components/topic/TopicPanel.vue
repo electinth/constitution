@@ -1,31 +1,49 @@
 <template>
   <div>
     <div id="panel-container" class="flex flex-box bg-white justify-center">
-      <button
+      <div
         v-for="(item, index) in sections"
         :key="index"
-        class="flex bg-white h-full border-solid border-b-4 justify-center"
-        style="
-          width: 33%;
-          margin-left: 5px;
-          outline: none;
-          -webkit-transition: opacity 0.1s ease-in-out;
-          -moz-transition: opacity 0.1s ease-in-out;
-          -ms-transition: opacity 0.1s ease-in-out;
-          -o-transition: opacity 0.1s ease-in-out;
-          transition: opacity 0.1s ease-in-out;
-        "
-        :style="
-          index == 0
-            ? { borderColor: bgColor, opacity: 1.0 }
-            : { borderColor: bgColor, opacity: 0.2 }
-        "
-        @click="clickPanel(index)"
+        style="height: 100%; width: 33%; margin-left: 5px"
       >
-        <Label1>
-          {{ item }}
-        </Label1>
-      </button>
+        <button
+          class="panel-button-text"
+          style="
+            display: flex;
+            justify-content: center;
+            height: calc(100% - 5px);
+            border: none;
+            width: 100%;
+            outline: none;
+          "
+          @click="clickPanel(index)"
+        >
+          <Label1>
+            {{ item }}
+          </Label1>
+        </button>
+        <button
+          class="panel-button-border"
+          style="
+            display: flex;
+            justify-content: center;
+            height: 0px;
+            border-bottom: 5px solid;
+            width: 100%;
+            outline: none;
+            -webkit-transition: opacity 0.1s ease-in-out;
+            -moz-transition: opacity 0.1s ease-in-out;
+            -ms-transition: opacity 0.1s ease-in-out;
+            -o-transition: opacity 0.1s ease-in-out;
+            transition: opacity 0.1s ease-in-out;
+          "
+          :style="
+            index == 0
+              ? { borderColor: bgColor, opacity: 1.0 }
+              : { borderColor: bgColor, opacity: 0.2 }
+          "
+        ></button>
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +61,7 @@ export default Vue.extend({
   },
   methods: {
     clickPanel(index: number): void {
-      const panels = document.querySelectorAll('button');
+      const panels = document.querySelectorAll('.panel-button-border');
       panels.forEach(function (item, i) {
         if (i !== index) {
           item.style.opacity = '0.2';

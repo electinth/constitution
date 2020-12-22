@@ -33,6 +33,14 @@ export default Vue.extend({
     bgColor: String,
     versions: Array,
   },
+  mounted() {
+    // change dropdown colors
+    const bgColor = this.bgColor;
+    const tags = document.querySelectorAll('.multiselect__tags');
+    tags.forEach(function (tag) {
+      tag.style.borderColor = bgColor;
+    });
+  },
 });
 </script>
 
@@ -52,7 +60,6 @@ export default Vue.extend({
   display: none;
 }
 .topic-comparison-side {
-  /* width: calc(50% - 62.5px); */
   width: 45%;
   min-width: 140px;
 }

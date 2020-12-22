@@ -4,6 +4,7 @@
       RELATED TOPICS
     </Heading7>
     <TopicsCarousal
+      id="related-topics"
       :category-id="categoryId"
       :topics="related_topics"
       class="flex max-w-5xl mx-auto"
@@ -53,26 +54,18 @@ export default Vue.extend({
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.topic-image {
-  width: 500px;
-  padding-right: 15px;
-}
-#topic-image-container {
-  margin-left: 85px;
+#related-topics {
   margin-bottom: 96.5px;
+  max-width: 90%;
 }
-
 @media only screen and (max-width: 768px) {
   #related-container {
     overflow: hidden;
   }
-  .topic-image {
-    width: 280px;
-    padding-right: 15px;
-  }
-  #topic-image-container {
-    margin-left: 0px;
+  #related-topics {
     margin-bottom: 30px;
+    margin-left: 5%;
+    width: 90%;
   }
 }
 </style>

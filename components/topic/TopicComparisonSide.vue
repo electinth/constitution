@@ -27,38 +27,35 @@
       <div
         v-for="(section, index) in sections"
         :key="index"
-        style="margin-top: 64px"
+        class="section-container"
       >
-        <div
-          class="flex flex-col"
-          :style="
-            sideL
-              ? `padding-left: 30%; padding-right: 12px;`
-              : `padding-left: 12px; padding-right: 30%;`
-          "
-        >
-          <Paragraph1
-            class="flex flex-row text-left"
-            v-html="section.content"
-          />
-          <Label1
-            style="
-              text-align: right;
-              margin-top: 30px;
-              margin-bottom: 16px;
-              width: 100%;
-            "
-            v-html="section.footer"
-          />
-          <!-- <div
-            v-for="(amendment, index) in section.amendments"
-            :key="'amend-' + index"
-            style="background-color: #ccc; margin-top: 64px"
-            class="text-left"
-          >
-            <Label1 v-html="amendment.header" />
-            <Paragraph1 class="text-left" v-html="amendment.content" />
-          </div> -->
+        <div v-if="sideL" class="section-container-l">
+          <Paragraph1 v-html="section.content" />
+          <div class="section-label">
+            <Label1 class="section-label-text" v-html="section.footer" />
+          </div>
+          <div class="section-label-mobile">
+            <Label1 class="section-label-text" v-html="section.footer_id" />
+            <Label1 class="section-label-text" v-html="section.footer_part" />
+            <Label1
+              class="section-label-text"
+              v-html="section.footer_chapter"
+            />
+          </div>
+        </div>
+        <div v-if="!sideL" class="section-container-r">
+          <Paragraph1 v-html="section.content" />
+          <div class="section-label">
+            <Label1 class="section-label-text" v-html="section.footer" />
+          </div>
+          <div class="section-label-mobile">
+            <Label1 class="section-label-text" v-html="section.footer_id" />
+            <Label1 class="section-label-text" v-html="section.footer_part" />
+            <Label1
+              class="section-label-text"
+              v-html="section.footer_chapter"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -89,10 +86,23 @@ export default Vue.extend({
   },
   methods: {
     selectVersion(value: any): void {
+      console.log(value);
       this.sections = value.sections;
       value.sections.forEach(function (section: any) {
         section.content = section.content.replace('\\n', '<br/>');
         section.content = section.content.replace('\n', '<br/>');
+
+        section.footer_id = '<b>มาตรา</b> ' + section.id;
+        section.footer_part = null;
+        if (section.partId) {
+          section.footer_part =
+            '<b>ส่วน</b> ' + section.partId + ' ' + section.partName;
+        }
+        section.footer_chapter = null;
+        if (section.chapterId) {
+          section.footer_chapter =
+            '<b>หมวด</b> ' + section.chapterId + ' ' + section.chapterName;
+        }
 
         section.footer = '<b>มาตรา</b> ' + section.id;
         if (section.partId) {
@@ -103,7 +113,6 @@ export default Vue.extend({
           section.footer +=
             ' <b>หมวด</b> ' + section.chapterId + ' ' + section.chapterName;
         }
-        console.log(section.footer);
 
         section.amendments = [];
         section.amendmentIds.forEach(function (id: number) {
@@ -124,5 +133,67 @@ export default Vue.extend({
 <style scoped>
 #comparison-side-container {
   width: 100%;
+}
+.section-container {
+  margin-top: 64px;
+}
+.section-container-l,
+.section-container-r {
+  text-align: left;
+}
+.section-container-l {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30%;
+  padding-right: 12px;
+}
+.section-container-r {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 30%;
+}
+.section-text {
+  display: flex;
+  flex-direction: row;
+}
+.section-label,
+.section-label-mobile {
+  justify-content: end;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.section-label-mobile {
+  display: none;
+}
+.section-label-text {
+  text-align: right;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .section-container {
+    margin-top: 17px;
+  }
+  .section-container-l {
+    padding-left: 9%;
+    padding-right: 0px;
+  }
+  .section-container-r {
+    padding-left: 0px;
+    padding-right: 9%;
+  }
+  .section-label {
+    display: none;
+  }
+  .section-label-mobile {
+    margin-top: 15px;
+    margin-bottom: 23px;
+    flex-direction: column;
+    display: flex;
+  }
 }
 </style>

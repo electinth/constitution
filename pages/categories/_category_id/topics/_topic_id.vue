@@ -155,7 +155,9 @@ export default Vue.extend({
 }
 
 #hr-end {
-  border: 1px solid #929191;
+  border: 0;
+  height: 1px;
+  background-color: #929191;
   margin-left: 85px;
   margin-right: 85px;
   margin-top: 1px;
@@ -185,12 +187,8 @@ export default Vue.extend({
     margin-bottom: 25px;
   }
   #hr-end {
-    border: 1px solid #929191;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    outline: none;
   }
 }
 </style>
