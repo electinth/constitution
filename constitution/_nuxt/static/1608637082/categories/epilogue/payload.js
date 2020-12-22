@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/categories/epilogue", (function(a,b){return {data:[{category:{id:17,name:"บทสุดท้าย",color:"#877f74",content:a,category_id:"epilogue",description:a,created_at:b,updated_at:b,sub_categories:[]}}],fetch:[],mutations:void 0}}("หมวดสุดท้ายของรัฐธรรมนูญ มักจะเกี่ยวกับการแก้ไขรัฐธรรมนูญ","2020-12-22T09:50:40.460Z")));
