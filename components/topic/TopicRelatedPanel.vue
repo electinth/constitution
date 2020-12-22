@@ -3,28 +3,39 @@
     <Heading7 id="related-title" class="text-center font-black">
       RELATED TOPICS
     </Heading7>
-    <div id="topic-image-container" class="flex flex-row">
-      <div v-for="(topic, index) in related_topics" :key="index" class="flex">
-        <img :src="topic.thumbnail_image" class="topic-image" />
-      </div>
-    </div>
+    <TopicsCarousal
+      :category-id="categoryId"
+      :topics="related_topics"
+      class="flex max-w-5xl mx-auto"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import { SubCategory } from '~/utils/strapi';
+
 export default Vue.extend({
   props: {
-    subcategories: Array,
-    subcategory_id: Number,
+    categoryId: {
+      type: String,
+      required: true,
+    },
+    subcategories: {
+      type: Array as () => SubCategory[],
+      required: true,
+    },
+    subcategoryId: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     related_topics() {
-      const subcategory_id: any = this.subcategory_id;
-      const subcategory: any = this.subcategories.filter(function (x: any) {
-        return x.id === subcategory_id;
-      })[0];
-      return subcategory.topics;
+      const subcategory = this.subcategories.find(
+        ({ id }) => id === this.subcategoryId
+      );
+      return subcategory?.topics;
       //   const other_topics = subcategory.topics.filter(function (x: any) {
       //       x.id !==
       //   })

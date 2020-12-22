@@ -6,12 +6,15 @@
       :style="{ backgroundColor: category.color }"
     >
       <div id="header-tab-arrow">
-        <a href="www.google.com" style="cursor: pointer; float: left">
+        <NuxtLink
+          :to="`/categories/${category.id}`"
+          class="curser-pointer float-left"
+        >
           <img
             id="header-tab-arrow-img"
             src="@/assets/images/topic-back-arrow.png"
           />
-        </a>
+        </NuxtLink>
       </div>
       <div id="header-tab-text" class="flex justify-center">
         <Heading3 class="text-center font-black">
@@ -53,7 +56,8 @@
 
     <TopicRelatedPanel
       id="related-panel"
-      :subcategory_id="topic.subcategory_id"
+      :category-id="topic.category_id"
+      :subcategory-id="topic.subcategory_id"
       :subcategories="category.subcategories"
     />
   </div>
