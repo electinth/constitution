@@ -14,7 +14,7 @@ export const handlers = [
     res(
       ctx.json({
         ...categoryById,
-        id: +req.params.id,
+        id: req.params.id,
       })
     )
   ),

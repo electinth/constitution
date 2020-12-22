@@ -1,5 +1,5 @@
 import constitutionOverview from './data/constitution-overview';
-import { getTopicsByCategoryId } from './utils/strapi';
+import { getCategoryById, getTopicsByCategoryId } from './utils/strapi';
 import { server } from './mocks/server';
 
 export default {
@@ -61,29 +61,34 @@ export default {
         server.listen();
       }
 
-      const routes = await Promise.all(
-        constitutionOverview.categories
-          .map(async (category) => {
-            const categoryPage = {
-              route: `/category/${category.id}`,
-            };
-
-            const topics = await getTopicsByCategoryId(category.id);
-
-            const topicPages = topics.map((topic) => ({
-              route: `/topic/${topic.id}`,
-            }));
-
-            return [categoryPage, ...topicPages];
-          })
-          .flat()
+      const categoryRoutes = await Promise.all(
+        constitutionOverview.categories.map(async (category) => ({
+          route: `/categories/${category.id}`,
+          payload: {
+            category: await getCategoryById(category.id),
+          },
+        }))
       );
+
+      const topicRoutes = (
+        await Promise.all(
+          categoryRoutes.map(async ({ payload: { category } }) =>
+            (await getTopicsByCategoryId(category.id)).map((topic) => ({
+              route: `/categories/${category.id}/topics/${topic.id}`,
+              payload: {
+                category,
+                topic,
+              },
+            }))
+          )
+        )
+      ).flat();
 
       if (!process.env.STRAPI_ENDPOINT) {
         server.close();
       }
 
-      return routes;
+      return [...categoryRoutes, ...topicRoutes];
     },
   },
 };

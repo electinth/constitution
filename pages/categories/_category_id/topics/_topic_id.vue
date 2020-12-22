@@ -80,13 +80,17 @@ export default Vue.extend({
     SocialSharer,
     TopicRelatedPanel,
   },
-  async asyncData({ params }) {
-    const [[topic], category] = await Promise.all([
-      getTopicsByCategoryId(params.id),
-      getCategoryById(params.id),
-    ]);
+  async asyncData({ params: { category_id }, payload }) {
+    if (payload) {
+      return payload;
+    } else {
+      const [[topic], category] = await Promise.all([
+        getTopicsByCategoryId(category_id),
+        getCategoryById(category_id),
+      ]);
 
-    return { topic, category };
+      return { topic, category };
+    }
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="`/category/${category.id}`"
+    :to="`/categories/${category.id}`"
     class="flex flex-row py-2 md:p-0 w-full"
     :style="{
       backgroundColor: isFocusing ? category.color : 'unset',
