@@ -25,14 +25,16 @@
         <li
           v-for="category in categories"
           :key="category.id"
-          class="flex flex-row"
+          class="flex flex-row cursor-pointer"
           @mouseenter="focusingCategoryId = category.id"
           @mouseleave="focusingCategoryId = null"
         >
-          <CategoryLabel
-            :category="category"
-            :is-focusing="focusingCategoryId === category.id"
-          />
+          <NuxtLink :to="`/categories/${category.id}`" class="w-full">
+            <CategoryLabel
+              :category="category"
+              :is-focusing="focusingCategoryId === category.id"
+            />
+          </NuxtLink>
         </li>
       </ul>
     </div>

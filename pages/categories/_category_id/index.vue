@@ -27,7 +27,11 @@
             </Label2>
           </div>
         </div>
-        <TopicsCarousal :topics="subcategory.topics" class="flex-1" />
+        <TopicsCarousal
+          :category-id="category.id"
+          :topics="subcategory.topics"
+          class="flex-1"
+        />
       </div>
       <SectionDivider />
     </section>

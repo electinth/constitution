@@ -24,7 +24,13 @@
 
     <swiper ref="swiper" class="swiper" :options="swiperOptions">
       <swiper-slide v-for="{ id, name, thumbnail_image } in topics" :key="id">
-        <img :src="thumbnail_image" :alt="name" class="h-full" />
+        <NuxtLink :to="`/categories/${categoryId}/topics/${id}`">
+          <img
+            :src="thumbnail_image"
+            :alt="name"
+            class="h-full cursor-pointer"
+          />
+        </NuxtLink>
       </swiper-slide>
     </swiper>
 
@@ -69,6 +75,10 @@ export default Vue.extend({
     SwiperSlide,
   },
   props: {
+    categoryId: {
+      type: String,
+      required: true,
+    },
     topics: {
       type: Array as () => TopicOverview[],
       required: true,

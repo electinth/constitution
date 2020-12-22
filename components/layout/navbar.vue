@@ -9,7 +9,9 @@
         />
       </div>
       <div class="flex-1 col-span-2 md:col-span-1 flex md:justify-center">
-        <Heading4 class="my-auto">CONSTITUTION CHANGE</Heading4>
+        <NuxtLink to="/" class="my-auto">
+          <Heading4>CONSTITUTION CHANGE</Heading4>
+        </NuxtLink>
       </div>
     </div>
 
