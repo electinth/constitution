@@ -1,5 +1,5 @@
 <template>
-  <div id="related-container">
+  <div v-if="related_topics" id="related-container">
     <Heading7 id="related-title" class="text-center font-black">
       RELATED TOPICS
     </Heading7>
