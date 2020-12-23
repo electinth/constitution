@@ -3,14 +3,14 @@
     class="bg-dark text-white p-4 md:p-12 flex flex-col space-y-8 sm:space-y-16"
   >
     <section
-      class="text-center px-6 py-8 pt-16 flex flex-col space-y-8 md:space-y-16 max-w-4xl mx-auto"
+      class="text-center px-6 py-8 pt-16 flex flex-col space-y-8 md:space-y-16"
     >
       <img
         src="~/assets/images/logo-reconstitution.svg"
         alt="RE-CONSTITUTION"
         class="h-12 md:h-16 m-auto"
       />
-      <Subtitle2>
+      <Subtitle2 class="max-w-2xl mx-auto">
         ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ INTERACTIVE WEBSITE
         เพื่อความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน
       </Subtitle2>
