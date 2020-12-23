@@ -18,12 +18,19 @@
   border-color: #fff;
   outline: none;
 }
+.multiselect__tag {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .multiselect__tags {
   width: 100%;
   border: 1px solid black;
 }
 .multiselect__current {
   padding: 8px 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
   padding-right: 30px;
 }
 .multiselect__select {
@@ -35,10 +42,15 @@
 }
 .multiselect__placeholder {
   color: #000;
+  display: inline-block;
 }
 .multiselect__content-wrapper {
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   word-wrap: break-word;
+}
+.multiselect__content::webkit-scrollbar {
+  display: none;
 }
 .multiselect__content {
   word-wrap: break-word;
@@ -46,6 +58,7 @@
 .multiselect__option {
   line-height: 120%;
   word-wrap: break-word;
+  white-space: normal;
 }
 .multiselect__option--highlight {
   background: #000;

@@ -32,6 +32,7 @@
     <TopicPanel
       id="topic-panel"
       :bg-color="category.color"
+      :opinions="topic.opinions"
       @clicked="onClickPanel"
     />
 
@@ -184,6 +185,7 @@ export default Vue.extend({
   }
   #header-tab-arrow-img {
     width: 22px;
+    margin-top: 3px;
   }
   #title {
     padding-top: 29px;

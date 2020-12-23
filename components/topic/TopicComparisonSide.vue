@@ -52,7 +52,8 @@
 import Vue from 'vue';
 // import Multiselect from 'vue-multiselect';
 // Vue.component('Multiselect', Multiselect);
-import '@/node_modules/vue-multiselect/dist/vue-multiselect.min.css';
+import '@/assets/_vue-multiselect.min.css';
+// import '@/node_modules/vue-multiselect/dist/vue-multiselect.min.css';
 export default Vue.extend({
   // components: {
   //   Multiselect,
