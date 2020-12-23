@@ -4,25 +4,11 @@
       id="comparison-side-container"
       class="justify-center text-center align-center"
     >
-      <multiselect
-        v-model="version"
-        class="text-black shadow-none outline-none"
-        placeholder="เลือกฉบับรัฐธรรมนูญ"
-        track-by="name"
-        label="name"
-        :options="versions"
-        :searchable="false"
-        :allow-empty="false"
-        select-label=""
-        deselect-label=""
-        :style="
-          sideL
-            ? `margin-left: auto; margin-right: 0;`
-            : `margin-left: 0; margin-right: auto;`
-        "
-        @select="selectVersion"
-      >
-      </multiselect>
+      <TopicComparisonSelect
+        :versions="versions"
+        :side-l="sideL"
+        @select-version="selectVersion"
+      />
 
       <div
         v-for="(section, index) in sections"
@@ -64,12 +50,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Multiselect from 'vue-multiselect';
-Vue.component('Multiselect', Multiselect);
+// import Multiselect from 'vue-multiselect';
+// Vue.component('Multiselect', Multiselect);
+import '@/node_modules/vue-multiselect/dist/vue-multiselect.min.css';
 export default Vue.extend({
-  components: {
-    Multiselect,
-  },
+  // components: {
+  //   Multiselect,
+  // },
   props: {
     versions: Array,
     sideL: {
@@ -86,7 +73,6 @@ export default Vue.extend({
   },
   methods: {
     selectVersion(value: any): void {
-      console.log(value);
       this.sections = value.sections;
       value.sections.forEach(function (section: any) {
         section.content = section.content.replace('\\n', '<br/>');
@@ -127,8 +113,6 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style src="@/assets/vue-multiselect.min.css"></style>
 
 <style scoped>
 #comparison-side-container {
