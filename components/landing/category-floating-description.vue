@@ -21,7 +21,7 @@
       </div>
       <div class="flex flex-col p-4 space-y-4">
         <Paragraph2>{{ category.shortDesc }}</Paragraph2>
-        <NuxtLink :to="`/categories/${category.id}`">
+        <NuxtLink v-if="showExploreButton" :to="`/categories/${category.id}`">
           <ButtonNext compact>Explore</ButtonNext>
         </NuxtLink>
       </div>
@@ -38,6 +38,10 @@ export default Vue.extend({
     category: {
       type: Object as () => Category,
       required: true,
+    },
+    showExploreButton: {
+      type: Boolean,
+      default: true,
     },
   },
 });

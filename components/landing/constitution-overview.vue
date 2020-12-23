@@ -136,8 +136,10 @@ export default Vue.extend({
     return {
       hoveringPageIndex: null,
       selectedPageIndex: null,
-      isLargeOrMore,
     };
+  },
+  methods: {
+    isLargeOrMore,
   },
 });
 </script>
