@@ -45,7 +45,8 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { getCategoryById } from '~/utils/strapi';
+import { generateHeadTags } from '~/utils/head';
+import { Category, getCategoryById } from '~/utils/strapi';
 
 export default Vue.extend({
   async asyncData({ params: { category_id }, payload }) {
@@ -54,6 +55,18 @@ export default Vue.extend({
     } else {
       return { category: await getCategoryById(category_id) };
     }
+  },
+  data() {
+    return { category: null as Category | null };
+  },
+  head() {
+    const { name, content, category_id } = this.category as Category;
+
+    return generateHeadTags({
+      title: name,
+      description: content,
+      image: `${process.env.SITE_URL}/sharer/${category_id}.png`,
+    });
   },
 });
 </script>

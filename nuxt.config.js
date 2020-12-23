@@ -1,6 +1,7 @@
 import constitutionOverview from './data/constitution-overview';
 import { getCategoryById, getAllTopics } from './utils/strapi';
 import { server } from './mocks/server';
+import { generateHeadTags } from './utils/head';
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -8,13 +9,25 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'elect-constitution',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+    ...generateHeadTags(
+      {
+        title: 'Re-Constitution',
+        description:
+          'ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ INTERACTIVE WEBSITE เพื่อความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน',
+        image: `${process.env.SITE_URL}/sharer/main.png`,
+      },
+      [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ]
+    ),
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: `${process.env.BASE_PATH || ''}/favicon.ico`,
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -46,6 +59,7 @@ export default {
   env: {
     STRAPI_ENDPOINT: process.env.STRAPI_ENDPOINT,
     STRAPI_TOKEN: process.env.STRAPI_TOKEN,
+    SITE_URL: process.env.SITE_URL,
   },
 
   router: {

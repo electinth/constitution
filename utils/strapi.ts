@@ -51,6 +51,7 @@ export interface Topic extends TopicOverview {
   summary: string;
   constitutions: Constitution[];
   options: Opinion[];
+  og_image: string;
 }
 
 export interface SubCategory {

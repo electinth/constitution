@@ -22,6 +22,7 @@ jobs:
           cmd: generate
         env:
           BASE_PATH: /constitution
+          SITE_URL: https://electinth.github.io/constitution
           STRAPI_ENDPOINT: https://cms.constitution.kickdown.dev
           STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
       - name: Deploy to Github Page

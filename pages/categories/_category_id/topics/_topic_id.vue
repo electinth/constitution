@@ -72,6 +72,7 @@ import TopicOpinions from '@/components/topic/TopicOpinions.vue';
 import TopicRelatedPanel from '@/components/topic/TopicRelatedPanel.vue';
 import SocialSharer from '@/components/social-sharer.vue';
 import { getCategoryById, Topic, Category, getTopicById } from '@/utils/strapi';
+import { generateHeadTags } from '~/utils/head';
 
 export default Vue.extend({
   components: {
@@ -99,6 +100,14 @@ export default Vue.extend({
       topic: null as Topic | null,
       category: null as Category | null,
     };
+  },
+  head() {
+    const { name, og_image } = this.topic as Topic;
+
+    return generateHeadTags({
+      title: name,
+      image: og_image,
+    });
   },
   mounted() {
     this.onClickPanel(0);
