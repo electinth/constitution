@@ -60,15 +60,15 @@
         <!-- End of Page ratio visualize -->
         <!-- Page preview -->
         <div v-if="hoveringPageIndex === pageIndex" class="relative">
-          <div class="absolute z-10 top-0 left-0 bg-white flex w-24">
+          <div class="absolute z-10 top-0 left-0 bg-white shadow-md">
             <img
               :src="
                 require(`~/assets/images/constitutions/${constitution.id}/${
                   pageIndex + 1
                 }.png`)
               "
-              :alt="`${constitution.title} หน้า ${pageIndex}`"
-              class="hw-full shadow-md"
+              :alt="`${constitution.name} หน้า ${pageIndex}`"
+              class="w-24 h-auto max-w-none max-h-none"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@
                   pageIndex + 1
                 }.png`)
               "
-              :alt="`${constitution.title} หน้า ${pageIndex}`"
+              :alt="`${constitution.name} หน้า ${pageIndex}`"
               class="h-full w-auto m-auto"
             />
             <div
@@ -136,8 +136,10 @@ export default Vue.extend({
     return {
       hoveringPageIndex: null,
       selectedPageIndex: null,
-      isLargeOrMore,
     };
+  },
+  methods: {
+    isLargeOrMore,
   },
 });
 </script>

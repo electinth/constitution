@@ -44,15 +44,33 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import constitutionOverview from '~/data/constitution-overview.ts';
+import constitutionOverview, {
+  CategoryOverview,
+} from '~/data/constitution-overview.ts';
+import { getAllTopics } from '~/utils/strapi';
 
 export default Vue.extend({
   data() {
     return {
-      categories: constitutionOverview.categories,
+      categories: [],
       isOpen: false,
       focusingCategoryId: null,
+    } as {
+      categories: never | CategoryOverview[];
+      isOpen: boolean;
+      focusingCategoryId: null | string;
     };
+  },
+  async fetch() {
+    const topics = await getAllTopics();
+
+    const catagoryIdsHavingTopics = new Set(
+      topics.map(({ category_id }) => category_id)
+    );
+
+    this.categories = constitutionOverview.categories.filter(({ id }) =>
+      catagoryIdsHavingTopics.has(id)
+    );
   },
 });
 </script>

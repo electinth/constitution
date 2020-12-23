@@ -25,6 +25,7 @@
         <CategoryFloatingDescription
           v-if="focusingCategoryId === category.id"
           :category="category"
+          :show-explore-button="catagoryIdsHavingTopics.has(category.id)"
           @close="closeDescription"
         />
       </li>
@@ -37,6 +38,7 @@
 import Vue from 'vue';
 import { CategoryOverview } from '~/data/constitution-overview.ts';
 import { isLargeOrMore } from '~/utils/screen';
+import { getAllTopics } from '~/utils/strapi';
 
 export default Vue.extend({
   props: {
@@ -48,11 +50,18 @@ export default Vue.extend({
   data() {
     return {
       focusingCategoryId: null,
-      isLargeOrMore,
+      catagoryIdsHavingTopics: null,
     } as {
       focusingCategoryId: string | null;
-      isLargeOrMore: () => boolean;
+      catagoryIdsHavingTopics: Set<string> | null;
     };
+  },
+  async fetch() {
+    const topics = await getAllTopics();
+
+    this.catagoryIdsHavingTopics = new Set(
+      topics.map(({ category_id }) => category_id)
+    );
   },
   methods: {
     openDescription(category: CategoryOverview) {
@@ -61,6 +70,7 @@ export default Vue.extend({
     closeDescription() {
       this.focusingCategoryId = null;
     },
+    isLargeOrMore,
   },
 });
 </script>
