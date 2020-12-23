@@ -30,13 +30,21 @@ export default Vue.extend({
     TopicComparisonSide,
   },
   props: {
-    bgColor: String,
-    versions: Array,
+    bgColor: {
+      type: String,
+      default: '',
+    },
+    versions: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
   mounted() {
     // change dropdown colors
     const bgColor = this.bgColor;
-    const tags = document.querySelectorAll('.multiselect__tags');
+    const tags = document.querySelectorAll<HTMLElement>('.multiselect__tags');
     tags.forEach(function (tag) {
       tag.style.borderColor = bgColor;
     });

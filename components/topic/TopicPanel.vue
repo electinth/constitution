@@ -52,7 +52,10 @@
 import Vue from 'vue';
 export default Vue.extend({
   props: {
-    bgColor: String,
+    bgColor: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
@@ -61,7 +64,9 @@ export default Vue.extend({
   },
   methods: {
     clickPanel(index: number): void {
-      const panels = document.querySelectorAll('.panel-button-border');
+      const panels = document.querySelectorAll<HTMLElement>(
+        '.panel-button-border'
+      );
       panels.forEach(function (item, i) {
         if (i !== index) {
           item.style.opacity = '0.2';
