@@ -14,7 +14,7 @@ export default {
         title: 'Re-Constitution',
         description:
           'ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ INTERACTIVE WEBSITE เพื่อความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน',
-        image: `${process.env.SITE_URL}/sharer/main.png`,
+        image: `${process.env.SITE_URL}/sharer/default.png`,
       },
       [
         { charset: 'utf-8' },
