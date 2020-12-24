@@ -3,8 +3,9 @@ name: Deploy to Github Page
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  repository_dispatch:
+    types:
+      - webhook-build
 
 jobs:
   pipeline:
