@@ -79,30 +79,40 @@ export default Vue.extend({
 
 <style scoped>
 div >>> h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+div >>> h2,
+div >>> h3,
+div >>> h4,
+div >>> h5,
+div >>> h6,
+div >>> table,
+div >>> p {
+  margin-bottom: 50px;
+}
+div >>> h1,
+div >>> h2,
+div >>> h3,
+div >>> h4,
+div >>> h5,
+div >>> h6 {
   padding-left: 120px;
   padding-right: 120px;
 }
 div >>> h1,
-h2 {
-  @apply font-heading leading-1.2 text-48 font-normal;
+div >>> h2 {
+  @apply font-heading leading-1.2 text-36 font-normal;
 }
 div >>> h1 {
   @apply font-black;
 }
 div >>> h3,
-h4 {
-  @apply font-heading leading-1.2 text-36 font-normal;
+div >>> h4 {
+  @apply font-heading leading-1.2 text-24 font-normal;
 }
 div >>> h3 {
   @apply font-black;
 }
 div >>> h5,
-h6 {
+div >>> h6 {
   @apply font-subtitle leading-1.5 text-24 font-normal;
 }
 div >>> h5 {
@@ -118,15 +128,15 @@ div >>> p.thick {
 
 @media only screen and (max-width: 768px) {
   div >>> h1,
-  h2 {
-    @apply text-36;
-  }
-  div >>> h3,
-  h4 {
+  div >>> h2 {
     @apply text-24;
   }
+  div >>> h3,
+  div >>> h4 {
+    @apply text-21;
+  }
   div >>> h5,
-  h6 {
+  div >>> h6 {
     @apply text-21;
   }
   div >>> p {
@@ -137,25 +147,35 @@ div >>> p.thick {
 
 @media only screen and (max-width: 640px) {
   div >>> h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
+  div >>> h2,
+  div >>> h3,
+  div >>> h4,
+  div >>> h5,
+  div >>> h6,
+  div >>> table,
+  div >>> p {
+    margin-bottom: 30px;
+  }
+  div >>> h1,
+  div >>> h2,
+  div >>> h3,
+  div >>> h4,
+  div >>> h5,
+  div >>> h6,
+  div >>> p {
     margin-left: 7px;
     margin-right: 7px;
   }
   div >>> h1,
-  h2 {
-    @apply text-24;
-  }
-  div >>> h3,
-  h4 {
+  div >>> h2 {
     @apply text-21;
   }
+  div >>> h3,
+  div >>> h4 {
+    @apply text-18;
+  }
   div >>> h5,
-  h6 {
+  div >>> h6 {
     @apply text-18;
   }
   div >>> p {

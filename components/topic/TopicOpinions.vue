@@ -1,17 +1,17 @@
 <template>
   <div class="flex flex-col pb-4 md:pb-8">
     <div
-      v-for="(opinion, index) in opinions"
+      v-for="(opinion, index) in computed_opinions"
       :key="index"
       class="flex bg-white justify-center"
     >
       <div
         class="mx-auto pt-12 md:pt-32 pb-0 md:pb-16"
-        style="width: 100%; max-width: 750px"
+        style="width: 90%; max-width: 750px"
       >
         <div
           class="flex flex-row w-full"
-          :style="index % 2 == 0 ? `` : `margin-right: 0; margin-left: auto;`"
+          :style="index % 2 == 0 ? `` : `justify-content: flex-end;`"
         >
           <img
             v-if="index % 2 == 0"
@@ -30,6 +30,12 @@
             <Subtitle2>
               {{ opinion['speaker_position'] }}
             </Subtitle2>
+            <div
+              class="font-subtitle leading-1.3 text-12 md:text-13 lg:text-14"
+              style="color: #888"
+            >
+              {{ opinion['thai_date'] }}
+            </div>
           </div>
           <img
             v-if="index % 2 == 1"
@@ -50,6 +56,37 @@ import Vue from 'vue';
 export default Vue.extend({
   props: {
     opinions: Array,
+  },
+  computed: {
+    computed_opinions() {
+      for (const opinion of this.opinions) {
+        opinion.thai_date = this.get_thai_datestring(opinion.date);
+      }
+      return this.opinions;
+    },
+  },
+  methods: {
+    get_thai_datestring(date) {
+      // date: format YYYY-MM-DD
+      const Y = parseInt(date.split('-')[0]) + 543;
+      const M = parseInt(date.split('-')[1]);
+      const D = parseInt(date.split('-')[2]);
+      const thai_month_names = {
+        1: 'มกราคม',
+        2: 'กุมภาพันธุ์',
+        3: 'มีนาคม',
+        4: 'เมษายน',
+        5: 'พฤษภาคม',
+        6: 'มิถุนายน',
+        7: 'กรกฎาคม',
+        8: 'สิงหาคม',
+        9: 'กันยายน',
+        10: 'ตุลาคม',
+        11: 'พฤศจิกายน',
+        12: 'ธันวาคม',
+      };
+      return D.toString() + ' ' + thai_month_names[M] + ' ' + Y.toString();
+    },
   },
 });
 </script>
