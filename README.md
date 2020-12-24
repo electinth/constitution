@@ -4,7 +4,7 @@ Thailand's Constitution, explained
 
 ## Deployment
 
-- Staging: https://electinth.github.io/constitution/
+- Staging: https://elect-reconstitution.netlify.app/
 - Production: not deployed yet
 
 ## Environment
@@ -13,7 +13,9 @@ Thailand's Constitution, explained
 
 ```
 STRAPI_ENDPOINT=<url_to_strapi>
+STRAPI_TOKEN=<strapi_token>
 BASE_PATH=<site_path_when_deploy>
+SITE_URL=<site_url_when_deploy>
 ```
 
 ## Build Setup
