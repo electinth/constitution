@@ -16,12 +16,15 @@
     }
   },
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "@nuxt/typescript-runtime": "^2.0.0",
     "axios": "^0.21.0",
+    "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "swiper": "^6.4.5",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-markdown": "^2.2.4",
     "vue-multiselect": "^2.1.6"
   },
   "devDependencies": {
@@ -32,6 +35,7 @@
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^3.1.0",
+    "@types/vue-markdown": "^2.2.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
     "babel-eslint": "^10.1.0",
