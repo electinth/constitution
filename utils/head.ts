@@ -31,13 +31,11 @@ export const generateHeadTags = (
   { title, description, image }: GenerateHeadTagsProps,
   combindedMeta: MetaProperty[] = []
 ): MetaInfo => {
+  const pageTitle = title ? `${title} - ${TITLE_POSTFIX}` : TITLE_POSTFIX;
   const meta: MetaProperty[] = [...combindedMeta];
 
   meta.push(
-    ...generateMetas(
-      ['title', 'og:title', 'twitter:title'],
-      title ? `${title} - ${TITLE_POSTFIX}` : TITLE_POSTFIX
-    )
+    ...generateMetas(['title', 'og:title', 'twitter:title'], pageTitle)
   );
 
   if (description) {
@@ -54,7 +52,7 @@ export const generateHeadTags = (
   }
 
   return {
-    title: title || TITLE_POSTFIX,
+    title: pageTitle,
     meta,
   };
 };

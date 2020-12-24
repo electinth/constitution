@@ -63,7 +63,7 @@ export default Vue.extend({
     const { name, category_id } = this.category as Category;
 
     return generateHeadTags({
-      title: `หมวด${name}`,
+      title: `${name.indexOf('บท') === 0 ? '' : 'หมวด'}${name}`,
       image: `${process.env.SITE_URL}/sharer/${category_id}.png`,
     });
   },
