@@ -60,11 +60,10 @@ export default Vue.extend({
     return { category: null as Category | null };
   },
   head() {
-    const { name, content, category_id } = this.category as Category;
+    const { name, category_id } = this.category as Category;
 
     return generateHeadTags({
-      title: name,
-      description: content,
+      title: `หมวด${name}`,
       image: `${process.env.SITE_URL}/sharer/${category_id}.png`,
     });
   },

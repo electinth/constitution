@@ -20,6 +20,8 @@ interface GenerateHeadTagsProps {
   image?: string;
 }
 
+const TITLE_POSTFIX = 'Reconstitution ฐานข้อมูลรัฐธรรมนูญไทยออนไลน์';
+
 const generateMetas = (properties: string[], content: string) =>
   properties.map(
     (property): MetaPropertyProperty => ({ hid: property, property, content })
@@ -29,13 +31,14 @@ export const generateHeadTags = (
   { title, description, image }: GenerateHeadTagsProps,
   combindedMeta: MetaProperty[] = []
 ): MetaInfo => {
-  const head: MetaInfo = {};
   const meta: MetaProperty[] = [...combindedMeta];
 
-  if (title) {
-    head.title = title;
-    meta.push(...generateMetas(['title', 'og:title', 'twitter:title'], title));
-  }
+  meta.push(
+    ...generateMetas(
+      ['title', 'og:title', 'twitter:title'],
+      title ? `${title} - ${TITLE_POSTFIX}` : TITLE_POSTFIX
+    )
+  );
 
   if (description) {
     meta.push(
@@ -51,7 +54,7 @@ export const generateHeadTags = (
   }
 
   return {
-    ...head,
+    title: title || TITLE_POSTFIX,
     meta,
   };
 };

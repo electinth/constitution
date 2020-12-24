@@ -52,3 +52,14 @@
     </section>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { generateHeadTags } from '~/utils/head';
+
+export default Vue.extend({
+  head: generateHeadTags({
+    title: 'เกี่ยวกับโครงการ',
+  }),
+});
+</script>
