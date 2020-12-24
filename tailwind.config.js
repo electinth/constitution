@@ -44,6 +44,8 @@ module.exports = {
       'light-gray-3': '#d9d9d9',
       'gray-1': '#4B4B4B',
       'gray-2': '#2b2b2b',
+      blue: '#0077cc',
+      teal: '#444D5F',
     },
     extend: {
       transitionProperty: {

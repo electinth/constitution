@@ -11,9 +11,8 @@ export default {
   head: {
     ...generateHeadTags(
       {
-        title: 'Re-Constitution',
         description:
-          'ฐานข้อมูลรัฐธรรมนูญไทยทั้ง 20 ฉบับ นำเสนอในรูปแบบ INTERACTIVE WEBSITE เพื่อความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน',
+          'เรียนรู้และเปรียบเทียบรัฐธรรมนูญของประเทศไทย ที่นำเสนอผ่าน Interactive website เพื่อเสริมสร้างความเข้าใจในรัฐธรรมนูญที่ทุกคนเป็นเจ้าของร่วมกัน',
         image: `${process.env.SITE_URL}/sharer/default.png`,
       },
       [
@@ -25,7 +24,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: `${process.env.BASE_PATH || ''}/favicon.ico`,
+        href: `${process.env.BASE_PATH || ''}/favicon.png`,
       },
     ],
   },

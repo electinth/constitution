@@ -5,7 +5,9 @@
   >
     <div
       class="flex rounded-tr-md rounded-br-md px-2"
-      :class="isExpanded ? 'text-dark bg-gray-1' : 'text-gray-1 bg-dark'"
+      :class="
+        isExpanded ? 'text-dark bg-light-gray-3' : 'text-light-gray-3 bg-dark'
+      "
     >
       <svg
         width="9"
@@ -22,7 +24,9 @@
     </div>
     <div
       class="flex rounded-tl-md rounded-bl-md px-2"
-      :class="!isExpanded ? 'text-dark bg-gray-1' : 'text-gray-1 bg-dark'"
+      :class="
+        !isExpanded ? 'text-dark bg-light-gray-3' : 'text-light-gray-3 bg-dark'
+      "
     >
       <svg
         width="11"
