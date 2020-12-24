@@ -1,13 +1,10 @@
 <template>
-  <div v-if="related_topics" id="related-container">
-    <Heading7 id="related-title" class="text-center font-black">
-      RELATED TOPICS
-    </Heading7>
+  <div v-if="related_topics">
+    <Heading7 class="text-center font-black my-12"> RELATED TOPICS </Heading7>
     <TopicsCarousal
-      id="related-topics"
       :category-id="categoryId"
       :topics="related_topics"
-      class="flex max-w-5xl mx-auto"
+      class="flex max-w-5xl mx-auto w-full mb-10 md:mb-24"
     />
   </div>
 </template>
@@ -37,35 +34,7 @@ export default Vue.extend({
         ({ sub_category_id }) => sub_category_id === this.subcategoryId
       );
       return subcategory?.topics;
-      //   const other_topics = subcategory.topics.filter(function (x: any) {
-      //       x.id !==
-      //   })
-      //   return subcategory;
     },
   },
 });
 </script>
-
-<style scoped>
-#related-container {
-  overflow: hidden;
-}
-#related-title {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-#related-topics {
-  margin-bottom: 96.5px;
-  max-width: 90%;
-}
-@media only screen and (max-width: 768px) {
-  #related-container {
-    overflow: hidden;
-  }
-  #related-topics {
-    margin-bottom: 30px;
-    margin-left: 5%;
-    width: 90%;
-  }
-}
-</style>

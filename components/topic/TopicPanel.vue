@@ -1,8 +1,19 @@
 <template>
   <div>
-    <div id="panel-container" class="flex flex-box bg-white justify-center">
-      <div v-for="(item, index) in sections" :key="index" class="panel-button">
-        <button class="panel-button-text" @click="clickPanel(index)">
+    <div
+      id="panel-container"
+      class="flex flex-box bg-white justify-center h-10"
+    >
+      <div
+        v-for="(item, index) in sections"
+        :key="index"
+        class="h-full w-full ml-1"
+      >
+        <button
+          class="flex justify-center w-full border-none"
+          style="height: calc(100% - 5px); outline: none"
+          @click="clickPanel(index)"
+        >
           <Label1>
             {{ item }}
           </Label1>
@@ -10,7 +21,7 @@
         <button
           class="panel-button-border"
           :style="
-            index === 0
+            index === current_panel
               ? { borderColor: bgColor, opacity: 1.0 }
               : { borderColor: bgColor, opacity: 0.2 }
           "
@@ -33,8 +44,14 @@ export default Vue.extend({
       type: Array,
     },
   },
+  data() {
+    return {
+      current_panel: 0,
+    };
+  },
   computed: {
     sections() {
+      // allow for 2-column panel, if no opinions available
       if (this.opinions.length === 0) {
         return ['สรุป', 'เปรียบเทียบ'];
       } else {
@@ -43,17 +60,9 @@ export default Vue.extend({
     },
   },
   methods: {
+    // change panel & notify parent to display correct section
     clickPanel(index: number): void {
-      const panels = document.querySelectorAll<HTMLElement>(
-        '.panel-button-border'
-      );
-      panels.forEach(function (item, i) {
-        if (i !== index) {
-          item.style.opacity = '0.2';
-        } else {
-          item.style.opacity = '1.0';
-        }
-      });
+      this.current_panel = index;
       this.$emit('clicked', index);
     },
   },
@@ -61,24 +70,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-#panel-container {
-  height: 50px;
-  padding-left: 110px;
-  padding-right: 105px;
-}
-.panel-button {
-  height: 100%;
-  margin-left: 5px;
-  width: 100%;
-}
-.panel-button-text {
-  display: flex;
-  justify-content: center;
-  height: calc(100% - 5px);
-  border: none;
-  width: 100%;
-  outline: none;
-}
 .panel-button-border {
   display: flex;
   justify-content: center;
@@ -91,13 +82,5 @@ export default Vue.extend({
   -ms-transition: opacity 0.1s ease-in-out;
   -o-transition: opacity 0.1s ease-in-out;
   transition: opacity 0.1s ease-in-out;
-}
-
-@media only screen and (max-width: 768px) {
-  #panel-container {
-    height: 35px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
 }
 </style>

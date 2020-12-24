@@ -23,44 +23,46 @@
       </div>
     </div>
 
-    <div id="title" class="flex flex-row bg-white text-black justify-center">
-      <Heading1 class="text-center font-black">
-        {{ topic.name }}
-      </Heading1>
+    <div class="topic-page-bound">
+      <div id="title" class="flex flex-row bg-white text-black justify-center">
+        <Heading1 class="text-center font-black">
+          {{ topic.name }}
+        </Heading1>
+      </div>
+
+      <TopicPanel
+        id="topic-panel"
+        :bg-color="category.color"
+        :opinions="topic.opinions"
+        @clicked="onClickPanel"
+      />
+
+      <TopicSummary id="topic-summary" :summary="topic.summary" />
+
+      <TopicComparison
+        id="topic-comparison"
+        :versions="topic.constitutions"
+        :bg-color="category.color"
+        style="display: none"
+      />
+
+      <TopicOpinions
+        id="topic-opinions"
+        :opinions="topic.opinions"
+        style="display: none"
+      />
+
+      <SocialSharer id="social-sharer" />
+
+      <hr id="hr-end" />
+      <TopicRelatedPanel
+        class="mx-auto"
+        style="width: 90%; height: auto"
+        :category-id="topic.category_id"
+        :subcategory-id="topic.subcategory_id"
+        :subcategories="category.sub_categories"
+      />
     </div>
-
-    <TopicPanel
-      id="topic-panel"
-      :bg-color="category.color"
-      :opinions="topic.opinions"
-      @clicked="onClickPanel"
-    />
-
-    <TopicSummary id="topic-summary" :summary="topic.summary" />
-
-    <TopicComparison
-      id="topic-comparison"
-      :versions="topic.constitutions"
-      :bg-color="category.color"
-      style="display: none"
-    />
-
-    <TopicOpinions
-      id="topic-opinions"
-      :opinions="topic.opinions"
-      style="display: none"
-    />
-
-    <SocialSharer id="social-sharer" />
-
-    <hr id="hr-end" />
-
-    <TopicRelatedPanel
-      id="related-panel"
-      :category-id="topic.category_id"
-      :subcategory-id="topic.subcategory_id"
-      :subcategories="category.sub_categories"
-    />
   </div>
 </template>
 
@@ -138,6 +140,13 @@ export default Vue.extend({
   padding-bottom: 15px;
 }
 
+.topic-page-bound {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 1280px;
+}
+
 #header-tab-arrow {
   margin-left: 35px;
   position: absolute;
@@ -168,8 +177,6 @@ export default Vue.extend({
   border: 0;
   height: 1px;
   background-color: #929191;
-  margin-left: 85px;
-  margin-right: 85px;
   margin-top: 1px;
   margin-bottom: 1px;
   outline: none;
@@ -179,6 +186,12 @@ export default Vue.extend({
   #header-tab {
     padding-top: 8px;
     padding-bottom: 8px;
+  }
+  .topic-page-bound {
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    max-width: none;
   }
   #header-tab-arrow {
     margin-left: 10px;
@@ -196,10 +209,6 @@ export default Vue.extend({
   #social-sharer {
     margin-top: 25px;
     margin-bottom: 25px;
-  }
-  #hr-end {
-    margin-left: 20px;
-    margin-right: 20px;
   }
 }
 </style>

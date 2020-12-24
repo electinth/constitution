@@ -12,7 +12,7 @@
       select-label=""
       deselect-label=""
       :style="
-        sideL
+        isLeft
           ? `margin-left: auto; margin-right: 0;`
           : `margin-left: 0; margin-right: auto;`
       "
@@ -33,7 +33,7 @@ export default Vue.extend({
   },
   props: {
     versions: Array,
-    sideL: {
+    isLeft: {
       type: Boolean,
       default: false,
     },

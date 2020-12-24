@@ -4,7 +4,7 @@
   font-size: 14px;
 }
 .multiselect {
-  width: calc(70% - 12px);
+  width: calc(90% - 12px);
 }
 .multiselect__input::-webkit-input-placeholder {
   color: #35495e;

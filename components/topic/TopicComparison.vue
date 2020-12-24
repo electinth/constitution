@@ -2,22 +2,27 @@
   <div>
     <div
       id="comparison-container"
-      class="flex flex-row justify-center align-center"
+      class="flex flex-row justify-center align-center w-full pt-10 md:pt-24"
     >
       <TopicComparisonSide
-        class="topic-comparison-side"
+        class="w-1/2 md:w-5/12"
+        style="min-width: 140px"
         :versions="versions"
-        side-l
+        is-left
       />
       <span
         id="vs-icon"
-        class="flex text-white justify-center text-center"
+        class="flex text-white justify-center text-center rounded-full hidden md:flex w-12 h-12 mx-12"
         :style="{ backgroundColor: bgColor }"
       >
         <Label1 class="text-center text-justify m-auto"> vs. </Label1>
       </span>
-      <span id="vs-padding" />
-      <TopicComparisonSide class="topic-comparison-side" :versions="versions" />
+      <span id="vs-padding" class="flex md:hidden w-3" />
+      <TopicComparisonSide
+        class="w-1/2 md:w-5/12"
+        style="min-width: 140px"
+        :versions="versions"
+      />
     </div>
   </div>
 </template>
@@ -51,40 +56,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style scoped>
-#comparison-container {
-  padding-top: 102.5px;
-  width: 100%;
-}
-#vs-icon {
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-#vs-padding {
-  display: none;
-}
-.topic-comparison-side {
-  width: 45%;
-  min-width: 140px;
-}
-
-@media only screen and (max-width: 768px) {
-  #comparison-container {
-    padding-top: 35px;
-  }
-  #vs-icon {
-    display: none;
-  }
-  #vs-padding {
-    display: flex;
-    width: 10px;
-  }
-  .topic-comparison-side {
-    width: 50%;
-  }
-}
-</style>

@@ -1,48 +1,27 @@
 <template>
-  <div>
-    <div
-      id="comparison-side-container"
-      class="justify-center text-center align-center"
-    >
-      <TopicComparisonSelect
-        :versions="versions"
-        :side-l="sideL"
-        @select-version="selectVersion"
-      />
-
+  <div class="justify-center text-center align-center w-full">
+    <TopicComparisonSelect
+      :versions="versions"
+      :is-left="isLeft"
+      @select-version="selectVersion"
+    />
+    <div v-for="(section, index) in sections" :key="index">
       <div
-        v-for="(section, index) in sections"
-        :key="index"
-        class="section-container"
+        class="flex flex-col text-left"
+        :class="{
+          'section-l': isLeft,
+          'section-r': !isLeft,
+        }"
       >
-        <div v-if="sideL" class="section-container-l">
-          <Paragraph1 v-html="section.content" />
-          <div class="section-label">
-            <Label1 class="section-label-text" v-html="section.footer" />
-          </div>
-          <div class="section-label-mobile">
-            <Label1 class="section-label-text" v-html="section.footer_id" />
-            <Label1 class="section-label-text" v-html="section.footer_part" />
-            <Label1
-              class="section-label-text"
-              v-html="section.footer_chapter"
-            />
-          </div>
+        <div class="hidden md:flex justify-end w-full">
+          <Label1 class="text-left w-full" v-html="section.footer" />
         </div>
-        <div v-if="!sideL" class="section-container-r">
-          <Paragraph1 v-html="section.content" />
-          <div class="section-label">
-            <Label1 class="section-label-text" v-html="section.footer" />
-          </div>
-          <div class="section-label-mobile">
-            <Label1 class="section-label-text" v-html="section.footer_id" />
-            <Label1 class="section-label-text" v-html="section.footer_part" />
-            <Label1
-              class="section-label-text"
-              v-html="section.footer_chapter"
-            />
-          </div>
+        <div class="flex md:hidden flex-col justify-end w-full">
+          <Label1 class="text-left w-full" v-html="section.footer_id" />
+          <Label1 class="text-left w-full" v-html="section.footer_part" />
+          <Label1 class="text-left w-full" v-html="section.footer_chapter" />
         </div>
+        <Paragraph1 class="pt-4 md:pt-8" v-html="section.content" />
       </div>
     </div>
   </div>
@@ -54,7 +33,7 @@ import '@/node_modules/vue-multiselect/dist/vue-multiselect.min.css';
 export default Vue.extend({
   props: {
     versions: Array,
-    sideL: {
+    isLeft: {
       type: Boolean,
       default: false,
     },
@@ -110,69 +89,35 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-#comparison-side-container {
-  width: 100%;
-}
-.section-container {
+.section-l,
+.section-r {
   margin-top: 64px;
 }
-.section-container-l,
-.section-container-r {
-  text-align: left;
-}
-.section-container-l {
-  display: flex;
-  flex-direction: column;
-  padding-left: 30%;
+.section-l {
+  padding-left: 10%;
   padding-right: 12px;
 }
-.section-container-r {
-  display: flex;
-  flex-direction: column;
+.section-r {
   padding-left: 12px;
-  padding-right: 30%;
-}
-.section-text {
-  display: flex;
-  flex-direction: row;
-}
-.section-label,
-.section-label-mobile {
-  justify-content: end;
-  margin-top: 30px;
-  margin-bottom: 16px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.section-label-mobile {
-  display: none;
-}
-.section-label-text {
-  text-align: right;
-  width: 100%;
+  padding-right: 10%;
 }
 
 @media only screen and (max-width: 768px) {
-  .section-container {
+  .section-l,
+  .section-r {
     margin-top: 17px;
   }
-  .section-container-l {
+  .section-l {
     padding-left: 9%;
     padding-right: 0px;
   }
-  .section-container-r {
+  .section-r {
     padding-left: 0px;
     padding-right: 9%;
-  }
-  .section-label {
-    display: none;
   }
   .section-label-mobile {
     margin-top: 15px;
     margin-bottom: 23px;
-    flex-direction: column;
-    display: flex;
   }
 }
 </style>
