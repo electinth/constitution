@@ -17,6 +17,7 @@ STRAPI_ENDPOINT=<url_to_strapi>
 STRAPI_TOKEN=<strapi_token>
 BASE_PATH=<site_path_when_deploy>
 SITE_URL=<site_url_when_deploy>
+GOOGLE_ANALYTICS_ID=<G-XXXXXXX>
 ```
 
 ## Build Setup
