@@ -3,7 +3,7 @@
     <div class="flex flex-row bg-white text-black justify-center mx-auto">
       <div class="flex justify-center w-full px-3 md:px-6">
         <vue-markdown class="mt-16 md:mt-20 w-full justify-center mx-auto">{{
-          summary
+          summaryWithAbsoluteImageUrl
         }}</vue-markdown>
       </div>
     </div>
@@ -13,12 +13,25 @@
 <script lang="ts">
 import Vue from 'vue';
 import VueMarkdown from 'vue-markdown';
+
 export default Vue.extend({
   components: {
     'vue-markdown': VueMarkdown,
   },
   props: {
     summary: String,
+  },
+  computed: {
+    summaryWithAbsoluteImageUrl() {
+      if (this.summary) {
+        return this.summary.replace(
+          /\(\/uploads\//gi,
+          `(${process.env.STRAPI_ENDPOINT}/uploads/`
+        );
+      } else {
+        return '';
+      }
+    },
   },
 });
 </script>
