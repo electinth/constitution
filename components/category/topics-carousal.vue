@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-row h-32 md:h-56">
     <div class="flex">
       <div
         class="flex w-8 h-8 z-10 bg-white rounded-full -mx-4 my-auto shadow text-light-gray-3 hover:text-gray-1 cursor-pointer"
