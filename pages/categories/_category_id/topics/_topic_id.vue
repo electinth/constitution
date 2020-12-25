@@ -53,9 +53,12 @@
         style="display: none"
       />
 
-      <SocialSharer id="social-sharer" />
+      <SocialSharer class="my-6 md:my-12" />
 
-      <hr id="hr-end" />
+      <hr
+        class="border-0 h-px my-1 outline-none"
+        style="background-color: #929191"
+      />
       <TopicRelatedPanel
         class="mx-auto"
         style="width: 90%; height: auto"
@@ -149,24 +152,6 @@ export default Vue.extend({
   width: 31px;
 }
 
-#topic-panel {
-  padding-top: 52px;
-}
-
-#social-sharer {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-#hr-end {
-  border: 0;
-  height: 1px;
-  background-color: #929191;
-  margin-top: 1px;
-  margin-bottom: 1px;
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .topic-page-bound {
     width: 96%;
@@ -178,13 +163,6 @@ export default Vue.extend({
   #header-tab-arrow-img {
     width: 22px;
     margin-top: 3px;
-  }
-  #topic-panel {
-    padding-top: 25px;
-  }
-  #social-sharer {
-    margin-top: 25px;
-    margin-bottom: 25px;
   }
 }
 </style>

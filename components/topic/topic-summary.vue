@@ -81,10 +81,11 @@ div >>> tr:not(:last-child) {
 }
 div >>> th:not(:last-child),
 div >>> td:not(:last-child) {
-  padding-right: 40px;
+  padding-right: 6.5%;
 }
 div >>> table {
   width: 100%;
+  table-layout: fixed;
 }
 div >>> tr {
   text-align: left;
@@ -109,13 +110,6 @@ div >>> td {
   div >>> p {
     padding: 0 8px 0 8px;
     @apply text-16;
-  }
-  div >>> th:not(:last-child),
-  div >>> td:not(:last-child) {
-    padding-right: 30px;
-  }
-  div >>> table {
-    table-layout: fixed;
   }
 }
 
@@ -155,10 +149,6 @@ div >>> td {
   div >>> p {
     padding: 0 8px 0 8px;
     @apply text-14;
-  }
-  div >>> th:not(:last-child),
-  div >>> td:not(:last-child) {
-    padding-right: 20px;
   }
 }
 </style>

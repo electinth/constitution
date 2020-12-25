@@ -20,8 +20,8 @@
           />
           <div
             :class="{
-              'opinion-credentials-left': index % 2 == 0,
-              'opinion-credentials-right': index % 2 == 1,
+              'flex flex-col text-left ml-4 md:ml-8': index % 2 == 0,
+              'flex flex-col text-right mr-4 md:mr-8': index % 2 == 1,
             }"
           >
             <Heading2 class="font-semibold" style="padding-top: 8px">
@@ -91,24 +91,4 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
-.opinion-credentials-left {
-  flex-direction: column;
-  margin-left: 30px;
-  text-align: left;
-}
-.opinion-credentials-right {
-  flex-direction: column;
-  margin-right: 30px;
-  text-align: right;
-}
-
-@media only screen and (max-width: 768px) {
-  .opinion-credentials-left {
-    margin-left: 15px;
-  }
-  .opinion-credentials-right {
-    margin-right: 15px;
-  }
-}
-</style>
+<style scoped></style>

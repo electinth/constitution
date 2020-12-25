@@ -98,7 +98,7 @@ export default Vue.extend({
 <style scoped>
 .section-l,
 .section-r {
-  margin-top: 64px;
+  margin-top: 48px;
 }
 .section-l {
   padding-left: 10%;

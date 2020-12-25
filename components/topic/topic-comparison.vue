@@ -2,7 +2,7 @@
   <div>
     <div
       id="comparison-container"
-      class="flex flex-row justify-center align-center w-full pt-10 md:pt-24"
+      class="flex flex-row justify-center align-center w-full pt-10 md:pt-16"
     >
       <TopicComparisonSide
         class="w-1/2 md:w-5/12"
