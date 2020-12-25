@@ -65,6 +65,11 @@ export default Vue.extend({
       return this.opinions;
     },
   },
+  mounted() {
+    for (const o of this.opinions) {
+      console.log(o.content);
+    }
+  },
   methods: {
     get_thai_datestring(date) {
       // date: format YYYY-MM-DD
