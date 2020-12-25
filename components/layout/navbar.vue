@@ -1,15 +1,19 @@
 <template>
   <div class="flex flex-col md:flex-row bg-white">
-    <div class="md:flex-1 p-3 md:p-4 mx-auto">
-      <img
-        src="~/assets/images/logo-elect-header.svg"
-        alt="ELECT"
-        class="h-4 md:h-6 my-auto"
-      />
+    <div class="flex md:flex-1 p-3 md:p-4 mx-auto justify-start">
+      <NuxtLink to="/">
+        <img
+          src="~/assets/images/logo-elect-header.svg"
+          alt="ELECT"
+          class="h-4 md:h-6 my-auto"
+        />
+      </NuxtLink>
     </div>
 
     <div class="hidden md:flex col-span-2 md:col-span-1 md:justify-center">
-      <Heading4 class="my-auto">RE-CONSTITUTION</Heading4>
+      <NuxtLink to="/" class="my-auto">
+        <Heading4>RE-CONSTITUTION</Heading4>
+      </NuxtLink>
     </div>
 
     <div
