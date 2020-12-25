@@ -43,9 +43,14 @@
             class="rounded-full w-16 md:w-20 h-16 md:h-20 object-cover"
           />
         </div>
-        <Paragraph1 class="text-center w-full mt-5 md:mt-20">
-          {{ opinion['content'] }}
+        <Paragraph1 style="max-width: 100%">
+          <vue-markdown class="text-center w-full mt-5 md:mt-20 mx-auto">{{
+            opinion.content
+          }}</vue-markdown>
         </Paragraph1>
+        <!-- <Paragraph1 class="text-center w-full mt-5 md:mt-20">
+          {{ opinion['content'] }}
+        </Paragraph1> -->
       </div>
     </div>
   </div>
@@ -53,7 +58,11 @@
 
 <script>
 import Vue from 'vue';
+import VueMarkdown from 'vue-markdown';
 export default Vue.extend({
+  components: {
+    'vue-markdown': VueMarkdown,
+  },
   props: {
     opinions: Array,
   },
@@ -64,11 +73,6 @@ export default Vue.extend({
       }
       return this.opinions;
     },
-  },
-  mounted() {
-    for (const o of this.opinions) {
-      console.log(o.content);
-    }
   },
   methods: {
     get_thai_datestring(date) {
