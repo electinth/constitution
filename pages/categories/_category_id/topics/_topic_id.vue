@@ -170,7 +170,7 @@ export default Vue.extend({
 
 @media only screen and (max-width: 768px) {
   .topic-page-bound {
-    width: 94%;
+    width: 96%;
     max-width: none;
   }
   #header-tab-arrow {

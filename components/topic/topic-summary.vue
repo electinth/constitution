@@ -110,6 +110,13 @@ div >>> td {
     padding: 0 8px 0 8px;
     @apply text-16;
   }
+  div >>> th:not(:last-child),
+  div >>> td:not(:last-child) {
+    padding-right: 30px;
+  }
+  div >>> table {
+    table-layout: fixed;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -148,6 +155,10 @@ div >>> td {
   div >>> p {
     padding: 0 8px 0 8px;
     @apply text-14;
+  }
+  div >>> th:not(:last-child),
+  div >>> td:not(:last-child) {
+    padding-right: 20px;
   }
 }
 </style>
