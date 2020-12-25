@@ -1,8 +1,7 @@
 <template>
   <div>
     <div
-      id="header-tab"
-      class="flex flex-row bg-black text-white"
+      class="flex flex-row bg-black text-white py-2 md:py-4"
       :style="{ backgroundColor: category.color }"
     >
       <div id="header-tab-arrow">
@@ -16,22 +15,24 @@
           />
         </NuxtLink>
       </div>
-      <div id="header-tab-text" class="flex justify-center">
+      <div class="flex justify-center w-full">
         <Heading3 class="text-center font-black">
           {{ topic.category_name }}
         </Heading3>
       </div>
     </div>
 
-    <div class="topic-page-bound">
-      <div id="title" class="flex flex-row bg-white text-black justify-center">
+    <div id="topic-page-bound" class="mx-auto">
+      <div
+        class="flex flex-row bg-white text-black justify-center pt-8 md:pt-20"
+      >
         <Heading1 class="text-center font-black">
           {{ topic.name }}
         </Heading1>
       </div>
 
       <TopicPanel
-        id="topic-panel"
+        class="pt-8 md:pt-12"
         :bg-color="category.color"
         :opinions="topic.opinions"
         @clicked="onClickPanel"
@@ -68,11 +69,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import TopicPanel from '@/components/topic/TopicPanel.vue';
-import TopicSummary from '@/components/topic/TopicSummary.vue';
-import TopicComparison from '@/components/topic/TopicComparison.vue';
-import TopicOpinions from '@/components/topic/TopicOpinions.vue';
-import TopicRelatedPanel from '@/components/topic/TopicRelatedPanel.vue';
+import TopicPanel from '@/components/topic/topic-panel.vue';
+import TopicSummary from '@/components/topic/topic-summary.vue';
+import TopicComparison from '@/components/topic/topic-comparison.vue';
+import TopicOpinions from '@/components/topic/topic-opinions.vue';
+import TopicRelatedPanel from '@/components/topic/topic-related-panel.vue';
 import SocialSharer from '@/components/social-sharer.vue';
 import { getCategoryById, Topic, Category, getTopicById } from '@/utils/strapi';
 import { generateHeadTags } from '~/utils/head';
@@ -135,16 +136,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-#header-tab {
-  padding-top: 16px;
-  padding-bottom: 15px;
-}
-
-.topic-page-bound {
-  margin-left: auto;
-  margin-right: auto;
+#topic-page-bound {
   width: 80%;
-  max-width: 1280px;
+  max-width: 1000px;
 }
 
 #header-tab-arrow {
@@ -154,14 +148,6 @@ export default Vue.extend({
 
 #header-tab-arrow-img {
   width: 31px;
-}
-
-#header-tab-text {
-  width: 100%;
-}
-
-#title {
-  padding-top: 95px;
 }
 
 #topic-panel {
@@ -183,13 +169,7 @@ export default Vue.extend({
 }
 
 @media only screen and (max-width: 768px) {
-  #header-tab {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
   .topic-page-bound {
-    margin-left: auto;
-    margin-right: auto;
     width: 94%;
     max-width: none;
   }
@@ -199,9 +179,6 @@ export default Vue.extend({
   #header-tab-arrow-img {
     width: 22px;
     margin-top: 3px;
-  }
-  #title {
-    padding-top: 29px;
   }
   #topic-panel {
     padding-top: 25px;

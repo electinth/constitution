@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import TopicComparisonSide from '@/components/topic/TopicComparisonSide.vue';
+import TopicComparisonSide from '@/components/topic/topic-comparison-side.vue';
 export default Vue.extend({
   components: {
     TopicComparisonSide,

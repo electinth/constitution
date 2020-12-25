@@ -48,9 +48,12 @@ export default Vue.extend({
   methods: {
     selectVersion(value: any): void {
       this.sections = value.sections;
+      console.log(this.sections);
       value.sections.forEach(function (section: any) {
-        section.content = section.content.replace('\\n', '<br/>');
-        section.content = section.content.replace('\n', '<br/>');
+        section.content = section.content.replaceAll('\\n', '<br/>');
+        section.content = section.content.replaceAll('\n', '<br/>');
+        section.content = section.content.replaceAll('\\r', '<br/>');
+        section.content = section.content.replaceAll('\r', '<br/>');
 
         section.footer_chapter =
           '<b>หมวด</b> ' + section.chapter_id + ' ' + section.chapter_name;
