@@ -21,14 +21,14 @@
         <div class="px-4 md:px-6 space-y-6 md:max-w-sm">
           <Heading4 class="font-black">{{ subcategory.name }}</Heading4>
           <Paragraph2>{{ subcategory.content }}</Paragraph2>
-          <div v-if="subcategory.topics">
+          <div v-if="subcategory.topics.length > 0">
             <Label2 class="font-semibold">
               {{ subcategory.topics.length }} posts
             </Label2>
           </div>
         </div>
         <TopicsCarousal
-          v-if="subcategory.topics"
+          v-if="subcategory.topics.length > 0"
           :category-id="category.category_id"
           :topics="subcategory.topics"
           class="flex-1"
