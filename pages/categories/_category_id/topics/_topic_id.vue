@@ -4,7 +4,7 @@
       class="flex flex-row bg-black text-white py-2 md:py-4"
       :style="{ backgroundColor: category.color }"
     >
-      <div id="header-tab-arrow">
+      <div class="absolute pl-4">
         <NuxtLink
           :to="`/categories/${category.category_id}`"
           class="curser-pointer float-left"
@@ -113,7 +113,6 @@ export default Vue.extend({
     });
   },
   mounted() {
-    console.log(this.topic, this.category);
     this.onClickPanel(0);
   },
   methods: {

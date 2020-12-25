@@ -7,7 +7,7 @@
     />
     <div v-for="(section, index) in sections" :key="index">
       <div
-        class="flex flex-col text-left"
+        class="flex flex-col text-left pt-2 md:pt-0"
         :class="{
           'section-l': isLeft,
           'section-r': !isLeft,
@@ -17,11 +17,14 @@
           <Label1 class="text-left w-full" v-html="section.footer" />
         </div>
         <div class="flex md:hidden flex-col justify-end w-full">
-          <Label1 class="text-left w-full" v-html="section.footer_id" />
-          <Label1 class="text-left w-full" v-html="section.footer_part" />
           <Label1 class="text-left w-full" v-html="section.footer_chapter" />
+          <Label1 class="text-left w-full" v-html="section.footer_part" />
+          <Label1 class="text-left w-full" v-html="section.footer_id" />
         </div>
-        <Paragraph1 class="pt-4 md:pt-8" v-html="section.content" />
+        <Paragraph1
+          class="pt-4 md:pt-8 pb-6 md:pb-2"
+          v-html="section.content"
+        />
       </div>
     </div>
   </div>
@@ -48,29 +51,35 @@ export default Vue.extend({
   methods: {
     selectVersion(value: any): void {
       this.sections = value.sections;
-      console.log(this.sections);
       value.sections.forEach(function (section: any) {
         section.content = section.content.replaceAll('\\n', '<br/>');
         section.content = section.content.replaceAll('\n', '<br/>');
         section.content = section.content.replaceAll('\\r', '<br/>');
         section.content = section.content.replaceAll('\r', '<br/>');
 
-        section.footer_chapter =
-          '<b>หมวด</b> ' + section.chapter_id + ' ' + section.chapter_name;
+        section.footer = '';
+
+        if (section.chapter_id === '-' && section.chapter_name === '-') {
+          section.footer_chapter = null;
+        } else {
+          if (section.chapter_id === '-') {
+            section.footer_chapter = '<b>หมวด</b> ' + section.chapter_name;
+          } else {
+            section.footer_chapter =
+              '<b>หมวด</b> ' + section.chapter_id + ' ' + section.chapter_name;
+          }
+          section.footer += section.footer_chapter;
+        }
+
         section.footer_part = null;
-        if (section.part_id) {
+        if (section.part_id && section.part_id !== '-') {
           section.footer_part =
             '<b>ส่วน</b> ' + section.part_id + ' ' + section.part_name;
+          section.footer += ' ' + section.footer_part;
         }
-        section.footer_id = '<b>มาตรา</b> ' + section.id;
 
-        section.footer =
-          '<b>หมวด</b> ' + section.chapter_id + ' ' + section.chapter_name;
-        if (section.part_id) {
-          section.footer +=
-            ' <b>ส่วน</b> ' + section.part_id + ' ' + section.part_name;
-        }
-        section.footer += ' <b>มาตรา</b> ' + section.id;
+        section.footer_id = '<b>มาตรา</b> ' + section.id;
+        section.footer += ' ' + section.footer_id;
 
         // section.amendments = [];
         // section.amendmentIds.forEach(function (id: number) {

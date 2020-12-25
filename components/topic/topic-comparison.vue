@@ -6,7 +6,7 @@
     >
       <TopicComparisonSide
         class="w-1/2 md:w-5/12"
-        style="min-width: 140px"
+        style="min-width: 120px"
         :versions="versions"
         is-left
       />
@@ -20,7 +20,7 @@
       <span id="vs-padding" class="flex md:hidden w-4" />
       <TopicComparisonSide
         class="w-1/2 md:w-5/12"
-        style="min-width: 140px"
+        style="min-width: 120px"
         :versions="versions"
       />
     </div>

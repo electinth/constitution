@@ -16,7 +16,7 @@
           <img
             v-if="index % 2 == 0"
             :src="opinion['speaker_image']"
-            class="rounded-full w-16 md:w-20 h-16 md:h-20"
+            class="rounded-full w-16 md:w-20 h-16 md:h-20 object-cover"
           />
           <div
             :class="{
@@ -40,7 +40,7 @@
           <img
             v-if="index % 2 == 1"
             :src="opinion['speaker_image']"
-            class="rounded-full w-16 md:w-20 h-16 md:h-20"
+            class="rounded-full w-16 md:w-20 h-16 md:h-20 object-cover"
           />
         </div>
         <Paragraph1 class="text-center w-full mt-5 md:mt-20">
