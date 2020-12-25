@@ -44,13 +44,10 @@
           />
         </div>
         <Paragraph1 style="max-width: 100%">
-          <vue-markdown class="text-center w-full mt-5 md:mt-20 mx-auto">{{
+          <vue-markdown class="w-full mt-5 md:mt-20 mx-auto">{{
             opinion.content
           }}</vue-markdown>
         </Paragraph1>
-        <!-- <Paragraph1 class="text-center w-full mt-5 md:mt-20">
-          {{ opinion['content'] }}
-        </Paragraph1> -->
       </div>
     </div>
   </div>
