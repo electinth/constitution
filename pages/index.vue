@@ -41,7 +41,10 @@
       <section
         class="flex flex-col xl:flex-row space-y-6 xl:space-y-0 xl:space-x-8 mx-auto"
       >
-        <CategoriesTable :categories="constitutionOverview.categories" />
+        <CategoriesTable
+          :categories="constitutionOverview.categories"
+          :catagory-ids-having-topics="catagoryIdsHavingTopics"
+        />
         <ConstitutionsBreakdown
           :categories="constitutionOverview.categories"
           :constitutions="constitutionOverview.constitutions"
@@ -58,6 +61,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import constitutionOverview from '~/data/constitution-overview.ts';
+import { getAllTopics } from '~/utils/strapi';
 
 interface HowtoStep {
   image: string;
@@ -84,6 +88,15 @@ const howtoSteps: HowtoStep[] = [
 ];
 
 export default Vue.extend({
+  async asyncData() {
+    const topics = await getAllTopics();
+
+    return {
+      catagoryIdsHavingTopics: new Set(
+        topics.map(({ category_id }) => category_id)
+      ),
+    };
+  },
   data() {
     return {
       howtoSteps,

@@ -38,7 +38,6 @@
 import Vue from 'vue';
 import { CategoryOverview } from '~/data/constitution-overview.ts';
 import { isLargeOrMore } from '~/utils/screen';
-import { getAllTopics } from '~/utils/strapi';
 
 export default Vue.extend({
   props: {
@@ -46,22 +45,17 @@ export default Vue.extend({
       type: Array as () => CategoryOverview[],
       required: true,
     },
+    catagoryIdsHavingTopics: {
+      type: Set,
+      required: true,
+    },
   },
   data() {
     return {
       focusingCategoryId: null,
-      catagoryIdsHavingTopics: null,
     } as {
       focusingCategoryId: string | null;
-      catagoryIdsHavingTopics: Set<string> | null;
     };
-  },
-  async fetch() {
-    const topics = await getAllTopics();
-
-    this.catagoryIdsHavingTopics = new Set(
-      topics.map(({ category_id }) => category_id)
-    );
   },
   methods: {
     openDescription(category: CategoryOverview) {
