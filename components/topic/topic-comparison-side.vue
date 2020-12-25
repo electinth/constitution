@@ -14,12 +14,15 @@
         }"
       >
         <div class="hidden md:flex justify-end w-full">
-          <Label1 class="text-left w-full" v-html="section.footer" />
+          <Paragraph2 class="text-left w-full" v-html="section.footer" />
         </div>
         <div class="flex md:hidden flex-col justify-end w-full">
-          <Label1 class="text-left w-full" v-html="section.footer_chapter" />
-          <Label1 class="text-left w-full" v-html="section.footer_part" />
-          <Label1 class="text-left w-full" v-html="section.footer_id" />
+          <Paragraph2
+            class="text-left w-full"
+            v-html="section.footer_chapter"
+          />
+          <Paragraph2 class="text-left w-full" v-html="section.footer_part" />
+          <Paragraph2 class="text-left w-full" v-html="section.footer_id" />
         </div>
         <Paragraph1
           class="pt-4 md:pt-8 pb-6 md:pb-2"
