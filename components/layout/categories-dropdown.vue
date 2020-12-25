@@ -1,9 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <NavigationItem
-      v-click-outside="() => (isOpen = false)"
-      @click="isOpen = !isOpen"
-    >
+    <NavigationItem @click="isOpen = !isOpen">
       <div class="flex flex-row space-x-1 cursor-pointer">
         <span>ดูตามหมวด</span>
         <svg
@@ -23,6 +20,7 @@
     </NavigationItem>
     <div v-if="isOpen" class="relative z-20">
       <ul
+        v-click-outside="() => (isOpen = false)"
         class="absolute top-0 left:0 md:right-0 flex flex-col bg-white mt-2 w-48 md:w-56 shadow-md border border-light-gray-2 rounded overflow-auto divide-y divide-light-gray-1"
       >
         <li
