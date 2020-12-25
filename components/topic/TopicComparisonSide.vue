@@ -52,36 +52,31 @@ export default Vue.extend({
         section.content = section.content.replace('\\n', '<br/>');
         section.content = section.content.replace('\n', '<br/>');
 
-        section.footer_id = '<b>มาตรา</b> ' + section.id;
+        section.footer_chapter =
+          '<b>หมวด</b> ' + section.chapter_id + ' ' + section.chapter_name;
         section.footer_part = null;
-        if (section.partId) {
+        if (section.part_id) {
           section.footer_part =
-            '<b>ส่วน</b> ' + section.partId + ' ' + section.partName;
+            '<b>ส่วน</b> ' + section.part_id + ' ' + section.part_name;
         }
-        section.footer_chapter = null;
-        if (section.chapterId) {
-          section.footer_chapter =
-            '<b>หมวด</b> ' + section.chapterId + ' ' + section.chapterName;
-        }
+        section.footer_id = '<b>มาตรา</b> ' + section.id;
 
-        section.footer = '<b>มาตรา</b> ' + section.id;
-        if (section.partId) {
+        section.footer =
+          '<b>หมวด</b> ' + section.chapter_id + ' ' + section.chapter_name;
+        if (section.part_id) {
           section.footer +=
-            ' <b>ส่วน</b> ' + section.partId + ' ' + section.partName;
+            ' <b>ส่วน</b> ' + section.part_id + ' ' + section.part_name;
         }
-        if (section.chapterId) {
-          section.footer +=
-            ' <b>หมวด</b> ' + section.chapterId + ' ' + section.chapterName;
-        }
+        section.footer += ' <b>มาตรา</b> ' + section.id;
 
-        section.amendments = [];
-        section.amendmentIds.forEach(function (id: number) {
-          const amendment = value.amendments.filter(function (a: any) {
-            return a.id === id;
-          })[0];
-          amendment.header = '<b>' + amendment.affectedBy + '</b>';
-          section.amendments.push(amendment);
-        });
+        // section.amendments = [];
+        // section.amendmentIds.forEach(function (id: number) {
+        //   const amendment = value.amendments.filter(function (a: any) {
+        //     return a.id === id;
+        //   })[0];
+        //   amendment.header = '<b>' + amendment.affectedBy + '</b>';
+        //   section.amendments.push(amendment);
+        // });
       });
     },
   },
@@ -108,12 +103,12 @@ export default Vue.extend({
     margin-top: 17px;
   }
   .section-l {
-    padding-left: 9%;
-    padding-right: 0px;
+    padding-left: 8%;
+    padding-right: 12px;
   }
   .section-r {
-    padding-left: 0px;
-    padding-right: 9%;
+    padding-left: 12px;
+    padding-right: 8%;
   }
   .section-label-mobile {
     margin-top: 15px;

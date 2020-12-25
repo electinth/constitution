@@ -17,7 +17,7 @@
       >
         <Label1 class="text-center text-justify m-auto"> vs. </Label1>
       </span>
-      <span id="vs-padding" class="flex md:hidden w-3" />
+      <span id="vs-padding" class="flex md:hidden w-4" />
       <TopicComparisonSide
         class="w-1/2 md:w-5/12"
         style="min-width: 140px"

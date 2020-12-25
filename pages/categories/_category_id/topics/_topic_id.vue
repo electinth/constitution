@@ -94,7 +94,6 @@ export default Vue.extend({
         getTopicById(topic_id),
         getCategoryById(category_id),
       ]);
-
       return { topic, category };
     }
   },
@@ -113,6 +112,7 @@ export default Vue.extend({
     });
   },
   mounted() {
+    console.log(this.topic, this.category);
     this.onClickPanel(0);
   },
   methods: {

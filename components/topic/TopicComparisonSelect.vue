@@ -9,6 +9,8 @@
       :options="versions"
       :searchable="false"
       :allow-empty="false"
+      open-direction="bottom"
+      selected-label=""
       select-label=""
       deselect-label=""
       :style="
