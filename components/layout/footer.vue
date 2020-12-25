@@ -72,12 +72,6 @@
 <script lang="ts">
 import Vue from 'vue';
 
-interface IconLink {
-  image: string;
-  alt: string;
-  url: string;
-}
-
 export default Vue.extend({
   data() {
     return {
@@ -107,7 +101,7 @@ export default Vue.extend({
           alt: 'iLaw',
           url: 'https://ilaw.or.th',
         },
-      ] as IconLink[],
+      ],
       followLinks: [
         {
           image: require('~/assets/images/follow-facebook.svg'),
@@ -119,7 +113,7 @@ export default Vue.extend({
           alt: 'Twitter',
           url: 'https://twitter.com/electinth/',
         },
-      ] as IconLink[],
+      ],
     };
   },
 });
