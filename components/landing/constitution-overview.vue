@@ -39,7 +39,7 @@
       >
         <!-- Page ratio visualize -->
         <div
-          class="`flex flex-col w-6 mr-2 lg:mx-auto transition-size-spacing duration-500 ease-in-out"
+          class="`flex flex-col w-6 mr-2 lg:mx-auto transition-size-spacing duration-500 ease-in-out cursor-pointer"
           :class="[
             hoveringPageIndex === pageIndex ? 'border-white' : 'border-dark',
             isExpanded ? 'h-8 mb-3 lg:mb-1 border' : 'h-1',
@@ -78,7 +78,10 @@
           v-if="selectedPageIndex === pageIndex"
           class="fixed z-10 inset-0 flex"
         >
-          <div class="flex max-h-screen h-full m-auto py-10 relative">
+          <div
+            v-click-outside="() => (selectedPageIndex = null)"
+            class="flex max-h-screen h-full m-auto py-10 relative"
+          >
             <img
               :src="
                 require(`~/assets/images/constitutions/${constitution.id}/${
@@ -89,7 +92,7 @@
               class="h-full w-auto m-auto"
             />
             <div
-              class="absolute right-0 flex bg-black -m-3 w-8 h-8 rounded-full border"
+              class="absolute right-0 flex bg-black -m-3 w-8 h-8 rounded-full border cursor-pointer"
               @click="selectedPageIndex = null"
             >
               <img

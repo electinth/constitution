@@ -1,11 +1,12 @@
 <template>
   <div class="fixed z-10 inset-0 flex">
     <div
+      v-click-outside="close"
       class="flex flex-col w-full h-full min-h-screen md:min-h-0 md:h-auto bg-white text-black m-auto md:max-w-lg p-2 md:p-1 shadow-md overflow-y-auto"
     >
       <CoupIndicator is-dark :coup="constitution.isInvolvedWithCoup" />
       <div class="flex justify-end">
-        <button @click="$emit('close')">
+        <button @click="close">
           <img
             src="~/assets/images/icon-cross.svg"
             alt="close"
@@ -33,6 +34,11 @@ export default Vue.extend({
     constitution: {
       type: Object as () => Constitution,
       required: true,
+    },
+  },
+  methods: {
+    close() {
+      this.$emit('close');
     },
   },
 });

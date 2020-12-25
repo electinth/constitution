@@ -1,6 +1,7 @@
 <template>
   <div class="fixed z-10 inset-0 lg:relative flex">
     <div
+      v-click-outside="close"
       class="lg:absolute top-0 right-0 xl:left-0 bg-white text-black w-screen lg:max-w-xs mx-8 my-auto lg:m-0 shadow-md"
     >
       <div
@@ -10,7 +11,7 @@
         <Heading4 class="font-black flex-1">
           {{ category.title }}
         </Heading4>
-        <button @click.stop="$emit('close')">
+        <button @click.stop="close">
           <img
             src="~/assets/images/icon-cross.svg"
             alt="close"
@@ -42,6 +43,11 @@ export default Vue.extend({
     showExploreButton: {
       type: Boolean,
       default: true,
+    },
+  },
+  methods: {
+    close() {
+      this.$emit('close');
     },
   },
 });

@@ -23,6 +23,7 @@
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "swiper": "^6.4.5",
+    "v-click-outside": "^3.1.2",
     "vue-awesome-swiper": "^4.1.1",
     "vue-markdown": "^2.2.4",
     "vue-multiselect": "^2.1.6"

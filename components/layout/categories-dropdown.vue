@@ -1,6 +1,9 @@
 <template>
   <div class="flex flex-col">
-    <NavigationItem @click="isOpen = !isOpen">
+    <NavigationItem
+      v-click-outside="() => (isOpen = false)"
+      @click="isOpen = !isOpen"
+    >
       <div class="flex flex-row space-x-1 cursor-pointer">
         <span>ดูตามหมวด</span>
         <svg
@@ -25,7 +28,7 @@
         <li
           v-for="category in categories"
           :key="category.id"
-          class="flex flex-row cursor-pointer"
+          class="flex flex-row"
           @mouseenter="focusingCategoryId = category.id"
           @mouseleave="focusingCategoryId = null"
           @click="isOpen = false"
