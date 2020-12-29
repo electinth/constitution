@@ -38,6 +38,7 @@ export default {
     '~/plugins/msw.server.ts',
     '~/plugins/msw.client.ts',
     '~/plugins/v-click-outside.ts',
+    '~/plugins/vue-gtag.ts',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -50,7 +51,6 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@aceforth/nuxt-optimized-images',
-    '@nuxtjs/google-analytics',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -65,6 +65,7 @@ export default {
     STRAPI_ENDPOINT: process.env.STRAPI_ENDPOINT,
     STRAPI_TOKEN: process.env.STRAPI_TOKEN,
     SITE_URL: process.env.SITE_URL,
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
   },
 
   router: {
@@ -73,10 +74,6 @@ export default {
 
   optimizedImages: {
     optimizeImages: true,
-  },
-
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
   },
 
   generate: {

@@ -1295,13 +1295,6 @@
     consola "^2.11.3"
     eslint-loader "^4.0.2"
 
-"@nuxtjs/google-analytics@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.4.0.tgz#3bb9f398a05cc23340d1f423f8d8653dc4114f46"
-  integrity sha512-rDQTwHIjyjVrx8GywHPuWykJ3jRFGaHl5Iqji/y8tQWUc0yGEeHxOoR0yimzxnTS1Ph2/PubQYpgnVeEPEdL/A==
-  dependencies:
-    vue-analytics "^5.22.1"
-
 "@nuxtjs/tailwindcss@^3.1.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-3.2.0.tgz#43e47188fd16f993b93d6e9057e4da83057a2fbd"
@@ -10678,11 +10671,6 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-analytics@^5.22.1:
-  version "5.22.1"
-  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.22.1.tgz#9d6b32da56daee1b9dfb23a267b50349a03f710f"
-  integrity sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ==
-
 vue-awesome-swiper@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-4.1.1.tgz#8f7ab221ad003021d756b86aa618f429924900fe"
@@ -10704,6 +10692,11 @@ vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.1.1:
     espree "^6.2.1"
     esquery "^1.0.1"
     lodash "^4.17.15"
+
+vue-gtag@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/vue-gtag/-/vue-gtag-1.10.0.tgz#787d62eb4f1135dfa2997b465f1b11e5cf8fb0c9"
+  integrity sha512-pGbe6m/12a2DHftnWQOHBmkS+a3kPAZNU6ouP426mF/MPc/43DcHCEySUtB3MeJCPuXaUQQgGsRosIZWPdl/MQ==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
