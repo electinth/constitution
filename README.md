@@ -6,7 +6,7 @@ Thailand's Constitution, explained
 
 - Staging: https://elect-reconstitution.netlify.app/
   [![Netlify Status](https://api.netlify.com/api/v1/badges/bdcf56d4-7384-4117-a39e-883f8ed65bde/deploy-status)](https://app.netlify.com/sites/elect-reconstitution/deploys)
-- Production: not deployed yet
+- Production: https://recon.elect.in.th/
 
 ## Environment
 
