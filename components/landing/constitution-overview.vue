@@ -73,40 +73,18 @@
           </div>
         </div>
         <!-- End of Page preview -->
-        <!-- Page image dialog -->
-        <div
-          v-if="selectedPageIndex === pageIndex"
-          class="fixed z-10 inset-0 flex"
-        >
-          <div
-            v-click-outside="() => (selectedPageIndex = null)"
-            class="flex max-h-screen h-full m-auto py-10 relative"
-          >
-            <img
-              :src="
-                require(`~/assets/images/constitutions/${constitution.id}/${
-                  pageIndex + 1
-                }.png`)
-              "
-              :alt="`${constitution.name} หน้า ${pageIndex}`"
-              class="h-full w-auto m-auto"
-            />
-            <div
-              class="absolute right-0 flex bg-black -m-3 w-8 h-8 rounded-full border cursor-pointer"
-              @click="selectedPageIndex = null"
-            >
-              <img
-                src="~/assets/images/icon-cross.svg"
-                alt="close"
-                class="w-4 m-auto"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- End of Page image dialog -->
       </div>
     </div>
     <!-- End of Constitution pages -->
+    <!-- Page image dialog -->
+    <ConstitutionPageDialog
+      v-if="selectedPageIndex !== null"
+      :constitution="constitution"
+      :page-index="selectedPageIndex"
+      @close="selectedPageIndex = null"
+      @change="(newPageIndex) => (selectedPageIndex = newPageIndex)"
+    />
+    <!-- End of Page image dialog -->
   </div>
 </template>
 
