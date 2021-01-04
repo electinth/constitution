@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-row h-10 p-1 justify-center space-x-4">
+  <div class="flex flex-row p-1 justify-center space-x-4">
     <Label1 :class="`my-auto ${isDark ? 'text-white' : 'text-black'}`"
       >Share</Label1
     >
-    <div class="flex flex-row">
+    <div class="flex flex-row space-x-3">
       <a
         v-for="{ service, icon, href } in socialLinks"
         :key="service"
@@ -14,7 +14,7 @@
         <img
           :src="icon"
           :alt="service"
-          class="h-full"
+          class="h-8"
           :style="isDark ? {} : { filter: `brightness(0)` }"
         />
       </a>
