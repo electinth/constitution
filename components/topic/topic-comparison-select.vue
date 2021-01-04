@@ -27,7 +27,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Multiselect from 'vue-multiselect';
-import '@/assets/multiselect-override.css';
+import '@/assets/styles/multiselect-override.css';
 Vue.component('Multiselect', Multiselect);
 export default Vue.extend({
   components: {
