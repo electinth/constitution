@@ -5,12 +5,14 @@
     <div
       class="col-span-2 lg:col-span-1 flex flex-row md:flex-col mb-8 md:mb-0"
     >
-      <div class="flex-1">
-        <img
-          src="~/assets/images/logo-elect-footer.png"
-          alt="ELECT"
-          class="w-24 md:w-32 lg:w-40 h-auto"
-        />
+      <div class="flex-1 flex">
+        <a href="https://elect.in.th" class="mb-auto">
+          <img
+            src="~/assets/images/logo-elect-footer.png"
+            alt="ELECT"
+            class="w-24 md:w-32 lg:w-40 h-auto"
+          />
+        </a>
       </div>
       <div class="flex-1 md:flex-grow-0 flex flex-row space-x-4">
         <a
