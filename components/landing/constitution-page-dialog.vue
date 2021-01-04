@@ -2,7 +2,7 @@
   <div class="fixed z-10 inset-0 flex">
     <div
       v-click-outside="() => $emit('close')"
-      class="flex flex-row max-h-screen h-full m-auto py-10 relative"
+      class="flex flex-row max-h-screen h-full m-auto py-10"
     >
       <div class="flex w-16">
         <svg
@@ -27,8 +27,20 @@
           }.png`)
         "
         :alt="`${constitution.name} หน้า ${pageIndex}`"
-        class="h-full w-auto m-auto"
+        class="h-full w-auto"
       />
+      <div class="relative">
+        <div
+          class="absolute right-0 flex bg-black -m-4 w-8 h-8 rounded-full border cursor-pointer"
+          @click="$emit('close')"
+        >
+          <img
+            src="~/assets/images/icon-cross.svg"
+            alt="close"
+            class="w-4 m-auto"
+          />
+        </div>
+      </div>
       <div class="flex w-16">
         <svg
           v-if="pageIndex !== constitution.pageCount - 1"
@@ -44,16 +56,6 @@
         >
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
-      </div>
-      <div
-        class="absolute right-0 flex bg-black -m-4 mr-12 w-8 h-8 rounded-full border cursor-pointer"
-        @click="$emit('close')"
-      >
-        <img
-          src="~/assets/images/icon-cross.svg"
-          alt="close"
-          class="w-4 m-auto"
-        />
       </div>
     </div>
   </div>
