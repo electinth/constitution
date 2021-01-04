@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col justify-center w-full">
     <div class="flex flex-row bg-white text-black justify-center mx-auto">
-      <div class="flex justify-center w-full px-3 md:px-6">
-        <vue-markdown class="mt-16 md:mt-20 w-full justify-center mx-auto">{{
+      <div class="flex justify-center w-full md:px-6">
+        <vue-markdown class="mt-12 md:mt-20 w-full justify-center mx-auto">{{
           summaryWithAbsoluteImageUrl
         }}</vue-markdown>
       </div>
@@ -19,7 +19,10 @@ export default Vue.extend({
     'vue-markdown': VueMarkdown,
   },
   props: {
-    summary: String,
+    summary: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     summaryWithAbsoluteImageUrl() {

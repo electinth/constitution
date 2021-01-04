@@ -51,6 +51,7 @@ module.exports = {
     extend: {
       transitionProperty: {
         'size-spacing': 'height, width, margin, padding',
+        opacity: 'opacity',
       },
     },
   },

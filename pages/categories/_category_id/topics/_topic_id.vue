@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div id="topic-page-bound" class="mx-auto">
+    <div class="px-4 max-w-5xl mx-auto">
       <div
         class="flex flex-row bg-white text-black justify-center pt-8 md:pt-20"
       >
@@ -35,23 +35,19 @@
         class="pt-8 md:pt-12"
         :bg-color="category.color"
         :opinions="topic.opinions"
-        @clicked="onClickPanel"
+        :current-panel="currentPanel"
+        @change="(panelIndex) => (currentPanel = panelIndex)"
       />
 
-      <TopicSummary id="topic-summary" :summary="topic.summary" />
+      <TopicSummary v-if="currentPanel === 0" :summary="topic.summary" />
 
       <TopicComparison
-        id="topic-comparison"
+        v-else-if="currentPanel === 1"
         :versions="topic.constitutions"
         :bg-color="category.color"
-        style="display: none"
       />
 
-      <TopicOpinions
-        id="topic-opinions"
-        :opinions="topic.opinions"
-        style="display: none"
-      />
+      <TopicOpinions v-else :opinions="topic.opinions" />
 
       <SocialSharer class="my-6 md:my-12" />
 
@@ -105,6 +101,7 @@ export default Vue.extend({
     return {
       topic: null as Topic | null,
       category: null as Category | null,
+      currentPanel: 0 as number,
     };
   },
   head() {
@@ -114,25 +111,6 @@ export default Vue.extend({
       title: name,
       image: og_image,
     });
-  },
-  mounted() {
-    this.onClickPanel(0);
-  },
-  methods: {
-    onClickPanel(index: number): void {
-      const summary = document.getElementById('topic-summary');
-      if (summary) {
-        summary.style.display = index === 0 ? 'flex' : 'none';
-      }
-      const comparison = document.getElementById('topic-comparison');
-      if (comparison) {
-        comparison.style.display = index === 1 ? 'flex' : 'none';
-      }
-      const opinions = document.getElementById('topic-opinions');
-      if (opinions) {
-        opinions.style.display = index === 2 ? 'flex' : 'none';
-      }
-    },
   },
 });
 </script>

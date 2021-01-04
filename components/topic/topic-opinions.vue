@@ -1,30 +1,29 @@
 <template>
-  <div class="flex flex-col pb-4 md:pb-8">
+  <div
+    class="flex flex-col pb-4 md:pb-8 space-y-12 md:space-y-24 pt-12 md:pt-24"
+  >
     <div
       v-for="(opinion, index) in computed_opinions"
       :key="index"
-      class="flex bg-white justify-center"
+      class="flex"
     >
-      <div
-        class="mx-auto pt-12 md:pt-32 pb-0 md:pb-16"
-        style="width: 90%; max-width: 750px"
-      >
+      <div class="mx-auto max-w-3xl">
         <div
-          class="flex flex-row w-full"
-          :style="index % 2 == 0 ? `` : `justify-content: flex-end;`"
+          class="flex w-full"
+          :class="index % 2 == 0 ? `flex-row` : `flex-row-reverse`"
         >
           <img
-            v-if="index % 2 == 0"
             :src="opinion['speaker_image']"
-            class="rounded-full w-16 md:w-20 h-16 md:h-20 object-cover"
+            class="rounded-full w-16 md:w-20 h-16 md:h-20 object-cover my-auto"
           />
           <div
-            :class="{
-              'flex flex-col text-left ml-4 md:ml-8': index % 2 == 0,
-              'flex flex-col text-right mr-4 md:mr-8': index % 2 == 1,
-            }"
+            :class="
+              index % 2 == 0
+                ? 'flex flex-col text-left ml-4 md:ml-8'
+                : 'flex flex-col text-right mr-4 md:mr-8'
+            "
           >
-            <Heading2 class="font-semibold" style="padding-top: 8px">
+            <Heading2 class="font-semibold">
               {{ opinion['speaker_name'] }}
             </Heading2>
             <Subtitle2>
@@ -37,11 +36,6 @@
               {{ opinion['thai_date'] }}
             </div>
           </div>
-          <img
-            v-if="index % 2 == 1"
-            :src="opinion['speaker_image']"
-            class="rounded-full w-16 md:w-20 h-16 md:h-20 object-cover"
-          />
         </div>
         <Paragraph1 style="max-width: 100%">
           <vue-markdown class="w-full mt-5 md:mt-20 mx-auto">{{
@@ -61,14 +55,17 @@ export default Vue.extend({
     'vue-markdown': VueMarkdown,
   },
   props: {
-    opinions: Array,
+    opinions: {
+      type: Array,
+      required: true,
+    },
   },
   computed: {
     computed_opinions() {
-      for (const opinion of this.opinions) {
-        opinion.thai_date = this.get_thai_datestring(opinion.date);
-      }
-      return this.opinions;
+      return this.opinions.map((opinion) => ({
+        ...opinion,
+        thai_date: this.get_thai_datestring(opinion.date),
+      }));
     },
   },
   methods: {
