@@ -1,15 +1,16 @@
 <template>
   <div>
-    <div class="flex flex-row bg-white justify-center h-10 space-x-1">
+    <div class="flex flex-row bg-white space-x-1">
       <button
         v-for="(item, index) in sections"
         :key="index"
-        class="flex flex-1 flex-col justify-center w-full border-none focus:outline-none"
+        class="flex-1 border-none focus:outline-none"
         @click="$emit('change', index)"
       >
-        <Label1 class="flex-1 m-auto">
+        <Label1 class="flex py-4 justify-center">
           {{ item }}
         </Label1>
+
         <div
           class="h-1 w-full transition-opacity duration-100 ease-in-out"
           :class="index !== currentPanel ? 'opacity-25' : ''"
