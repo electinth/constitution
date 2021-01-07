@@ -42,7 +42,10 @@
     </div>
     <div v-if="showSearchBar" class="relative">
       <div class="absolute inset-0 z-10">
-        <SearchBar @close="showSearchBar && (showSearchBar = false)" />
+        <SearchBar
+          :topics-index="topicsIndex"
+          @close="showSearchBar && (showSearchBar = false)"
+        />
       </div>
     </div>
   </div>
@@ -50,11 +53,24 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { TopicIndex } from './search-bar.vue';
+import { getAllTopics } from '~/utils/strapi';
+
 export default Vue.extend({
   data() {
     return {
       showSearchBar: false,
+      topicsIndex: [] as TopicIndex[],
     };
+  },
+  async fetch() {
+    const topics = await getAllTopics();
+
+    this.topicsIndex = topics.map(({ category_id, id, name }) => ({
+      category_id,
+      id,
+      name,
+    }));
   },
 });
 </script>

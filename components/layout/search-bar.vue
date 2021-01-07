@@ -11,7 +11,6 @@
         v-model.trim="searchQuery"
         type="text"
         class="flex-1 text-center bg-light-gray-1 focus:outline-none p-2"
-        autofocus
       />
       <button
         class="text-gray-1 hover:text-gray-2 px-2 focus:outline-none"
@@ -48,31 +47,27 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { getAllTopics } from '~/utils/strapi';
 
-interface TopicIndex {
+export interface TopicIndex {
   category_id: string;
-  id: string;
+  id: number;
   name: string;
 }
 
 export default Vue.extend({
+  props: {
+    topicsIndex: {
+      type: Array as () => TopicIndex[],
+      required: true,
+    },
+  },
   data() {
     return {
       searchQuery: '' as string,
-      topicsIndex: [] as TopicIndex[],
     };
   },
-  async fetch() {
-    const topics = await getAllTopics();
-    this.topicsIndex = topics.map(({ category_id, id, name }) => ({
-      category_id,
-      id,
-      name,
-    }));
-  },
   computed: {
-    searchResult() {
+    searchResult(): TopicIndex[] {
       if (!this.searchQuery) {
         return [];
       }
@@ -84,7 +79,7 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.$refs.searchInput.focus();
+    (this.$refs.searchInput as HTMLInputElement).focus();
   },
 });
 </script>
