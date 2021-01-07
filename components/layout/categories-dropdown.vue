@@ -1,22 +1,22 @@
 <template>
   <div class="flex flex-col">
-    <NavigationItem @click="isOpen = !isOpen">
-      <div class="flex flex-row space-x-1 cursor-pointer">
+    <NavigationItem :active="isOpen" @click="isOpen = !isOpen">
+      <button class="flex flex-row space-x-1 focus:outline-none">
         <span>ดูตามหมวด</span>
         <svg
           width="10"
           height="8"
           viewBox="0 0 10 8"
           xmlns="http://www.w3.org/2000/svg"
-          class="my-auto text-light-gray-3 group-hover:text-gray-2 transform transition-transform ease-out duration-200"
-          :class="{ 'rotate-180': isOpen }"
+          class="my-auto text-light-gray-3 transform transition-transform ease-out duration-200"
+          :class="{ 'rotate-180': isOpen, 'group-hover:text-gray-2': !isOpen }"
         >
           <path
             d="M5.28307 8L0.707571 0.500001L9.85857 0.5L5.28307 8Z"
             class="fill-current"
           />
         </svg>
-      </div>
+      </button>
     </NavigationItem>
     <div v-if="isOpen" class="relative z-20">
       <ul

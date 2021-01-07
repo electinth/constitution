@@ -27,9 +27,9 @@
         <NuxtLink to="/about">
           <NavigationItem>เกี่ยวกับโครงการ</NavigationItem>
         </NuxtLink>
-        <button
-          class="my-auto focus:outline-none rounded-full p-2"
-          :class="showSearchBar ? 'bg-black' : ''"
+        <NavigationItem
+          :active="showSearchBar"
+          class="my-auto focus:outline-none rounded-full p-2 cursor-pointer"
           @click="showSearchBar = !showSearchBar"
         >
           <img
@@ -37,7 +37,7 @@
             alt="search"
             :style="showSearchBar ? 'filter: brightness(100)' : ''"
           />
-        </button>
+        </NavigationItem>
       </div>
     </div>
     <div v-if="showSearchBar" class="relative">
