@@ -4,8 +4,7 @@ Thailand's Constitution, explained
 
 ## Deployment
 
-- Staging: https://elect-reconstitution.netlify.app/
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/bdcf56d4-7384-4117-a39e-883f8ed65bde/deploy-status)](https://app.netlify.com/sites/elect-reconstitution/deploys)
+- Staging: https://electinth.github.io/constitution/
 - Production: https://recon.elect.in.th/
 
 ## Environment
@@ -14,7 +13,6 @@ Thailand's Constitution, explained
 
 ```
 STRAPI_ENDPOINT=<url_to_strapi>
-STRAPI_TOKEN=<strapi_token>
 BASE_PATH=<site_path_when_deploy>
 SITE_URL=<site_url_when_deploy>
 GOOGLE_ANALYTICS_ID=<G-XXXXXXX>
