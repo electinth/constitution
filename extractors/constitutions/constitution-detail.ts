@@ -1,5 +1,5 @@
 import {parseCsv} from '../csv.ts';
-import {ConstitutionDetail} from './constitutionDetail.model.ts';
+import {ConstitutionDetail} from './constitution-detail.model.ts';
 
 export async function extractConstitution(csvConsPath: string, csvNamePath: string): Promise<ConstitutionDetail[]> {
     const rawConstitutions = await parseCsv(csvConsPath, mapConstitution);

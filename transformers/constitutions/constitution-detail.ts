@@ -1,5 +1,5 @@
-import {ConstitutionDetail as ExtractedConstitutionDetail} from "../../extractors/constitutions/constitutionDetail.model.ts";
-import {ConstitutionDetail} from './constitutionDetail.model.ts';
+import {ConstitutionDetail as ExtractedConstitutionDetail} from "../../extractors/constitutions/constitution-detail.model.ts";
+import {ConstitutionDetail} from './constitution-detail.model.ts';
 
 export function transform(extractConstitutions: ExtractedConstitutionDetail[]): ConstitutionDetail[] {
     const constitution: ConstitutionDetail[] = [];

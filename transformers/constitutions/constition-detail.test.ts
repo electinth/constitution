@@ -1,7 +1,7 @@
 import {
     assertEquals,
 } from "https://deno.land/std@0.80.0/testing/asserts.ts";
-import { transform } from "./constitutionDetail.ts";
+import { transform } from "./constitution-detail.ts";
 
 
 Deno.test('should return correct format for constitution data', () => {
