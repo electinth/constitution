@@ -1,4 +1,4 @@
-name: Release to Github Release
+name: Release to GitHub Release
 on: workflow_dispatch
 jobs:
   release:
@@ -9,8 +9,7 @@ jobs:
       - uses: denolib/setup-deno@v2
 
       - name: Generate JSONs
-        run: |
-          mkdir constitution-data
+        run: mkdir constitution-data
           deno run --allow-net --allow-write=./ app.ts -o ./constitution-data \
           --recordRowCsvPath ${{ secrets.RECORD_ROW_CSV }} \
           --constitutionCsvPath ${{ secrets.CONSTITUTION_CSV }} \
