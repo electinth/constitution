@@ -12,11 +12,15 @@ jobs:
         run: mkdir constitution-data
 
       - name: Generate JSONs
+        env:
+          RECORD_ROW_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=967540758&single=true&output=csv
+          CONSTITUTION_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=210965472&single=true&output=csv
+          CATEGORY_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=971764486&single=true&output=csv
         run: >
           deno run --allow-net --allow-write=./ app.ts -o ./constitution-data
-          --recordRowCsvPath ${{ secrets.RECORD_ROW_CSV }}
-          --constitutionCsvPath ${{ secrets.CONSTITUTION_CSV }}
-          --categoryCsvPath ${{ secrets.CATEGORY_CSV }}
+          --recordRowCsvPath $RECORD_ROW_CSV
+          --constitutionCsvPath $CONSTITUTION_CSV
+          --categoryCsvPath $CATEGORY_CSV
 
       - name: Pack as zip
         run: |
