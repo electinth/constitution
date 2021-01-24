@@ -12,9 +12,10 @@ jobs:
         run: mkdir constitution-data
 
       - name: Generate JSONs
-        run: deno run --allow-net --allow-write=./ app.ts -o ./constitution-data \
-          --recordRowCsvPath ${{ secrets.RECORD_ROW_CSV }} \
-          --constitutionCsvPath ${{ secrets.CONSTITUTION_CSV }} \
+        run: >
+          deno run --allow-net --allow-write=./ app.ts -o ./constitution-data
+          --recordRowCsvPath ${{ secrets.RECORD_ROW_CSV }}
+          --constitutionCsvPath ${{ secrets.CONSTITUTION_CSV }}
           --categoryCsvPath ${{ secrets.CATEGORY_CSV }}
 
       - name: Pack as zip
