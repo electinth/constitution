@@ -36,8 +36,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: $DATE
-          release_name: Release $DATE
+          tag_name: ${{ env.DATE }}
+          release_name: Release ${{ env.DATE }}
           draft: false
           prerelease: false
 
@@ -48,6 +48,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./constitution-data.zip
+          asset_path: ./constitution-data/constitution-data.zip
           asset_name: constitution-data.zip
           asset_content_type: application/zip
