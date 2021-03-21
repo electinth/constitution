@@ -4,6 +4,7 @@
     "prettier/vue",
     "plugin:prettier/recommended"
   ],
+  "ignorePatterns": ["data-fetcher/**/*"],
   "rules": {
     "camelcase": "off"
   }
