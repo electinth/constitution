@@ -1,4 +1,4 @@
-import { parse } from "https://deno.land/std@0.80.0/encoding/csv.ts"
+import { parse } from "encoding/csv.ts"
 
 export async function parseCsv<T>(
   csvPath: string,

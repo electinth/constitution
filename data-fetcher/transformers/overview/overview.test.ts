@@ -1,6 +1,6 @@
 import {
   assertEquals,
-} from "https://deno.land/std@0.80.0/testing/asserts.ts";
+} from "testing/asserts.ts";
 import { transformPages } from "./overview.ts";
 
 Deno.test('should return correct pages for the temporary 2475 constitution', () => {
