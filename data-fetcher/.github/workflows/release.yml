@@ -1,0 +1,55 @@
+name: Release to GitHub Release
+on: workflow_dispatch
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denolib/setup-deno@v2
+
+      - name: Generate directory
+        run: mkdir constitution-data
+
+      - name: Generate JSONs
+        env:
+          RECORD_ROW_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=967540758&single=true&output=csv
+          CONSTITUTION_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=210965472&single=true&output=csv
+          CATEGORY_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=971764486&single=true&output=csv
+          CONSTITUTION_DETAIL_CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vRUq2kWVN8fopcNaLP1iRRumPlzxzbke-ppkeaFMXpX0OOsQpYbKhEGPyrJdPx4sXaNjOB7MBtaOyxs/pub?gid=144576065&single=true&output=csv
+        run: >
+          deno run --allow-net --allow-write=./ app.ts -o ./constitution-data
+          --recordRowCsvPath $RECORD_ROW_CSV
+          --constitutionCsvPath $CONSTITUTION_CSV
+          --categoryCsvPath $CATEGORY_CSV
+          --constitutionDetailCsvPath $CONSTITUTION_DETAIL_CSV
+
+      - name: Pack as zip
+        run: |
+          cd constitution-data
+          zip -r constitution-data.zip ./*
+
+      - name: Get Current Date
+        run: echo "DATE=$(date +'%Y-%m-%dT%H%M%S%z')" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.DATE }}
+          release_name: Release ${{ env.DATE }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./constitution-data/constitution-data.zip
+          asset_name: constitution-data.zip
+          asset_content_type: application/zip
