@@ -24,6 +24,9 @@ GOOGLE_ANALYTICS_ID=<G-XXXXXXX>
 # install dependencies
 $ yarn install
 
+# populate data (Docker required)
+$ ./populate-data.sh
+
 # serve with hot reload at localhost:3000
 $ yarn dev
 

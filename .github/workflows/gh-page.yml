@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
+      - name: Populate data JSONs
+        run: ./populate-data.sh
       - name: Install dependencies
         uses: borales/actions-yarn@v2.0.0
         with:
