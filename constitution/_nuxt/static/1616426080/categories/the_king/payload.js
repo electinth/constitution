@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/categories/the_king", (function(a){return {data:[{category:{id:2,name:"พระมหากษัตริย์\u002Fองคมนตรี",color:"#1f90ef",content:a,category_id:"the_king",created_at:"2020-12-16T12:50:11.837Z",updated_at:"2020-12-22T09:47:33.837Z",og_image:a,sub_categories:[]}}],fetch:{},mutations:void 0}}(null)));
