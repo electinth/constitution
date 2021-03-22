@@ -199,8 +199,8 @@
       >
     </section>
 
-    <section>
-      <SocialSharer />
+    <section class="flex justify-center">
+      <social-sharer />
     </section>
   </div>
 </template>

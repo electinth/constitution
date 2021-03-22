@@ -16,13 +16,13 @@ jobs:
       - name: Populate data JSONs
         run: ./populate-data.sh
       - name: Install dependencies
-        uses: borales/actions-yarn@v2.0.0
+        uses: actions/setup-node@v2
         with:
-          cmd: install
+          node-version: '12'
+        run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+        run: npm install
       - name: Build project
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: generate
+        run: npm run generate
         env:
           BASE_PATH: /constitution
           SITE_URL: https://electinth.github.io/constitution

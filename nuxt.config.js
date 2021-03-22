@@ -39,6 +39,7 @@ export default {
     '~/plugins/msw.client.ts',
     '~/plugins/v-click-outside.ts',
     '~/plugins/vue-gtag.ts',
+    '~/plugins/common.client.ts',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

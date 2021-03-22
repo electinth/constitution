@@ -49,7 +49,9 @@
 
       <TopicOpinions v-else :opinions="topic.opinions" />
 
-      <SocialSharer class="my-6 md:my-12" />
+      <div class="flex justify-center my-6 md:my-12">
+        <social-sharer />
+      </div>
 
       <hr
         class="border-0 h-px my-1 outline-none"
@@ -68,24 +70,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import TopicPanel from '@/components/topic/topic-panel.vue';
-import TopicSummary from '@/components/topic/topic-summary.vue';
-import TopicComparison from '@/components/topic/topic-comparison.vue';
-import TopicOpinions from '@/components/topic/topic-opinions.vue';
-import TopicRelatedPanel from '@/components/topic/topic-related-panel.vue';
-import SocialSharer from '@/components/social-sharer.vue';
 import { getCategoryById, Topic, Category, getTopicById } from '@/utils/strapi';
 import { generateHeadTags } from '~/utils/head';
 
 export default Vue.extend({
-  components: {
-    TopicPanel,
-    TopicSummary,
-    TopicComparison,
-    TopicOpinions,
-    SocialSharer,
-    TopicRelatedPanel,
-  },
   async asyncData({ params: { category_id, topic_id }, payload }) {
     if (payload?.topic && payload?.category) {
       return payload;

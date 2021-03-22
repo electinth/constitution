@@ -51,8 +51,8 @@
           class="flex-1"
         />
       </section>
-      <section>
-        <SocialSharer is-dark />
+      <section class="flex justify-center">
+        <social-sharer light />
       </section>
     </div>
   </div>
