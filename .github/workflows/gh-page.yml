@@ -19,9 +19,11 @@ jobs:
         with:
           node-version: '12'
       - name: Install dependencies
-        run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }} && npm install
+        run: yarn install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build project
-        run: npm run generate
+        run: yarn generate
         env:
           BASE_PATH: /constitution
           SITE_URL: https://electinth.github.io/constitution
