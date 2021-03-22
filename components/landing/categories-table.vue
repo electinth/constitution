@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { CategoryOverview } from '~/data/constitution-overview.ts';
+import { CategoryOverview } from '~/data/constitution-overview';
 import { isLargeOrMore } from '~/utils/screen';
 
 export default Vue.extend({

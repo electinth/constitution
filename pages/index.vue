@@ -60,7 +60,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import constitutionOverview from '~/data/constitution-overview.ts';
+import constitutionOverview from '~/data/constitution-overview';
 import { getAllTopics } from '~/utils/strapi';
 
 interface HowtoStep {

@@ -47,7 +47,7 @@
 import Vue from 'vue';
 import constitutionOverview, {
   CategoryOverview,
-} from '~/data/constitution-overview.ts';
+} from '~/data/constitution-overview';
 import { getAllTopics } from '~/utils/strapi';
 
 export default Vue.extend({
