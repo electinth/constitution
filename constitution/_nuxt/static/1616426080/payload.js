@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{catagoryIdsHavingTopics:new Set(["legislative","amendment","junta_authority"])}],fetch:{},mutations:void 0});
