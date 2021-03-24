@@ -891,10 +891,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@electinth/common@^1.2.2":
-  version "1.2.2"
-  resolved "https://npm.pkg.github.com/download/@electinth/common/1.2.2/fa5196fa0a67dbd858c3b043a14be1d6474bfcef1cdde547b2067846d1b010c5#305905c20ce6ea6bf27351defda491a3c73091b2"
-  integrity sha512-rQBnOL9VTnzIEue47AMmf5i8PUTpjEie9ZWDX9g9vLFJIjIlf5XmSAhWPWA6P/D/oNBCURAQZK1aN4I/aWIelw==
+"@electinth/common@^1.2.3":
+  version "1.2.3"
+  resolved "https://npm.pkg.github.com/download/@electinth/common/1.2.3/512be868cab28775649094bca74d0b4d321274a6c356cc46321b6784e65aa384#4558c6c42b7d30c970ced0087251507e0b00354f"
+  integrity sha512-GaoBmWN8MAxpnnP8WWrUyzR9nTKXOBGNfPBvMoi1AKsjf5/Cj3tEVLSWhfIUMtrGuAyd3jrdoxbmkA1pkI9smw==
   dependencies:
     hybrids "^4.3.4"
     twind "^0.15.4"

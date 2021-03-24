@@ -2,6 +2,7 @@
   <div class="flex flex-col">
     <navigation-bar
       title-text="RE-CONSTITUTION"
+      show-slot-in-new-row-on-mobile
       :logo-url="require('~/assets/images/logo-elect-header.svg')"
     >
       <div
