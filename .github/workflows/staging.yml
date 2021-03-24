@@ -1,0 +1,34 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Populate data JSONs
+        run: ./populate-data.sh
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: Install dependencies
+        run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }} && npm install
+      - name: Build project
+        run: npm run generate
+        env:
+          BASE_PATH: /constitution
+          SITE_URL: https://electinth.github.io/constitution
+          STRAPI_ENDPOINT: https://cms.constitution.kickdown.dev
+          STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
+      - name: Include JSONs data in deployment
+        run: mkdir dist/data && cp data/*.json dist/data/
+      - name: Deploy to Github Page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

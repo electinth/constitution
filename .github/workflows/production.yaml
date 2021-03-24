@@ -1,11 +1,6 @@
-name: Deploy to Github Page
+name: Deploy to Production
 
-on:
-  push:
-    branches: [main]
-  repository_dispatch:
-    types:
-      - webhook-build
+on: workflow_dispatch
 
 jobs:
   pipeline:
@@ -13,8 +8,13 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-      - name: Populate data JSONs
-        run: ./populate-data.sh
+      - name: Checkout latest staging build
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: staging
+      - name: Copy staging latest build data
+        run: cp staging/data/*.json data/
       - uses: actions/setup-node@v2
         with:
           node-version: '12'
@@ -27,8 +27,12 @@ jobs:
           SITE_URL: https://electinth.github.io/constitution
           STRAPI_ENDPOINT: https://cms.constitution.kickdown.dev
           STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
-      - name: Deploy to Github Page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - name: Deploy to ELECT Server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: '-avzP'
+          SOURCE: 'dist/'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
