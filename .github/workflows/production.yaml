@@ -23,10 +23,10 @@ jobs:
       - name: Build project
         run: npm run generate
         env:
-          BASE_PATH: /constitution
-          SITE_URL: https://electinth.github.io/constitution
+          SITE_URL: https://recon.elect.in.th
           STRAPI_ENDPOINT: https://cms.constitution.kickdown.dev
           STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
+          GOOGLE_ANALYTICS_ID: G-2F9Q3DF245
       - name: Deploy to ELECT Server
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
