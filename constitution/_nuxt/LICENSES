@@ -5,16 +5,18 @@
  * @license  MIT
  */
 
-/*! https://mths.be/punycode v1.4.1 by @mathias */
-
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-
 /*!
  * cookie
  * Copyright(c) 2012-2014 Roman Shtylman
  * Copyright(c) 2015 Douglas Christopher Wilson
  * MIT Licensed
+ */
+
+/*!
+ * vue-awesome-swiper v4.1.1
+ * Copyright (c) Surmon. All rights reserved.
+ * Released under the MIT License.
+ * Surmon <https://github.com/surmon-china>
  */
 
 /*!
@@ -44,27 +46,6 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
-
-/*!
-  * vue-router v3.5.1
-  * (c) 2021 Evan You
-  * @license MIT
-  */
-
-/*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
- * Released under the MIT License.
- */
-
-
-/*!
- * vue-awesome-swiper v4.1.1
- * Copyright (c) Surmon. All rights reserved.
- * Released under the MIT License.
- * Surmon <https://github.com/surmon-china>
- */
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -79,3 +60,20 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
+
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+
+/*!
+  * vue-router v3.5.1
+  * (c) 2021 Evan You
+  * @license MIT
+  */
+
+/*!
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
+ * Released under the MIT License.
+ */
