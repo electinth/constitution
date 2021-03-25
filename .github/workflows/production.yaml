@@ -28,11 +28,11 @@ jobs:
           STRAPI_TOKEN: ${{ secrets.STRAPI_TOKEN }}
           GOOGLE_ANALYTICS_ID: G-2F9Q3DF245
       - name: Deploy to ELECT Server
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: '-avzP'
-          SOURCE: 'dist/'
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -avzP
+          path: dist/
+          remote_path: ${{ secrets.REMOTE_TARGET }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.SERVER_SSH_KEY }}
