@@ -86,6 +86,7 @@ export default {
   },
 
   generate: {
+    concurrency: 1,
     async routes() {
       if (!process.env.STRAPI_ENDPOINT) {
         server.listen();
@@ -101,17 +102,20 @@ export default {
       );
 
       const topicRoutes = (await getAllTopics()).map((topic) => {
-        const { category } = categoryRoutes.find(
-          ({ payload }) => payload.category.category_id === topic.category_id
-        ).payload;
+        const { category } =
+          categoryRoutes.find(
+            ({ payload }) => payload.category.category_id === topic.category_id
+          )?.payload || {};
 
-        return {
-          route: `/categories/${category.category_id}/topics/${topic.id}`,
-          payload: {
-            category,
-            topic,
-          },
-        };
+        return category
+          ? {
+              route: `/categories/${category.category_id}/topics/${topic.id}`,
+              payload: {
+                category,
+                topic,
+              },
+            }
+          : null;
       });
 
       if (!process.env.STRAPI_ENDPOINT) {

@@ -89,6 +89,8 @@ export interface Category {
 
 const strapiEndpoint = process.env.STRAPI_ENDPOINT || MSW_ENDPOINT;
 
+const apiCache = new Map<String, unknown>();
+
 const parseConstitution = ({
   constitution_id,
   sections,
@@ -135,6 +137,10 @@ const parseRawTopic = ({ constitutions, ...rest }: RawTopic): Topic => ({
 });
 
 const get = async <T>(path: string): Promise<T> => {
+  if (apiCache.has(path)) {
+    return apiCache.get(path) as T;
+  }
+
   const { data } = await axios.get(
     `${strapiEndpoint}${path}`,
     process.env.STRAPI_TOKEN
@@ -145,6 +151,8 @@ const get = async <T>(path: string): Promise<T> => {
         }
       : {}
   );
+
+  apiCache.set(path, data);
 
   return data;
 };
