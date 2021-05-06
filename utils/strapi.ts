@@ -95,33 +95,35 @@ const parseConstitution = ({
   constitution_id,
   sections,
 }: RawConstitution): Constitution | null => {
-  const constitution = constitutions.find(
-    (constitution) =>
-      constitution_id === constitution.id &&
-      sections?.length &&
-      constitution.sections.some(
-        ({ id }: Section) => id === sections[0].section_id
-      )
+  const matchedConstitutions = constitutions.filter(
+    (constitution) => constitution_id === constitution.id
   );
 
-  if (!constitution) {
+  if (matchedConstitutions.length === 0) {
     return null;
   }
 
-  const { id, name = '', prelude } = constitution;
+  const { id, name = '', prelude } = matchedConstitutions[0];
+
+  const matchedConstitutionSections: Section[] = matchedConstitutions.reduce(
+    (list: Section[], { sections }) => [...list, ...sections],
+    []
+  );
+
+  const matchedSections = sections
+    ? sections.reduce<Section[]>((list, { section_id }) => {
+        const section = matchedConstitutionSections.find(
+          ({ id }) => section_id === id
+        );
+        return section ? [...list, section] : list;
+      }, [])
+    : [];
 
   return {
     id,
     name,
     prelude,
-    sections: sections
-      ? sections.reduce<Section[]>((list, { section_id }) => {
-          const section = (constitution.sections as Section[]).find(
-            ({ id }) => section_id === id
-          );
-          return section ? [...list, section] : list;
-        }, [])
-      : [],
+    sections: matchedSections,
   };
 };
 
