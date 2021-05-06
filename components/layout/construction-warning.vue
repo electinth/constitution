@@ -9,14 +9,9 @@
         />
       </div>
       <Paragraph2 class="flex-1">
-        Re-constitution อยู่ในเวอร์ชั่น BETA และกำลังพัฒนาเนื้อหาเพิ่มเติม
-        ผู้อ่านสามารถอ่านเนื้อหาในรายละเอียดได้ใน
-        <span class="font-semibold">
-          หมวดอำนาจนิติบัญญัติ หมวดการแก้ไขเพิ่มเติมรัฐธรรมนูญ
-        </span>
-        และ
-        <span class="font-semibold"> หมวดอำนาจคณะรัฐประหาร </span>
-        (อัพเดต ณ วันที่ 25/12/2563)
+        <span class="font-semibold"> Update Announcement</span><br />
+        Re-constitution เพิ่มเติมเนื้อหาบทบัญญัติรัฐธรรมนูญอีก 7 หมวดหลัก พร้อม
+        Function ค้นหาหมวดรัฐธรรมนูญ (อัพเดตรายละเอียด ณ วันที่ 06/05/2564)
       </Paragraph2>
     </div>
     <div class="w-3 md:w-4">
