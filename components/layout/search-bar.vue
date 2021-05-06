@@ -11,6 +11,7 @@
         v-model.trim="searchQuery"
         type="text"
         class="flex-1 text-center bg-light-gray-1 focus:outline-none p-2"
+        placeholder="กรอกหัวข้อรัฐธรรมนูญ"
       />
       <button
         class="text-gray-1 hover:text-gray-2 px-2 focus:outline-none"
@@ -33,6 +34,12 @@
       class="flex flex-col bg-gray-1 text-white text-center"
       @click="(searchQuery = '') || $emit('close')"
     >
+      <div
+        v-if="searchQuery.length > 0 && searchResult.length === 0"
+        class="p-3 text-12 lg:text-16"
+      >
+        ไม่พบผลการค้นหา
+      </div>
       <NuxtLink
         v-for="{ category_id, id, name } in searchResult"
         :key="id"
