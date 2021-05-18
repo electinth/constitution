@@ -200,7 +200,7 @@
     </section>
 
     <section class="flex justify-center">
-      <social-sharer />
+      <elect-sharer />
     </section>
   </div>
 </template>

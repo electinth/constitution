@@ -52,7 +52,7 @@
         />
       </section>
       <section class="flex justify-center">
-        <social-sharer light />
+        <elect-sharer light />
       </section>
     </div>
   </div>

@@ -50,7 +50,7 @@
       <TopicOpinions v-else :opinions="topic.opinions" />
 
       <div class="flex justify-center my-6 md:my-12">
-        <social-sharer />
+        <elect-sharer />
       </div>
 
       <hr

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <navigation-bar
+    <elect-navbar
       title-text="RE-CONSTITUTION"
       show-slot-in-new-row-on-mobile
       :logo-url="require('~/assets/images/logo-elect-header.svg')"
@@ -27,7 +27,7 @@
           />
         </NavigationItem>
       </div>
-    </navigation-bar>
+    </elect-navbar>
 
     <div v-if="showSearchBar" class="relative">
       <div class="absolute inset-0 z-10">
