@@ -32,7 +32,7 @@ interface RawConstitution {
 }
 export interface Constitution {
   id: string;
-  name: string;
+  short_name: string;
   prelude: string;
   sections: Section[];
   amendments?: Amendment[];
@@ -103,7 +103,7 @@ const parseConstitution = ({
     return null;
   }
 
-  const { id, name = '', prelude } = matchedConstitutions[0];
+  const { id, short_name = '', prelude } = matchedConstitutions[0];
 
   const matchedConstitutionSections: Section[] = matchedConstitutions.reduce(
     (list: Section[], { sections }) => [...list, ...sections],
@@ -121,7 +121,7 @@ const parseConstitution = ({
 
   return {
     id,
-    name,
+    short_name,
     prelude,
     sections: matchedSections,
   };

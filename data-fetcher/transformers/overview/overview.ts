@@ -18,6 +18,7 @@ export function transform(rows: RecordRow[], cons: ConstitutionRow[], categories
       return {
         id: c.id,
         name: c.name,
+        shortName: c.shortName,
         year: c.year,
         context: c.context,
         isInterim: c.isInterim,
