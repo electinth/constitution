@@ -1,5 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col">
+    <ConstructionWarning />
     <staging-banner
       v-if="showStagingBanner"
       production-url="https://recon.elect.in.th/"

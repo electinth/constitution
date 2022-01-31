@@ -1,37 +1,11 @@
 <template>
-  <div v-if="isOpen" class="flex flex-row bg-teal text-white p-2 md:p-4">
-    <div class="flex-1 flex flex-row max-w-4xl space-x-2 p-1 md:p-2 m-auto">
-      <div class="w-4 md:w-8 mt-1">
-        <img
-          src="~/assets/images/icon-warning.svg"
-          alt="คำเตือน"
-          class="w-full"
-        />
-      </div>
-      <Paragraph2 class="flex-1">
-        <span class="font-semibold"> Update Announcement</span><br />
-        มีการเพิ่มเติมเนื้อหาบทบัญญัติรัฐธรรมนูญอีก 3 หมวดหลัก
-        พร้อมปรับเปลี่ยนชื่อรัฐธรรมนูญ (อัพเดตรายละเอียด ณ วันที่ 20/07/2564)
-      </Paragraph2>
-    </div>
-    <div class="w-3 md:w-4">
-      <img
-        src="~/assets/images/icon-cross.svg"
-        alt="ปิด"
-        class="w-full cursor-pointer"
-        @click="isOpen = false"
-      />
-    </div>
+  <div class="sticky top-0 z-10 bg-teal text-white p-2 md:p-4 text-center">
+    <Paragraph2 class="flex-1">
+      เว็บไซต์นี้อัพเดทข้อมูลล่าสุดเมื่อ กรกฎาคม 2564
+      สามารถดูเวอร์ชั่นอัพเดทได้ที่
+      <a class="underline" href="https://reconstitution.wevis.info "
+        >https://reconstitution.wevis.info</a
+      >
+    </Paragraph2>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
-  data() {
-    return {
-      isOpen: true,
-    };
-  },
-});
-</script>

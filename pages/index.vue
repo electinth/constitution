@@ -1,7 +1,5 @@
 <template>
   <div class="flex flex-col">
-    <ConstructionWarning />
-
     <div
       class="bg-dark text-white p-4 md:p-12 flex flex-col space-y-8 sm:space-y-16"
     >
