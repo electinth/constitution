@@ -1,3 +1,7 @@
+**[DEPRECATED]** We moved to the new organization: [wevisdemo/reconstitution](https://github.com/wevisdemo/reconstitution)
+
+----
+
 # constitution
 
 Thailand's Constitution, explained
